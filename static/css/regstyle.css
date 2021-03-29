@@ -1,0 +1,223 @@
+body {
+    background-color: #C6E0FF;
+}
+
+div {
+    border: none;
+}
+
+@font-face {
+    font-family: "MainFont";
+    src: url("../fonts/20011.ttf");
+}
+
+@font-face {
+    font-family: "InputFont";
+    src: url("../fonts/20289.ttf");
+}
+
+h1 {
+    font-family: "MainFont";
+    font-weight: 200;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.labelText {
+    display: block;
+    font-family: "MainFont";
+}
+
+select {
+    background-color: #F7F5CC;
+    font-family: "InputFont";
+    width: 100%;
+}
+
+.choiceDIV {
+    font-family: "InputFont";
+    width: 100%;
+}
+
+.inputText {
+    font-family: "InputFont";
+    font-weight: 300;
+    background-color: #F7F5CC;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1%;
+}
+
+.button {
+    width: 100%;
+    cursor: pointer;
+    background-color: #53A2FF;
+    font-family: "MainFont";
+}
+
+
+/*Mobile*/
+
+@media (max-width: 424px) {
+    #content {
+        width: 250px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    .labelText {
+        margin-top: 10px;
+        font-size: 1.7em;
+    }
+    select {
+        height: 28px;
+        margin-top: 5px;
+        font-size: 1em;
+    }
+    .choiceDIV {
+        height: 20px;
+        margin-top: 5px;
+        font-size: 1em;
+        padding-left: 0px;
+    }
+    .choice {
+        vertical-align: -1.7px;
+        transform: scale(1);
+        margin-right: 5px;
+    }
+    .inputText {
+        font-size: 1em;
+        height: 28px;
+        margin-top: 5px;
+    }
+    .button {
+        height: 28px;
+        margin-top: 10px;
+        font-size: 1.35em;
+    }
+}
+
+@media (min-width: 424px) and (max-width: 767px) {
+    #content {
+        width: 400px;
+    }
+    h1 {
+        font-size: 2.8em;
+        margin-bottom: 10px;
+    }
+    .labelText {
+        margin-top: 10px;
+        font-size: 1.6em;
+    }
+    .choiceDIV {
+        height: 25px;
+        margin-top: 5px;
+        font-size: 1.2em;
+        padding-left: 2px;
+    }
+    .choice {
+        vertical-align: 0px;
+        transform: scale(1.3);
+        margin-right: 8px;
+    }
+    select {
+        height: 30px;
+        margin-top: 10px;
+        font-size: 1.2em;
+    }
+    .inputText {
+        font-size: 1.2em;
+        height: 30px;
+        margin-top: 10px;
+    }
+    .button {
+        height: 30px;
+        font-size: 1.6em;
+    }
+}
+
+
+/*Desktop*/
+
+@media (min-width: 767px) and (max-width: 1023px) {
+    #content {
+        width: 410px;
+    }
+    h1 {
+        font-size: 3.5em;
+    }
+    .labelText {
+        margin-top: 10px;
+        font-size: 1.8em;
+    }
+    select {
+        height: 37px;
+        margin-top: 10px;
+        font-size: 1.2em;
+    }
+    .choiceDIV {
+        height: 20px;
+        margin-top: 5px;
+        font-size: 1.2em;
+        padding-left: 1px;
+    }
+    .choice {
+        vertical-align: -1.5px;
+        transform: scale(1.3);
+        margin-right: 7px;
+    }
+    .inputText {
+        font-size: 1.2em;
+        height: 35px;
+        margin-top: 10px;
+    }
+    .button {
+        height: 35px;
+        margin-top: 10px;
+        font-size: 1.7em;
+    }
+}
+
+@media (min-width: 1023px) {
+    #content {
+        width: 500px;
+    }
+    h1 {
+        font-size: 3.9em;
+    }
+    .labelText {
+        margin-top: 10px;
+        font-size: 1.7em;
+    }
+    select {
+        height: 35px;
+        margin-top: 10px;
+        font-size: 1.2em;
+    }
+    .choiceDIV {
+        height: 20px;
+        margin-top: 5px;
+        font-size: 1.2em;
+        padding-left: 2px;
+    }
+    .choice {
+        vertical-align: 0px;
+        transform: scale(1.3);
+        margin-right: 6px;
+    }
+    .inputText {
+        font-size: 1.2em;
+        height: 35px;
+        margin-top: 10px;
+    }
+    .button {
+        height: 40px;
+        margin-top: 13px;
+        margin-bottom: 13px;
+        font-size: 2em;
+    }
+}
+
+#content {
+    margin: 0px auto;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./static/css/clear.css">
+    <link rel="stylesheet" href="./static/css/menustyle.css">
+    <link rel="stylesheet" href="./static/css/lkstyle.css">
+    <title>Личный кабинет</title>
+</head>
+
+<body>
+    <div id="content">
+        <div class="menuMobileDiv">
+            <input type="button" class="button" onclick="showHideMenu(1);" value="Меню">
+            <div class="menuMobile" id="menuId1" data-vis="nonvis">
+                <input type="button" class="button choice" value="Профиль">
+                <input type="button" class="button" value="Поиск ученика">
+                <input type="button" class="button" value="Мессенджер">
+                <input type="button" class="button" value="Расписание">
+                <input type="button" class="button" value="Выход">
+            </div>
+        </div>
+        <div class="menuDesktopDiv">
+            <input type="button" class="button deskmenu choice" value="Профиль">
+            <input type="button" class="button deskmenu" value="Поиск ученика">
+            <input type="button" class="button deskmenu" value="Мессенджер">
+            <input type="button" class="button deskmenu" value="Расписание">
+            <input type="button" class="button deskmenu" value="Выход">
+        </div>
+        <div id="mobileContext">
+            <img id="avatarMobile" src="ava.jpg" alt="Ваше фото">
+            <span class="labelText">Фамилия</span>
+            <span class="valueText">Бойков</span>
+            <span class="labelText">Имя</span>
+            <span class="valueText">Владимир</span>
+            <span class="labelText">Дата рождения</span>
+            <span class="valueText">22.04.1999</span>
+            <span class="labelText">Образование</span>
+            <span class="valueText">Студент</span>
+            <span class="labelText">Стаж</span>
+            <span class="valueText">1</span>
+            <span class="labelText">Ставка в час</span>
+            <span class="valueText">350</span>
+            <span class="labelText">Номер телефона</span>
+            <span class="valueText">+79967324991</span>
+            <span class="labelText">Email</span>
+            <span class="valueText">vladimirclame@gmail.com</span>
+            <span class="labelText">О себе</span>
+            <span class="valueText">С удовольствием подтяну школьников по предметам, которые сам хорошо знаю, пишите!</span>
+            <span class="labelText">Преподаваемые предметы</span>
+            <span class="valueText">Математика</span>
+            <span class="valueText">Информатика</span>
+            <span class="valueText">Английский язык</span>
+            <span class="labelText">Формат занятий</span>
+            <span class="valueText">Еду к ученику</span>
+            <span class="labelText">Вид занятий</span>
+            <span class="valueText">Разовые</span>
+            <span class="valueText">Групповые</span>
+            <span class="valueText">Помощь с домашней работой</span>
+            <span class="valueText">Обычные</span>
+            <input type="button" class="button edit" value="Редактировать профиль">
+        </div>
+        <div id="desktopContext">
+            <div class="onePartContext">
+                <img id="avatarDesktop" src="ava.jpg" alt="Ваше фото">
+                <span class="labelText firstColTextLabel">Фамилия</span>
+                <span class="valueText firstColTextValue">Бойков</span>
+                <span class="labelText firstColTextLabel">Имя</span>
+                <span class="valueText firstColTextValue">Владимир</span>
+            </div>
+            <div class="onePartContext">
+                <span class="labelText">Дата рождения</span>
+                <span class="valueText">22.04.1999</span>
+                <span class="labelText">Образование</span>
+                <span class="valueText">Студент</span>
+                <span class="labelText">Стаж</span>
+                <span class="valueText">1</span>
+                <span class="labelText">Ставка в час</span>
+                <span class="valueText">350</span>
+                <span class="labelText">Номер телефона</span>
+                <span class="valueText">+79967324991</span>
+                <span class="labelText">Email</span>
+                <span class="valueText">vladimirclame@gmail.com</span>
+                <span class="labelText">О себе</span>
+                <span class="valueText">С удовольствием подтяну школьников по предметам, которые сам хорошо знаю, пишите!</span>
+                <input type="button" class="button edit" value="Редактировать профиль">
+            </div>
+            <div class="onePartContext">
+                <span class="labelText">Преподаваемые предметы</span>
+                <span class="valueText">Математика</span>
+                <span class="valueText">Информатика</span>
+                <span class="valueText">Английский язык</span>
+                <span class="labelText">Формат занятий</span>
+                <span class="valueText">Еду к ученику</span>
+                <span class="labelText">Вид занятий</span>
+                <span class="valueText">Разовые</span>
+                <span class="valueText">Групповые</span>
+                <span class="valueText">Помощь с домашней работой</span>
+                <span class="valueText">Обычные</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./static/css/mobileMenuScript.js"></script>
+
+</html>

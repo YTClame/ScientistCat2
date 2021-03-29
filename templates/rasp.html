@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="clear.css">
+    <link rel="stylesheet" href="menustyle.css">
+    <link rel="stylesheet" href="raspstyle.css">
+    <title>Расписание</title>
+</head>
+
+<body>
+    <div id="content">
+        <div class="menuMobileDiv">
+            <input type="button" class="button" onclick="showHideMenu(1);" value="Меню">
+            <div class="menuMobile" id="menuId1" data-vis="nonvis">
+                <input type="button" class="button" value="Профиль">
+                <input type="button" class="button" value="Поиск !!!">
+                <input type="button" class="button" value="Мессенджер">
+                <input type="button" class="button choice" value="Расписание">
+                <input type="button" class="button" value="Выход">
+            </div>
+        </div>
+        <div class="menuMobileDiv">
+            <input type="button" class="button" onclick="showHideMenu(4);" value="Выбрать день">
+            <div class="menuMobile" id="menuId4" data-vis="nonvis">
+                <input type="button" class="button choice" id="mobileDay1" value="Понедельник" onclick="setRaspDay(1)">
+                <input type="button" class="button" id="mobileDay2" value="Вторник" onclick="setRaspDay(2)">
+                <input type="button" class="button" id="mobileDay3" value="Среда" onclick="setRaspDay(3)">
+                <input type="button" class="button" id="mobileDay4" value="Четверг" onclick="setRaspDay(4)">
+                <input type="button" class="button" id="mobileDay5" value="Пятница" onclick="setRaspDay(5)">
+                <input type="button" class="button" id="mobileDay6" value="Суббота" onclick="setRaspDay(6)">
+                <input type="button" class="button" id="mobileDay7" value="Воскресенье" onclick="setRaspDay(7)">
+            </div>
+        </div>
+        <div class="menuDesktopDiv">
+            <input type="button" class="button deskmenu" value="Профиль">
+            <input type="button" class="button deskmenu" value="Поиск !!!">
+            <input type="button" class="button deskmenu" value="Мессенджер">
+            <input type="button" class="button deskmenu choice" value="Расписание">
+            <input type="button" class="button deskmenu" value="Выход">
+        </div>
+        <div id="mobileContent">
+            <span id="mobileNameOfDay">Понедельник</span>
+            <div id="mobileMargin"></div>
+            <div class="mobileTimeDiv">
+                <span class="mobileTimeSpan">08:00-09:00</span>
+                <div class="mobileDay red"></div>
+            </div>
+            <div class="mobileTimeDiv">
+                <span class="mobileTimeSpan">09:00-10:00</span>
+                <div class="mobileDay green"></div>
+            </div>
+            <div class="mobileTimeDiv">
+                <span class="mobileTimeSpan">10:00-11:00</span>
+                <div class="mobileDay green"></div>
+            </div>
+            <div class="mobileTimeDiv">
+                <span class="mobileTimeSpan">11:00-12:00</span>
+                <div class="mobileDay red"></div>
+            </div>
+            <div class="mobileTimeDiv">
+                <span class="mobileTimeSpan">12:00-13:00</span>
+                <div class="mobileDay red"></div>
+            </div>
+            <div class="mobileTimeDiv">
+                <span class="mobileTimeSpan">13:00-14:00</span>
+                <div class="mobileDay red"></div>
+            </div>
+            <div class="mobileTimeDiv">
+                <span class="mobileTimeSpan">14:00-15:00</span>
+                <div class="mobileDay green"></div>
+            </div>
+            <div class="mobileTimeDiv">
+                <span class="mobileTimeSpan">15:00-16:00</span>
+                <div class="mobileDay green"></div>
+            </div>
+            <div class="mobileTimeDiv">
+                <span class="mobileTimeSpan">16:00-17:00</span>
+                <div class="mobileDay red"></div>
+            </div>
+            <div class="mobileTimeDiv">
+                <span class="mobileTimeSpan">17:00-18:00</span>
+                <div class="mobileDay red"></div>
+            </div>
+            <div class="mobileTimeDiv">
+                <span class="mobileTimeSpan">18:00-19:00</span>
+                <div class="mobileDay red"></div>
+            </div>
+            <div class="mobileTimeDiv">
+                <span class="mobileTimeSpan">19:00-20:00</span>
+                <div class="mobileDay green"></div>
+            </div>
+            <div class="mobileTimeDiv">
+                <span class="mobileTimeSpan">20:00-21:00</span>
+                <div class="mobileDay green"></div>
+            </div>
+            <div class="mobileTimeDiv">
+                <span class="mobileTimeSpan">21:00-22:00</span>
+                <div class="mobileDay red"></div>
+            </div>
+            <div class="mobileTimeDiv">
+                <span class="mobileTimeSpan">22:00-23:00</span>
+                <div class="mobileDay red"></div>
+            </div>
+        </div>
+        <div id="desktopContent">
+            <div id="desktopColumnTime">
+                <div class="desktopTimeDiv">
+                    <span class="desktopTimeSpan">08:00-09:00</span>
+                </div>
+                <div class="desktopTimeDiv">
+                    <span class="desktopTimeSpan">09:00-10:00</span>
+                </div>
+                <div class="desktopTimeDiv">
+                    <span class="desktopTimeSpan">10:00-11:00</span>
+                </div>
+                <div class="desktopTimeDiv">
+                    <span class="desktopTimeSpan">11:00-12:00</span>
+                </div>
+                <div class="desktopTimeDiv">
+                    <span class="desktopTimeSpan">12:00-13:00</span>
+                </div>
+                <div class="desktopTimeDiv">
+                    <span class="desktopTimeSpan">13:00-14:00</span>
+                </div>
+                <div class="desktopTimeDiv">
+                    <span class="desktopTimeSpan">14:00-15:00</span>
+                </div>
+                <div class="desktopTimeDiv">
+                    <span class="desktopTimeSpan">15:00-16:00</span>
+                </div>
+                <div class="desktopTimeDiv">
+                    <span class="desktopTimeSpan">16:00-17:00</span>
+                </div>
+                <div class="desktopTimeDiv">
+                    <span class="desktopTimeSpan">17:00-18:00</span>
+                </div>
+                <div class="desktopTimeDiv">
+                    <span class="desktopTimeSpan">18:00-19:00</span>
+                </div>
+                <div class="desktopTimeDiv">
+                    <span class="desktopTimeSpan">19:00-20:00</span>
+                </div>
+                <div class="desktopTimeDiv">
+                    <span class="desktopTimeSpan">20:00-21:00</span>
+                </div>
+                <div class="desktopTimeDiv">
+                    <span class="desktopTimeSpan">21:00-22:00</span>
+                </div>
+                <div class="desktopTimeDiv">
+                    <span class="desktopTimeSpan">22:00-23:00</span>
+                </div>
+            </div>
+            <div id="desktopColumnsDays">
+                <div class="desktopOneDayColumn">
+                    <span class="desktopDayName">Пн</span>
+                    <div class="desktomMargin"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock bottom green"></div>
+                </div>
+                <div class="desktopOneDayColumn">
+                    <span class="desktopDayName">Вт</span>
+                    <div class="desktomMargin"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock bottom green"></div>
+                </div>
+                <div class="desktopOneDayColumn">
+                    <span class="desktopDayName">Ср</span>
+                    <div class="desktomMargin"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock bottom green"></div>
+                </div>
+                <div class="desktopOneDayColumn">
+                    <span class="desktopDayName">Чт</span>
+                    <div class="desktomMargin"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock bottom red"></div>
+                </div>
+                <div class="desktopOneDayColumn">
+                    <span class="desktopDayName">Пт</span>
+                    <div class="desktomMargin"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock bottom green"></div>
+                </div>
+                <div class="desktopOneDayColumn">
+                    <span class="desktopDayName">Сб</span>
+                    <div class="desktomMargin"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock red"></div>
+                    <div class="desktopOneHourBlock green"></div>
+                    <div class="desktopOneHourBlock bottom green"></div>
+                </div>
+                <div class="desktopOneDayColumn">
+                    <span class="desktopDayName">Вс</span>
+                    <div class="desktomMargin"></div>
+                    <div class="desktopOneHourBlock right red"></div>
+                    <div class="desktopOneHourBlock right red"></div>
+                    <div class="desktopOneHourBlock right green"></div>
+                    <div class="desktopOneHourBlock right red"></div>
+                    <div class="desktopOneHourBlock right red"></div>
+                    <div class="desktopOneHourBlock right green"></div>
+                    <div class="desktopOneHourBlock right red"></div>
+                    <div class="desktopOneHourBlock right green"></div>
+                    <div class="desktopOneHourBlock right red"></div>
+                    <div class="desktopOneHourBlock right red"></div>
+                    <div class="desktopOneHourBlock right green"></div>
+                    <div class="desktopOneHourBlock right red"></div>
+                    <div class="desktopOneHourBlock right red"></div>
+                    <div class="desktopOneHourBlock right red"></div>
+                    <div class="desktopOneHourBlock bottom right green"></div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+<script src="mobileMenuScript.js"></script>
+<script src="mobileRaspDayScript.js"></script>
+
+</html>

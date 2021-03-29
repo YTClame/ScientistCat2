@@ -1,0 +1,147 @@
+body {
+    background-color: #C6E0FF;
+}
+
+div {
+    border: none;
+}
+
+@font-face {
+    font-family: "MainFont";
+    src: url("../fonts/20011.ttf");
+}
+
+@font-face {
+    font-family: "InputFont";
+    src: url("../fonts/20289.ttf");
+}
+
+.labelText {
+    margin-top: 10px;
+    font-family: "MainFont";
+}
+
+.inputText {
+    font-family: "InputFont";
+    font-weight: 300;
+    background-color: #F7F5CC;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1%;
+}
+
+.button {
+    width: 100%;
+    cursor: pointer;
+    background-color: #53A2FF;
+    font-family: "MainFont";
+}
+
+
+/*Mobile*/
+
+@media (max-width: 424px) {
+    #content {
+        width: 250px;
+    }
+    img {
+        height: 210px;
+        margin: 0px auto;
+        display: block;
+    }
+    .labelText {
+        font-size: 1.5em;
+    }
+    .inputText {
+        font-size: 1em;
+        height: 28px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    .button {
+        height: 28px;
+        margin-top: 10px;
+        font-size: 1.35em;
+        border: 1px solid;
+    }
+}
+
+@media (min-width: 424px) and (max-width: 767px) {
+    #content {
+        width: 400px;
+    }
+    img {
+        height: 250px;
+        margin: 0px auto;
+        display: block;
+    }
+    .labelText {
+        font-size: 2em;
+    }
+    .inputText {
+        font-size: 1.4em;
+        height: 40px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .button {
+        height: 40px;
+        margin-top: 20px;
+        font-size: 2em;
+    }
+}
+
+
+/*Desktop*/
+
+@media (min-width: 767px) and (max-width: 1023px) {
+    #content {
+        width: 410px;
+    }
+    img {
+        height: 220px;
+        margin: 0px auto;
+        display: block;
+    }
+    .labelText {
+        font-size: 2.2em;
+    }
+    .inputText {
+        font-size: 1.6em;
+        height: 40px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .button {
+        height: 40px;
+        font-size: 2em;
+    }
+}
+
+@media (min-width: 1023px) {
+    #content {
+        width: 500px;
+    }
+    img {
+        height: 250px;
+        margin: 0px auto;
+        display: block;
+    }
+    .labelText {
+        font-size: 2em;
+    }
+    .inputText {
+        font-size: 1.5em;
+        height: 40px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .button {
+        height: 40px;
+        font-size: 2em;
+    }
+}
+
+#content {
+    margin: 0px auto;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="clear.css">
+    <link rel="stylesheet" href="menustyle.css">
+    <link rel="stylesheet" href="messengerstylemobile.css">
+    <link rel="stylesheet" href="messengerstyledesktop.css">
+    <title>Мессенджер</title>
+</head>
+
+<body>
+    <div id="content">
+
+        <div class="menuMobileDiv">
+            <input type="button" class="button" onclick="showHideMenu(1);" value="Меню">
+            <div class="menuMobile" id="menuId1" data-vis="nonvis">
+                <input type="button" class="button" value="Профиль">
+                <input type="button" class="button" value="Поиск !!!">
+                <input type="button" class="button choice" value="Мессенджер">
+                <input type="button" class="button" value="Расписание">
+                <input type="button" class="button" value="Выход">
+            </div>
+        </div>
+
+        <div class="menuDesktopDiv">
+            <input type="button" class="button deskmenu" value="Профиль">
+            <input type="button" class="button deskmenu" value="Поиск !!!">
+            <input type="button" class="button deskmenu choice" value="Мессенджер">
+            <input type="button" class="button deskmenu" value="Расписание">
+            <input type="button" class="button deskmenu" value="Выход">
+        </div>
+
+        <div id="mobileContacts">
+            <div class="mobileContact">
+                <div class="mobileContactPhoto">
+                    <img src="ava.jpg" alt="Фото">
+                </div>
+                <div class="mobileContactInfo">
+                    <span class="mobileContactTitle">Бойков</span>
+                    <span class="mobileContactTitle">Владимир</span>
+                    <span class="mobileContactTitle">Online</span>
+                </div>
+            </div>
+            <div class="mobileContact">
+                <div class="mobileContactPhoto">
+                    <img src="ava.jpg" alt="Фото">
+                </div>
+                <div class="mobileContactInfo">
+                    <span class="mobileContactTitle">Бойков</span>
+                    <span class="mobileContactTitle">Владимир</span>
+                    <span class="mobileContactTitle">Online</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobileMessenger">
+            <div id="mobileSenderNameDiv">
+                <span id="mobileSenderNameSpan">Бойков В.</span>
+            </div>
+            <div id="mobileMessages">
+                <div class="mobileGetMessageDiv">
+                    <span class="mobileGetMessageSpan">Здравствуйте! Как ваши дела?</span>
+                </div>
+                <div class="mobileSendMessageDiv">
+                    <span class="mobileSendMessageSpan">Отлично! А у вас?</span>
+                </div>
+                <div class="mobileGetMessageDiv">
+                    <span class="mobileGetMessageSpan">У меня тоже хорошо, очень рад, когда так получается. Это очень вдохновляет!</span>
+                </div>
+                <div class="mobileSendMessageDiv">
+                    <span class="mobileSendMessageSpan">Согласен!</span>
+                </div>
+            </div>
+            <div id="mobileInputDiv">
+                <textarea id="mobileInputTextarea"></textarea>
+                <div id="mobileSendButton">
+                    <img id="mobileSendButtonImg" src="send.svg">
+                </div>
+            </div>
+        </div>
+        <div id="desktopMessenger">
+            <div id="desktopContactsDiv">
+                <div class="desktopOneContact">
+                    <div class="desktopImageDiv">
+                        <img class="desktopImage" src="ava.jpg">
+                    </div>
+                    <div class="desktopName">
+                        <span class="desktopNameSpan">Бойков</span>
+                        <span class="desktopNameSpan">Владимир</span>
+                        <span class="desktopNameSpan">Онлайн</span>
+                    </div>
+                </div>
+                <div class="desktopOneContact desktopChoice">
+                    <div class="desktopImageDiv">
+                        <img class="desktopImage" src="ava.jpg">
+                    </div>
+                    <div class="desktopName">
+                        <span class="desktopNameSpan">Учеватов</span>
+                        <span class="desktopNameSpan">Николай</span>
+                        <span class="desktopNameSpan">Офлайн</span>
+                    </div>
+                </div>
+                <div class="desktopOneContact">
+                    <div class="desktopImageDiv">
+                        <img class="desktopImage" src="ava.jpg">
+                    </div>
+                    <div class="desktopName">
+                        <span class="desktopNameSpan">Учеватов</span>
+                        <span class="desktopNameSpan">Николай</span>
+                        <span class="desktopNameSpan">Офлайн</span>
+                    </div>
+                </div>
+            </div>
+            <div id="desktopMessengerDiv">
+                <div id="desktopMessages">
+                    <div class="desktopMessageGetDiv">
+                        <span class="desktopMessageGetSpan">Здравствуйте! Как у вас дела?</span>
+                    </div>
+                    <div class="desktopMessageSendDiv">
+                        <span class="desktopMessageSendSpan">Приветствую! Отлично, а у вас?</span>
+                    </div>
+                </div>
+                <div id="desktopInputMessage">
+                    <textarea id="desktopTextarea" placeholder="Напишите сообщение..."></textarea>
+                    <input type="button" class="button" id="sendButton" value="Отправить сообщение">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="mobileMenuScript.js"></script>
+
+</html>
