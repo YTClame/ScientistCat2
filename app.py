@@ -9,6 +9,7 @@ import cityNames
 import apiRegistration
 import apiLogin
 import profileLK
+import apiGetInformation
 
 from flask import (
     Flask,
@@ -40,6 +41,8 @@ def regStudent():
 def profileURL():
     return profileLK.loadProfile(request)
 
+
+
 @app.route("/api/getCityNames")
 def apiCityNames():
     return cityNames.getCityNames()
@@ -55,6 +58,14 @@ def regStudentApi():
 @app.route("/api/login", methods=["post"])
 def singin():
     return apiLogin.login(request)
+
+@app.route("/api/getInformationAboutTeacher", methods=["get"])
+def getInformationAboutTeacher():
+    return apiGetInformation.getInformationAboutTeacherToToken(request.args['token'])
+
+@app.route("/api/getInformationAboutStudent", methods=["get"])
+def getInformationAboutStudent():
+    return apiGetInformation.getInformationAboutStudentToToken(request.args['token'])
 
 
 if __name__ == "__main__":

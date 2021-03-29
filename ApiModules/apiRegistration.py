@@ -135,7 +135,7 @@ def api_registerTeacher(r):
         lessons.append("Английский язык")
     if(r.form.get("nem") == "1"):
         lessons.append("Немецкий язык")
-    user["Изучаемые предметы"] = lessons
+    user["Преподаваемые предметы"] = lessons
 
     user["Ставка"] = int(r.form.get("price"))
 
@@ -148,6 +148,7 @@ def api_registerTeacher(r):
         typeOfLessons.append("Помощь с домашней работой")
     if(r.form.get("standart") == "1"):
         typeOfLessons.append("Обычные")
+    user["Вид занятий"] = typeOfLessons
 
     registration.AddTeacherToDatabase(user)
     return user["Токен"]

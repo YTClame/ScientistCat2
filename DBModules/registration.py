@@ -62,6 +62,8 @@ def AddTeacherToDatabase(teacher):
     rasp["Вс"] = day
     teacher["Расписание"] = rasp
 
+    
+
     loginClient = MongoClient()
     dbLogin = loginClient['SC_Service']
     collectLogin = dbLogin["Logins"]
