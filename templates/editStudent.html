@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="./static/css/clear.css">
     <link rel="stylesheet" href="./static/css/menustyle.css">
     <link rel="stylesheet" href="./static/css/regstyle.css">
-    <title>Регистрация ученика</title>
+    <title>Редактирование</title>
 </head>
 
 <body>
     <div id="content">
-        <h1>Регистрация ученика</h1>
+        <h1>Редактирование</h1>
         <form action="">
             <span class="labelText">Ваш город</span>
             <select id="selectCities"></select>
@@ -45,9 +45,7 @@
             <label><div class="choiceDIV"><input type="radio" name="sex" id="radioWoman" class="choice">Женский</div></label>
             <span class="labelText">Номер телефона</span>
             <input type="text" id="telephone" class="inputText" placeholder="+7**********">
-            <span class="labelText">Логин</span>
-            <input type="text" id="login" class="inputText">
-            <span class="labelText">Пароль</span>
+            <span class="labelText">Новый пароль (при смене)</span>
             <input type="password" id="password" class="inputText">
             <span class="labelText">Электронная почта</span>
             <input type="text" id="email" class="inputText">
@@ -65,7 +63,14 @@
             <label><div class="choiceDIV"><input type="checkbox" id="selectECO" class="choice">Экономика</div></label>
             <label><div class="choiceDIV"><input type="checkbox" id="selectENG" class="choice">Английский язык</div></label>
             <label><div class="choiceDIV"><input type="checkbox" id="selectNEM" class="choice">Немецкий язык</div></label>
-            <input type="button" class="button" value="Зарегистрироваться" onclick="registerStudent();">
+            <span class="labelText">О себе</span>
+            <textarea id="about"></textarea>
+            <span class="labelText">Фотография</span>
+            <label for="photo" id="labelPhoto" class="button">
+                Загрузить фото
+            </label>
+            <input id="photo" type="file">
+            <input type="button" class="button" value="Сохранить" onclick="registerStudent();">
         </form>
     </div>
 </body>

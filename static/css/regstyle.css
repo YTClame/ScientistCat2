@@ -55,6 +55,25 @@ select {
     font-family: "MainFont";
 }
 
+#about {
+    width: 100%;
+    font-family: "InputFont";
+    font-weight: 300;
+    background-color: #F7F5CC;
+    padding: 1%;
+    resize: none;
+    overflow-y: auto;
+}
+
+#photo {
+    display: none;
+}
+
+#labelPhoto {
+    display: block;
+    text-align: center;
+}
+
 
 /*Mobile*/
 
@@ -95,6 +114,15 @@ select {
         margin-top: 10px;
         font-size: 1.35em;
     }
+    #about {
+        border: 1px solid black;
+        font-size: 1em;
+        height: 100px;
+        margin-top: 5px;
+    }
+    #labelPhoto {
+        padding-top: 3px;
+    }
 }
 
 @media (min-width: 424px) and (max-width: 767px) {
@@ -133,6 +161,15 @@ select {
     .button {
         height: 30px;
         font-size: 1.6em;
+    }
+    #about {
+        border: 1.5px solid black;
+        font-size: 1.2em;
+        height: 100px;
+        margin-top: 10px;
+    }
+    #labelPhoto {
+        padding-top: 3px;
     }
 }
 
@@ -176,6 +213,15 @@ select {
         margin-top: 10px;
         font-size: 1.7em;
     }
+    #about {
+        border: 1px solid black;
+        font-size: 1.2em;
+        height: 100px;
+        margin-top: 10px;
+    }
+    #labelPhoto {
+        padding-top: 5px;
+    }
 }
 
 @media (min-width: 1023px) {
@@ -215,6 +261,15 @@ select {
         margin-top: 13px;
         margin-bottom: 13px;
         font-size: 2em;
+    }
+    #about {
+        border: 1.5px solid black;
+        font-size: 1.2em;
+        height: 100px;
+        margin-top: 10px;
+    }
+    #labelPhoto {
+        padding-top: 5px;
     }
 }
 

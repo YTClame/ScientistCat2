@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="./static/css/clear.css">
     <link rel="stylesheet" href="./static/css/menustyle.css">
     <link rel="stylesheet" href="./static/css/regstyle.css">
-    <title>Регистрация ученика</title>
+    <title>Редактирование</title>
 </head>
 
 <body>
     <div id="content">
-        <h1>Регистрация ученика</h1>
+        <h1>Редактирование</h1>
         <form action="">
             <span class="labelText">Ваш город</span>
             <select id="selectCities"></select>
@@ -22,36 +22,29 @@
             <input type="text" id="firstName" class="inputText">
             <span class="labelText">Дата рождения</span>
             <input type="text" id="birthDay" class="inputText" placeholder="ДД.ММ.ГГГГ">
-            <span class="labelText">Класс</span>
-            <select id="classNumber">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-                <option>11</option>
-            </select>
             <span class="labelText">Формат занятий</span>
-            <label><div class="choiceDIV"><input type="checkbox" id="selectSTOT" class="choice">Я к преподавателю</div></label>
-            <label><div class="choiceDIV"><input type="checkbox" id="selectTTOS" class="choice">Преподаватель ко мне</div></label>
+            <label><div class="choiceDIV"><input type="checkbox" id="selectTTOS" class="choice">Я к ученику</div></label>
+            <label><div class="choiceDIV"><input type="checkbox" id="selectSTOT" class="choice">Ученик ко мне</div></label>
             <label><div class="choiceDIV"><input type="checkbox" id="selectDistant" class="choice">Дистанционно</div></label>
+            <span class="labelText">Образование</span>
+            <select id="selectEducation">
+                <option>Студент</option>
+                <option>Аспирант</option>
+                <option>Учитель</option>
+                <option>Преподаватель</option>
+            </select>
+            <span class="labelText">Стаж преподавания</span>
+            <input type="text" id="stash" class="inputText" placeholder="Полных лет">
             <span class="labelText">Пол</span>
             <label><div class="choiceDIV"><input type="radio" name="sex" id="radioMan" checked class="choice">Мужской</div></label>
             <label><div class="choiceDIV"><input type="radio" name="sex" id="radioWoman" class="choice">Женский</div></label>
             <span class="labelText">Номер телефона</span>
             <input type="text" id="telephone" class="inputText" placeholder="+7**********">
-            <span class="labelText">Логин</span>
-            <input type="text" id="login" class="inputText">
-            <span class="labelText">Пароль</span>
+            <span class="labelText">Новый пароль (при смене)</span>
             <input type="password" id="password" class="inputText">
             <span class="labelText">Электронная почта</span>
             <input type="text" id="email" class="inputText">
-            <span class="labelText">Изучаемые предметы</span>
+            <span class="labelText">Преподаваемые предметы</span>
             <label><div class="choiceDIV"><input type="checkbox" id="selectMATH" class="choice">Математика</div></label>
             <label><div class="choiceDIV"><input type="checkbox" id="selectRUS" class="choice">Русский язык</div></label>
             <label><div class="choiceDIV"><input type="checkbox" id="selectPHIS" class="choice">Физика</div></label>
@@ -65,7 +58,21 @@
             <label><div class="choiceDIV"><input type="checkbox" id="selectECO" class="choice">Экономика</div></label>
             <label><div class="choiceDIV"><input type="checkbox" id="selectENG" class="choice">Английский язык</div></label>
             <label><div class="choiceDIV"><input type="checkbox" id="selectNEM" class="choice">Немецкий язык</div></label>
-            <input type="button" class="button" value="Зарегистрироваться" onclick="registerStudent();">
+            <span class="labelText">Ставка в час</span>
+            <input type="text" id="price" class="inputText" placeholder="Целое число">
+            <span class="labelText">Вид занятий</span>
+            <label><div class="choiceDIV"><input type="checkbox" id="checkSolo" class="choice">Разовые</div></label>
+            <label><div class="choiceDIV"><input type="checkbox" id="checkGroup" class="choice">Групповые</div></label>
+            <label><div class="choiceDIV"><input type="checkbox" id="checkHome" class="choice">Помощь с домашней работой</div></label>
+            <label><div class="choiceDIV"><input type="checkbox" id="checkStandart" class="choice">Обычные</div></label>
+            <span class="labelText">О себе</span>
+            <textarea id="about"></textarea>
+            <span class="labelText">Фотография</span>
+            <label for="photo" id="labelPhoto" class="button">
+                Загрузить фото
+            </label>
+            <input id="photo" type="file">
+            <input type="button" class="button" value="Сохранить" onclick="registerTeacher();">
         </form>
     </div>
 </body>

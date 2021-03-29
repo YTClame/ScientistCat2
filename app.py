@@ -10,6 +10,7 @@ import apiRegistration
 import apiLogin
 import profileLK
 import apiGetInformation
+import edit
 
 from flask import (
     Flask,
@@ -40,6 +41,10 @@ def regStudent():
 @app.route("/profile")
 def profileURL():
     return profileLK.loadProfile(request)
+
+@app.route("/edit")
+def editprofile():
+    return edit.editInf(request)
 
 
 
