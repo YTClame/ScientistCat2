@@ -2,6 +2,7 @@ import sys
 sys.path.append('./DBModules/')
 
 import registration
+import checker
 
 from flask import (
     request,
@@ -9,18 +10,32 @@ from flask import (
 
 def api_registerStudent(r):
     user = {}
-    if(registration.CheckLogin(r.form.get("login")) == False):
-        return "Bad Login"
-    if(registration.CheckPhone(r.form.get("phone")) == False):
-        return "Bad Phone"
-    if(registration.CheckEmail(r.form.get("email")) == False):
-        return "Bad Email"
+    if(checker.CheckLogin(r.form.get("login")) == False):
+        return "Указанный логин недопустим (или занят)"
+    if(checker.CheckPhone(r.form.get("phone")) == False):
+        return "Указанный номер телефона недопустим или занят"
+    if(checker.CheckEmail(r.form.get("email")) == False):
+        return "Указанный email недопустим или занят"
 
+    if (checker.CheckCity(r.form.get("city")) == False):
+        return "Указанный город недопустим!"
     user["Город"] = r.form.get("city")
+
+    if (checker.CheckSecondName(r.form.get("secondName")) == False):
+        return "Указанная фамилия недопустима!"
     user["Фамилия"] = r.form.get("secondName")
+
+    if (checker.CheckFirstName(r.form.get("firstName")) == False):
+        return "Указанное имя недопустимо!"
     user["Имя"] = r.form.get("firstName")
+
+    if (checker.CheckBirthday(r.form.get("birth")) == False):
+        return "Указанная дата рождения недопустима!"
     user["Дата рождения"] = r.form.get("birth")
-    user["Класс"] = r.form.get("class")
+
+    if (checker.CheckClass(r.form.get("class")) == False):
+        return "Указанный класс недопустим!"
+    user["Класс"] = int(r.form.get("class"))
 
     formatLessons = []
     if(r.form.get("stot") == "1"):
@@ -36,9 +51,21 @@ def api_registerStudent(r):
     else:
         user["Пол"] = "Ж"
     
+
+    if (checker.CheckPhoneForm(r.form.get("phone")) == False):
+        return "Указанный номер телефона недопустим!"
     user["Телефон"] = r.form.get("phone")
+
+    if (checker.CheckLoginForm(r.form.get("login")) == False):
+        return "Указанный логин недопустим!"
     user["Логин"] = r.form.get("login")
+
+    if (checker.CheckPassword(r.form.get("pass")) == False):
+        return "Указанный пароль недопустим!"
     user["Пароль"] = r.form.get("pass")
+
+    if (checker.CheckEmailForm(r.form.get("email")) == False):
+        return "Указанный email недопустим!"
     user["Email"] = r.form.get("email")
 
     lessons=[]
@@ -70,20 +97,31 @@ def api_registerStudent(r):
         lessons.append("Немецкий язык")
     user["Изучаемые предметы"] = lessons
     registration.AddStudentToDatabase(user)
-    return user["Токен"]
+    return "token: " + user["Токен"]
 
 def api_registerTeacher(r):
     user = {}
-    if(registration.CheckLogin(r.form.get("login")) == False):
+    if(checker.CheckLogin(r.form.get("login")) == False):
         return "Bad Login"
-    if(registration.CheckPhone(r.form.get("phone")) == False):
+    if(checker.CheckPhone(r.form.get("phone")) == False):
         return "Bad Phone"
-    if(registration.CheckEmail(r.form.get("email")) == False):
+    if(checker.CheckEmail(r.form.get("email")) == False):
         return "Bad Email"
 
+    if (checker.CheckCity(r.form.get("city")) == False):
+        return "Указанный город недопустим!"
     user["Город"] = r.form.get("city")
+
+    if (checker.CheckSecondName(r.form.get("secondName")) == False):
+        return "Указанная фамилия недопустима!"
     user["Фамилия"] = r.form.get("secondName")
+
+    if (checker.CheckFirstName(r.form.get("firstName")) == False):
+        return "Указанное имя недопустимо!"
     user["Имя"] = r.form.get("firstName")
+
+    if (checker.CheckBirthday(r.form.get("birth")) == False):
+        return "Указанная дата рождения недопустима!"
     user["Дата рождения"] = r.form.get("birth")
 
     formatLessons = []
@@ -95,7 +133,12 @@ def api_registerTeacher(r):
         formatLessons.append("Дистанционно")
     user["Формат занятий"] = formatLessons
 
+    if (checker.CheckEducation(r.form.get("edu")) == False):
+        return "Указанное образование недопустимо!"
     user["Образование"] = r.form.get("edu")
+
+    if (checker.CheckStash(r.form.get("stash")) == False):
+        return "Указанный стаж недопустим!"
     user["Стаж"] = int(r.form.get("stash"))
 
     if(r.form.get("sex") == "m"):
@@ -103,9 +146,20 @@ def api_registerTeacher(r):
     else:
         user["Пол"] = "Ж"
     
+    if (checker.CheckPhoneForm(r.form.get("phone")) == False):
+        return "Указанный номер телефона недопустим!"
     user["Телефон"] = r.form.get("phone")
+
+    if (checker.CheckLoginForm(r.form.get("login")) == False):
+        return "Указанный логин недопустим!"
     user["Логин"] = r.form.get("login")
+
+    if (checker.CheckPassword(r.form.get("pass")) == False):
+        return "Указанный пароль недопустим!"
     user["Пароль"] = r.form.get("pass")
+
+    if (checker.CheckEmailForm(r.form.get("email")) == False):
+        return "Указанный email недопустим!"
     user["Email"] = r.form.get("email")
 
     lessons=[]
@@ -137,11 +191,13 @@ def api_registerTeacher(r):
         lessons.append("Немецкий язык")
     user["Преподаваемые предметы"] = lessons
 
+    if (checker.CheckEmailForm(r.form.get("price")) == False):
+        return "Указанная ставка недопустима!"
     user["Ставка"] = int(r.form.get("price"))
 
     typeOfLessons=[]
     if(r.form.get("solo") == "1"):
-        typeOfLessons.append("Одиночные")
+        typeOfLessons.append("Разовые")
     if(r.form.get("group") == "1"):
         typeOfLessons.append("Групповые")
     if(r.form.get("home") == "1"):
@@ -151,4 +207,4 @@ def api_registerTeacher(r):
     user["Вид занятий"] = typeOfLessons
 
     registration.AddTeacherToDatabase(user)
-    return user["Токен"]
+    return "token: " + user["Токен"]

@@ -17,7 +17,7 @@ def AddStudentToDatabase(student):
     rasp = {}
     day = []
     for i in range(15):
-        day.append("Свободен")
+        day.append("Занят")
     rasp["Пн"] = day
     rasp["Вт"] = day
     rasp["Ср"] = day
@@ -31,6 +31,16 @@ def AddStudentToDatabase(student):
     dbLogin = loginClient['SC_Service']
     collectLogin = dbLogin["Logins"]
     collectLogin.insert_one({"Логин": student["Логин"], "Коллекция":str(student["Город"])+"Students"})
+
+    phoneClient = MongoClient()
+    dbPhone = phoneClient['SC_Service']
+    collectPhone = dbPhone["Phones"]
+    collectPhone.insert_one({"Телефон": student["Телефон"]})
+
+    emailClient = MongoClient()
+    dbEmail = emailClient['SC_Service']
+    collectEmail = dbEmail["Emails"]
+    collectEmail.insert_one({"Email": student["Email"]})
 
     client = MongoClient()
     db = client['SC_Users']
@@ -84,32 +94,5 @@ def AddTeacherToDatabase(teacher):
     collect = db[str(teacher["Город"])+"Teachers"]
     collect.insert_one(teacher)
 
-def CheckLogin(login):
-    client = MongoClient()
-    db = client['SC_Service']
-    loginCol = db["Logins"]
-    filterLogin = {"Логин": login}
-    if(loginCol.count_documents(filterLogin)>=1):
-        return False
-    else:
-        return True
 
-def CheckPhone(phone):
-    client = MongoClient()
-    db = client['SC_Service']
-    phoneCol = db["Phones"]
-    filterPhone = {"Телефон": phone}
-    if(phoneCol.count_documents(filterPhone)>=1):
-        return False
-    else:
-        return True
 
-def CheckEmail(email):
-    client = MongoClient()
-    db = client['SC_Service']
-    emailCol = db["Emails"]
-    filterEmail = {"Email": email}
-    if(emailCol.count_documents(filterEmail)>=1):
-        return False
-    else:
-        return True

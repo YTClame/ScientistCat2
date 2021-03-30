@@ -173,18 +173,8 @@ function _continueRegisterStudent() {
     xhr2.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
     xhr2.onreadystatechange = function() {
-        if (xhr2.readyState == 4 && xhr2.status == 200) {
-            if (xhr2.responseText == "Bad Login")
-                alert("Данный логин уже используется другим пользователем! Выберите другой логин!");
-            else if (xhr2.responseText == "Bad Phone")
-                alert("Данный номер телефона уже используется другим пользователем! Введите другой номер телефона!");
-            else if (xhr2.responseText == "Bad Email")
-                alert("Данный email уже используется другим пользователем! Введите другой email!");
-            else {
-                document.cookie = "token=" + xhr2.responseText + "; max-age=315360000000";
-                document.location.href = '/profile'
-            }
-        }
+        if (xhr2.readyState == 4 && xhr2.status == 200)
+            _lastRegistrationStep(xhr2.responseText);
     }
 
     xhr2.send(body);
@@ -449,18 +439,8 @@ function _continueRegisterTeacher() {
     xhr3.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
     xhr3.onreadystatechange = function() {
-        if (xhr3.readyState == 4 && xhr3.status == 200) {
-            if (xhr3.responseText == "Bad Login")
-                alert("Данный логин уже используется другим пользователем! Выберите другой логин!");
-            else if (xhr3.responseText == "Bad Phone")
-                alert("Данный номер телефона уже используется другим пользователем! Введите другой номер телефона!");
-            else if (xhr3.responseText == "Bad Email")
-                alert("Данный email уже используется другим пользователем! Введите другой email!");
-            else {
-                document.cookie = "token=" + xhr3.responseText + "; max-age=315360000000";
-                document.location.href = '/profile'
-            }
-        }
+        if (xhr3.readyState == 4 && xhr3.status == 200)
+            _lastRegistrationStep(xhr3.responseText);
     }
 
     xhr3.send(body);
@@ -491,4 +471,13 @@ function isPhoneNumber(number) {
 function isEmail(email) {
     var reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return reg.test(email);
+}
+
+function _lastRegistrationStep(serverResponseText) {
+    if (serverResponseText.substring(0, 7) == "token: ") {
+        document.cookie = "token=" + serverResponseText.substring(7) + "; max-age=315360000000";
+        document.location.href = '/profile'
+        return;
+    }
+    alert(serverResponseText);
 }

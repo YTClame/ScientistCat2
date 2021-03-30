@@ -67,19 +67,23 @@
             <label><div class="choiceDIV"><input type="checkbox" id="checkStandart" class="choice">Обычные</div></label>
             <span class="labelText">О себе</span>
             <textarea id="about"></textarea>
-            <span class="labelText">Фотография</span>
+            <span class="labelText" id="photoLabel">Фотография</span>
             <label for="photo" id="labelPhoto" class="button">
-                Загрузить фото
+                Выбрать фото
             </label>
             <input id="photo" type="file">
-            <input type="button" class="button" value="Сохранить" onclick="registerTeacher();">
+            <input type="button" class="button" value="Сохранить" onclick="saveTeacher();">
         </form>
     </div>
 </body>
 <script src="/static/js/loadCities.js"></script>
-<script src="/static/js/register.js"></script>
 <script>
     loadCities();
 </script>
+<script src="./static/js/loadInfoAboutUser.js"></script>
+<script>
+    loadEditableTeacher();
+</script>
+<script src="./static/js/editProfile.js"></script>
 
 </html>

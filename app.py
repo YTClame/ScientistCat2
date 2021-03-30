@@ -1,4 +1,4 @@
-import sys
+import sys, os
 sys.path.append('./RoutingModules/')
 sys.path.append('./ApiModules/')
 
@@ -11,6 +11,7 @@ import apiLogin
 import profileLK
 import apiGetInformation
 import edit
+import apiSaveChanges
 
 from flask import (
     Flask,
@@ -19,6 +20,7 @@ from flask import (
 )
 
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = './static/profilesImages/'
 
 @app.after_request
 def add_header(response):
@@ -72,6 +74,10 @@ def getInformationAboutTeacher():
 def getInformationAboutStudent():
     return apiGetInformation.getInformationAboutStudentToToken(request.args['token'])
 
+@app.route("/api/saveTeacherChanges", methods=["post"])
+def saveTeacherChanges():
+    return apiSaveChanges.saveTeacherChanges(request, app.config['UPLOAD_FOLDER'])
+
 
 if __name__ == "__main__":
-    app.run(host = '0.0.0.0', debug=True, port = 80)
+    app.run(host = '0.0.0.0', debug=True, port = 5000)
