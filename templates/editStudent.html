@@ -65,12 +65,12 @@
             <label><div class="choiceDIV"><input type="checkbox" id="selectNEM" class="choice">Немецкий язык</div></label>
             <span class="labelText">О себе</span>
             <textarea id="about"></textarea>
-            <span class="labelText">Фотография</span>
+            <span class="labelText" id="photoLabel">Фотография</span>
             <label for="photo" id="labelPhoto" class="button">
                 Выбрать фото
             </label>
             <input id="photo" type="file">
-            <input type="button" class="button" value="Сохранить" onclick="registerStudent();">
+            <input type="button" class="button" value="Сохранить" onclick="saveStudent();">
         </form>
     </div>
 </body>
@@ -82,5 +82,6 @@
 <script>
     loadEditableStudent();
 </script>
+<script src="./static/js/editProfile.js"></script>
 
 </html>

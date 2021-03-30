@@ -78,6 +78,10 @@ def getInformationAboutStudent():
 def saveTeacherChanges():
     return apiSaveChanges.saveTeacherChanges(request, app.config['UPLOAD_FOLDER'])
 
+@app.route("/api/saveStudentChanges", methods=["post"])
+def saveStudentChanges():
+    return apiSaveChanges.saveStudentChanges(request, app.config['UPLOAD_FOLDER'])
+
 
 if __name__ == "__main__":
     app.run(host = '0.0.0.0', debug=True, port = 5000)
