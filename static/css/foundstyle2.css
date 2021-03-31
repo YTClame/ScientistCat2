@@ -321,7 +321,7 @@ img {
     .deskRes {
         margin: 7px auto;
         width: 500px;
-        display: inline-block;
+        display: block;
         border: 1.5px solid;
         cursor: pointer;
         padding: 10px;

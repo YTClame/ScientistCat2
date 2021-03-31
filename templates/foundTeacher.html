@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="clear.css">
-    <link rel="stylesheet" href="menustyle.css">
-    <link rel="stylesheet" href="foundstyle.css">
+    <link rel="stylesheet" href="./static/css/clear.css">
+    <link rel="stylesheet" href="./static/css/menustyle.css">
+    <link rel="stylesheet" href="./static/css/foundstyle.css">
     <title>Подбор репетитора</title>
 </head>
 
@@ -15,8 +15,8 @@
         <div class="menuMobileDiv">
             <input type="button" class="button" onclick="showHideMenu(1);" value="Меню">
             <div class="menuMobile" id="menuId1" data-vis="nonvis">
-                <input type="button" class="button" value="Профиль">
-                <input type="button" class="button choice" value="Поиск репетитора">
+                <a href="/profile"><input type="button" class="button" value="Профиль"></a>
+                <a href="/found"><input type="button" class="button choice" value="Поиск репетитора"></a>
                 <input type="button" class="button" value="Мессенджер">
                 <input type="button" class="button" value="Расписание">
                 <input type="button" class="button" value="Выход" onclick="exit();">
@@ -61,42 +61,19 @@
                 <label><div class="choiceDIV"><input type="checkbox" class="choiceCheck" id="checkboxASPIRmobileFT">Аспирант</div></label>
                 <label><div class="choiceDIV"><input type="checkbox" class="choiceCheck" id="checkboxTEACHERmobileFT">Учитель</div></label>
                 <label><div class="choiceDIV"><input type="checkbox" class="choiceCheck" id="checkboxPREPODmobileFT">Преподаватель</div></label>
-                <input type="button" class="button" value="Применить фильтр">
+                <input type="button" class="button" value="Применить фильтр" onclick="foundTeacher();">
             </div>
         </div>
 
         <div class="menuDesktopDiv">
-            <input type="button" class="button deskmenu" value="Профиль">
-            <input type="button" class="button deskmenu choice" value="Поиск репетитора">
+            <a href="/profile"><input type="button" class="button deskmenu" value="Профиль"></a>
+            <a href="/found"><input type="button" class="button deskmenu choice" value="Поиск репетитора"></a>
             <input type="button" class="button deskmenu" value="Мессенджер">
             <input type="button" class="button deskmenu" value="Расписание">
             <input type="button" class="button deskmenu" value="Выход" onclick="exit();">
         </div>
         <div id="mobileContext">
-            <div class="mobileResult">
-                <div class="mobileResultImg">
-                    <img src="ava.jpg" alt="Фотография">
-                </div>
-                <div class="mobileResultInfo">
-                    <span class="valueText">Бойков</span>
-                    <span class="valueText">Владимир</span>
-                    <span class="valueText">Студент</span>
-                    <span class="valueText">Стаж: 1</span>
-                    <span class="valueText">Ставка: 350</span>
-                </div>
-            </div>
-            <div class="mobileResult">
-                <div class="mobileResultImg">
-                    <img src="ava.jpg" alt="Фотография">
-                </div>
-                <div class="mobileResultInfo">
-                    <span class="valueText">Учеватов</span>
-                    <span class="valueText">Николай</span>
-                    <span class="valueText">Студент</span>
-                    <span class="valueText">Стаж: 2</span>
-                    <span class="valueText">Ставка: 500</span>
-                </div>
-            </div>
+
         </div>
         <div id="desktopContext">
             <div class="menuMobileDiv" id="desktopMenu">
@@ -132,7 +109,7 @@
                     <label><div class="choiceDIV"><input type="checkbox" class="choiceCheck" id="checkboxECOdesktopFT">Экономика</div></label>
                     <label><div class="choiceDIV"><input type="checkbox" class="choiceCheck" id="checkboxENGdesktopFT">Английский язык</div></label>
                     <label><div class="choiceDIV"><input type="checkbox" class="choiceCheck" id="checkboxNEMdesktopFT">Немецкий язык</div></label>
-                    <input type="button" class="button" id="acceptButton" value="Применить фильтр">
+                    <input type="button" class="button" id="acceptButton" value="Применить фильтр" onclick="foundTeacher();">
                 </div>
                 <div class="onePartContext">
                     <span class="labelText">Минимальныая ставка</span>
@@ -146,37 +123,15 @@
                     <label><div class="choiceDIV"><input type="checkbox" class="choiceCheck" id="checkboxPREPODdesktopFT">Преподаватель</div></label>
                 </div>
             </div>
-            <div class="deskResults">
-                <div class="deskRes">
-                    <div class="mobileResultImg">
-                        <img src="ava.jpg" alt="Фотография">
-                    </div>
-                    <div class="mobileResultInfo">
-                        <span class="valueText">Фамилия: Учеватов</span>
-                        <span class="valueText">Имя: Николай</span>
-                        <span class="valueText">Образование: Студент</span>
-                        <span class="valueText">Стаж: 2</span>
-                        <span class="valueText">Ставка: 500</span>
-                    </div>
-                </div>
-                <div class="deskRes">
-                    <div class="mobileResultImg">
-                        <img src="ava.jpg" alt="Фотография">
-                    </div>
-                    <div class="mobileResultInfo">
-                        <span class="valueText">Фамилия: Учеватов</span>
-                        <span class="valueText">Имя: Николай</span>
-                        <span class="valueText">Образование: Студент</span>
-                        <span class="valueText">Стаж: 2</span>
-                        <span class="valueText">Ставка: 500</span>
-                    </div>
-                </div>
+            <div class="deskResults" id="desktopResults">
+
             </div>
         </div>
     </div>
 </body>
-<script src="mobileMenuScript.js"></script>
-<script src="sharevalues.js"></script>
+<script src="./static/js/mobileMenuScript.js"></script>
+<script src="./static/js/sharevalues.js"></script>
+<script src="./static/js/foundTeacher.js"></script>
 <script src="./static/js/exitProfile.js"></script>
 
 </html>

@@ -180,7 +180,7 @@ def saveStudentChanges(r, saveFirstParam):
 
     if(checker.CheckClass(r.form.get("class")) == False):
         return "Содержимое поле \"Класс\" недопустимо"
-    user["Класс"] = r.form.get("class")
+    user["Класс"] = int(r.form.get("class"))
 
     if(checker.CheckEmailForm(r.form.get("email")) == False):
         return "Содержимое поле \"Email\" недопустимо"

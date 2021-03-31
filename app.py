@@ -12,6 +12,9 @@ import profileLK
 import apiGetInformation
 import edit
 import apiSaveChanges
+import foundPage
+import apiFoundStudent
+import apiFoundTeacher
 
 from flask import (
     Flask,
@@ -48,6 +51,10 @@ def profileURL():
 def editprofile():
     return edit.editInf(request)
 
+@app.route("/found")
+def found():
+    return foundPage.found(request)
+
 
 
 @app.route("/api/getCityNames")
@@ -81,6 +88,14 @@ def saveTeacherChanges():
 @app.route("/api/saveStudentChanges", methods=["post"])
 def saveStudentChanges():
     return apiSaveChanges.saveStudentChanges(request, app.config['UPLOAD_FOLDER'])
+
+@app.route("/api/foundStudent", methods=["post"])
+def foundStudent():
+    return apiFoundStudent.foundStudent(request)
+
+@app.route("/api/foundTeacher", methods=["post"])
+def foundTeacher():
+    return apiFoundTeacher.foundTeacher(request)
 
 
 if __name__ == "__main__":

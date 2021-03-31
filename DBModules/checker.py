@@ -43,6 +43,10 @@ def CheckClass(classNumber):
 def CheckPassword(password):
     return True
 
+#string?
+def Check0or1(value):
+    return True
+
 def CheckEmail(email):
     if CheckEmailForm(email) == False:
         return False

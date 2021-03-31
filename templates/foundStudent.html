@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="clear.css">
-    <link rel="stylesheet" href="menustyle.css">
-    <link rel="stylesheet" href="foundstyle2.css">
+    <link rel="stylesheet" href="./static/css/clear.css">
+    <link rel="stylesheet" href="./static/css/menustyle.css">
+    <link rel="stylesheet" href="./static/css/foundstyle2.css">
     <title>Подбор ученика</title>
 </head>
 
@@ -15,8 +15,8 @@
         <div class="menuMobileDiv">
             <input type="button" class="button" onclick="showHideMenu(1);" value="Меню">
             <div class="menuMobile" id="menuId1" data-vis="nonvis">
-                <input type="button" class="button" value="Профиль">
-                <input type="button" class="button choice" value="Поиск ученика">
+                <a href="/profile"><input type="button" class="button" value="Профиль"></a>
+                <a href="/found"><input type="button" class="button choice" value="Поиск ученика"></a>
                 <input type="button" class="button" value="Мессенджер">
                 <input type="button" class="button" value="Расписание">
                 <input type="button" class="button" value="Выход" onclick="exit();">
@@ -76,38 +76,19 @@
                 <label><div class="choiceDIV"><input type="checkbox" id="checkboxECOmobileFS" class="choiceCheck">Экономика</div></label>
                 <label><div class="choiceDIV"><input type="checkbox" id="checkboxENGmobileFS" class="choiceCheck">Английский язык</div></label>
                 <label><div class="choiceDIV"><input type="checkbox" id="checkboxNEMmobileFS" class="choiceCheck">Немецкий язык</div></label>
-                <input type="button" class="button" value="Применить фильтр">
+                <input type="button" class="button" value="Применить фильтр" onclick="foundStudent();">
             </div>
         </div>
 
         <div class="menuDesktopDiv">
-            <input type="button" class="button deskmenu" value="Профиль">
-            <input type="button" class="button deskmenu choice" value="Поиск ученика">
+            <a href="/profile"><input type="button" class="button deskmenu" value="Профиль"></a>
+            <a href="/found"><input type="button" class="button deskmenu choice" value="Поиск ученика"></a>
             <input type="button" class="button deskmenu" value="Мессенджер">
             <input type="button" class="button deskmenu" value="Расписание">
             <input type="button" class="button deskmenu" value="Выход" onclick="exit();">
         </div>
         <div id="mobileContext">
-            <div class="mobileResult">
-                <div class="mobileResultImg">
-                    <img src="ava.jpg" alt="Фотография">
-                </div>
-                <div class="mobileResultInfo">
-                    <span class="valueText">Бойков</span>
-                    <span class="valueText">Владимир</span>
-                    <span class="valueText">11 класс</span>
-                </div>
-            </div>
-            <div class="mobileResult">
-                <div class="mobileResultImg">
-                    <img src="ava.jpg" alt="Фотография">
-                </div>
-                <div class="mobileResultInfo">
-                    <span class="valueText">Учеватов</span>
-                    <span class="valueText">Николай</span>
-                    <span class="valueText">7 класс</span>
-                </div>
-            </div>
+
         </div>
         <div id="desktopContext">
             <div class="menuMobileDiv" id="desktopMenu">
@@ -168,35 +149,17 @@
                     <label><div class="choiceDIV"><input type="checkbox" id="checkboxENGdesktopFS" class="choiceCheck">Английский язык</div></label>
                     <label><div class="choiceDIV"><input type="checkbox" id="checkboxNEMdesktopFS" class="choiceCheck">Немецкий язык</div></label>
                 </div>
-                <input type="button" class="button" id="acceptDeskFilterButton" value="Применить фильтр">
+                <input type="button" class="button" id="acceptDeskFilterButton" value="Применить фильтр" onclick="foundStudent();">
             </div>
-            <div class="deskResults">
-                <div class="deskRes">
-                    <div class="mobileResultImg">
-                        <img src="ava.jpg" alt="Фотография">
-                    </div>
-                    <div class="mobileResultInfo">
-                        <span class="valueText">Фамилия: Учеватов</span>
-                        <span class="valueText">Имя: Николай</span>
-                        <span class="valueText">Класс: 9</span>
-                    </div>
-                </div>
-                <div class="deskRes">
-                    <div class="mobileResultImg">
-                        <img src="ava.jpg" alt="Фотография">
-                    </div>
-                    <div class="mobileResultInfo">
-                        <span class="valueText">Фамилия: Учеватов</span>
-                        <span class="valueText">Имя: Николай</span>
-                        <span class="valueText">Класс: 5</span>
-                    </div>
-                </div>
+            <div class="deskResults" id="desktopResults">
+
             </div>
         </div>
     </div>
 </body>
-<script src="mobileMenuScript.js"></script>
-<script src="sharevalues2.js"></script>
+<script src="./static/js/mobileMenuScript.js"></script>
+<script src="./static/js/sharevalues2.js"></script>
+<script src="./static/js/foundStudents.js"></script>
 <script src="./static/js/exitProfile.js"></script>
 
 </html>
