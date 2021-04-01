@@ -10,7 +10,7 @@ def AddStudentToDatabase(student):
     student["Пароль"] = hash_object.hexdigest()
 
     student["Токен"] = tokenManager.getNewToken(student)
-    student["Фото"] = "./static/img/avatar.jpg"
+    student["Фото"] = "/static/img/avatar.jpg"
     student["Доступ"] = "Открыт"
     student["О себе"] = ""
 
@@ -55,14 +55,14 @@ def AddTeacherToDatabase(teacher):
     teacher["Пароль"] = hash_object.hexdigest()
 
     teacher["Токен"] = tokenManager.getNewToken(teacher)
-    teacher["Фото"] = "./static/img/avatar.jpg"
+    teacher["Фото"] = "/static/img/avatar.jpg"
     teacher["Доступ"] = "Открыт"
     teacher["О себе"] = ""
 
     rasp = {}
     day = []
     for i in range(15):
-        day.append("Свободен")
+        day.append("Занят")
     rasp["Пн"] = day
     rasp["Вт"] = day
     rasp["Ср"] = day

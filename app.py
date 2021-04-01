@@ -15,6 +15,7 @@ import apiSaveChanges
 import foundPage
 import apiFoundStudent
 import apiFoundTeacher
+import userProfile
 
 from flask import (
     Flask,
@@ -55,6 +56,10 @@ def editprofile():
 def found():
     return foundPage.found(request)
 
+@app.route("/user/<id>")
+def userProfileFunc(id):
+    return userProfile.loadProfile(id)
+
 
 
 @app.route("/api/getCityNames")
@@ -75,11 +80,21 @@ def singin():
 
 @app.route("/api/getInformationAboutTeacher", methods=["get"])
 def getInformationAboutTeacher():
-    return apiGetInformation.getInformationAboutTeacherToToken(request.args['token'])
+    try:
+        token = request.args['token']
+        return apiGetInformation.getInformationAboutTeacherToToken(token)
+    except:
+        id = request.args['id']
+        return apiGetInformation.getInformationAboutTeacherToId(id)
 
 @app.route("/api/getInformationAboutStudent", methods=["get"])
 def getInformationAboutStudent():
-    return apiGetInformation.getInformationAboutStudentToToken(request.args['token'])
+    try:
+        token = request.args['token']
+        return apiGetInformation.getInformationAboutStudentToToken(token)
+    except:
+        id = request.args['id']
+        return apiGetInformation.getInformationAboutStudentToId(id)
 
 @app.route("/api/saveTeacherChanges", methods=["post"])
 def saveTeacherChanges():
@@ -96,6 +111,10 @@ def foundStudent():
 @app.route("/api/foundTeacher", methods=["post"])
 def foundTeacher():
     return apiFoundTeacher.foundTeacher(request)
+
+@app.route("/api/getRasp", methods=["get"])
+def rasp():
+    return apiGetInformation.getRaspToId(request.args['id'])
 
 
 if __name__ == "__main__":

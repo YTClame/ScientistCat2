@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="/static/css/clear.css">
     <link rel="stylesheet" href="/static/css/menustyle.css">
     <link rel="stylesheet" href="/static/css/lkstyle.css">
-    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="/static/css/raspUser.css">
+    <title>{{name}}</title>
 </head>
 
 <body>
@@ -15,7 +16,7 @@
         <div class="menuMobileDiv">
             <input type="button" class="button" onclick="showHideMenu(1);" value="Меню">
             <div class="menuMobile" id="menuId1" data-vis="nonvis">
-                <a href="/profile"><input type="button" class="button choice" value="Профиль"></a>
+                <a href="/profile"><input type="button" class="button" value="Профиль"></a>
                 <a href="/found"><input type="button" class="button" value="Поиск ученика"></a>
                 <input type="button" class="button" value="Мессенджер">
                 <input type="button" class="button" value="Расписание">
@@ -23,7 +24,7 @@
             </div>
         </div>
         <div class="menuDesktopDiv">
-            <a href="/profile"><input type="button" class="button deskmenu choice" value="Профиль"></a>
+            <a href="/profile"><input type="button" class="button deskmenu" value="Профиль"></a>
             <a href="/found"><input type="button" class="button deskmenu" value="Поиск ученика"></a>
             <input type="button" class="button deskmenu" value="Мессенджер">
             <input type="button" class="button deskmenu" value="Расписание">
@@ -38,10 +39,13 @@
     </div>
 </body>
 <script src="/static/js/mobileMenuScript.js"></script>
-<script src="/static/js/loadInfoAboutUser.js"></script>
+<script src="/static/js/loadInfoAboutUserStudent.js"></script>
+<script src="/static/js/mobileRaspDayScript.js"></script>
+
 <script>
-    loadInfoAboutTeacher();
+    loadInfoAboutStudent();
 </script>
+
 <script src="/static/js/exitProfile.js"></script>
 
 </html>

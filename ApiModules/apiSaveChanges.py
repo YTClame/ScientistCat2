@@ -128,7 +128,7 @@ def saveTeacherChanges(r, saveFirstParam):
         filename = str(user["ID"]) + "." + variablePhoto.filename.split('.')[len(variablePhoto.filename.split('.'))-1]
         if (variablePhoto.filename.split('.')[len(variablePhoto.filename.split('.'))-1] in ["jpg", "jpeg", "bmp", "png"]):
             variablePhoto.save(os.path.join(saveFirstParam, filename))
-            user["Фото"] = "./static/profilesImages/" + filename
+            user["Фото"] = "/static/profilesImages/" + filename
         else:
             return "Фотография может быть лишь в форматах .jpg .jpeg .bmp и .png"
 
@@ -244,7 +244,7 @@ def saveStudentChanges(r, saveFirstParam):
         filename = str(user["ID"]) + "." + variablePhoto.filename.split('.')[len(variablePhoto.filename.split('.'))-1]
         if (variablePhoto.filename.split('.')[len(variablePhoto.filename.split('.'))-1] in ["jpg", "jpeg", "bmp", "png"]):
             variablePhoto.save(os.path.join(saveFirstParam, filename))
-            user["Фото"] = "./static/profilesImages/" + filename
+            user["Фото"] = "/static/profilesImages/" + filename
         else:
             return "Фотография может быть лишь в форматах .jpg .jpeg .bmp и .png"
 

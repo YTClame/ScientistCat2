@@ -47,3 +47,27 @@ def getUserToToken(token):
         else:
             return "Error"
     return "Error"
+
+def getUserToID(id):
+    client = MongoClient()
+    db = client['SC_Service']
+    collect = db["Tokens"]
+    doc = {'ID': int(id)}
+    if(collect.count_documents(doc)==1):
+        userIdInfo = collect.find_one(doc)
+
+        if(userIdInfo["Роль"] == "Репетитор"):
+            nameCollect = userIdInfo["Город"] + "Teachers"
+        if(userIdInfo["Роль"] == "Ученик"):
+            nameCollect = userIdInfo["Город"] + "Students"
+
+        db = client["SC_Users"]
+        collect = db[nameCollect]
+
+        userFilter = {"ID":int(id)}
+        if(collect.count_documents(userFilter)==1):
+            user = collect.find_one(userFilter)
+            return user
+        else:
+            return "Error"
+    return "Error"

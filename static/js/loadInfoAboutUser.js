@@ -40,7 +40,7 @@ function loadInfoAboutTeacher() {
             viewLessons.forEach(view => {
                 mobileRes += '<span class="valueText">' + view + '</span>';
             });
-            mobileRes += '<a href="./edit"><input type="button" class="button edit" value="Редактировать профиль"></a>';
+            mobileRes += '<a href="/edit"><input type="button" class="button edit" value="Редактировать профиль"></a>';
             mobileCont = document.getElementById("mobileContext");
             mobileCont.innerHTML = mobileRes;
 
@@ -66,7 +66,7 @@ function loadInfoAboutTeacher() {
                 '<span class="valueText">' + userInfo["Email"] + '</span>' +
                 '<span class="labelText">О себе</span>' +
                 '<span class="valueText">' + userInfo["О себе"] + '</span>' +
-                '<a href="./edit"><input type="button" class="button edit" value="Редактировать профиль"></a></div><div class="onePartContext"><span class="labelText">Преподаваемые предметы</span>';
+                '<a href="/edit"><input type="button" class="button edit" value="Редактировать профиль"></a></div><div class="onePartContext"><span class="labelText">Преподаваемые предметы</span>';
             lessons.forEach(lesson => {
                 desktopRes += '<span class="valueText">' + lesson + '</span>';
             });
@@ -120,7 +120,7 @@ function loadInfoAboutStudent() {
             formatLessons.forEach(form => {
                 mobileRes += '<span class="valueText">' + form + '</span>';
             });
-            mobileRes += '<a href="./edit"><input type="button" class="button edit" value="Редактировать профиль"></a>';
+            mobileRes += '<a href="/edit"><input type="button" class="button edit" value="Редактировать профиль"></a>';
             mobileCont = document.getElementById("mobileContext");
             mobileCont.innerHTML = mobileRes;
 
@@ -142,7 +142,7 @@ function loadInfoAboutStudent() {
                 '<span class="valueText">' + userInfo["Email"] + '</span>' +
                 '<span class="labelText">О себе</span>' +
                 '<span class="valueText">' + userInfo["О себе"] + '</span>' +
-                '<a href="./edit"><input type="button" class="button edit" value="Редактировать профиль"></a></div><div class="onePartContext"><span class="labelText">Изучаемые предметы</span>';
+                '<a href="/edit"><input type="button" class="button edit" value="Редактировать профиль"></a></div><div class="onePartContext"><span class="labelText">Изучаемые предметы</span>';
 
             lessons.forEach(lesson => {
                 desktopRes += '<span class="valueText">' + lesson + '</span>';

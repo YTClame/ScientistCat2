@@ -1,0 +1,233 @@
+@font-face {
+    font-family: "MainFont";
+    src: url("../fonts/20011.ttf");
+}
+
+@font-face {
+    font-family: "InputFont";
+    src: url("../fonts/20289.ttf");
+}
+
+#raspMobile {
+    width: 100%;
+    text-align: center;
+}
+
+#mobileNameOfDay {
+    font-family: "MainFont";
+}
+
+.mobileTimeDiv {
+    width: 100%;
+}
+
+.mobileTimeSpan {
+    font-family: "InputFont";
+    position: relative;
+}
+
+#mobileMargin {
+    width: 100%;
+}
+
+.mobileDay {
+    width: 40%;
+    display: inline-block;
+}
+
+.red {
+    background-color: #FE5757;
+}
+
+.green {
+    background-color: #5EDE73;
+}
+
+#raspDesktop {
+    height: 300px;
+    width: 100%;
+    font-size: 0em;
+}
+
+#desktopColumnTime,
+#desktopColumnsDays,
+.desktopOneDayColumn {
+    display: inline-block;
+    height: 400px;
+    vertical-align: top;
+}
+
+.desktopOneDayColumn {
+    display: inline-block;
+    width: 14%;
+    vertical-align: top;
+    text-align: center;
+}
+
+#desktopColumnTime {
+    text-align: right;
+}
+
+#desktopColumnsDays {
+    text-align: left;
+}
+
+.desktopTimeDiv {
+    width: 100%;
+    font-family: "InputFont";
+    height: 20px;
+}
+
+.desktopDayName {
+    font-family: "MainFont";
+    color: black;
+}
+
+.desktopOneHourBlock {
+    width: 100%;
+    height: 20px;
+}
+
+.desktomMargin {
+    width: 100%;
+}
+
+
+/*Mobile*/
+
+@media (max-width: 424px) {
+    #raspDesktop {
+        display: none;
+    }
+    #raspMobile {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #mobileNameOfDay {
+        font-size: 1.6em;
+    }
+    #mobileMargin {
+        height: 10px;
+    }
+    .mobileDay {
+        height: 20px;
+        border: 1px solid black;
+    }
+    .mobileTimeSpan {
+        bottom: 4px;
+        font-size: 1em;
+        right: 10px;
+    }
+}
+
+@media (min-width: 424px) and (max-width: 767px) {
+    #raspDesktop {
+        display: none;
+    }
+    #raspMobile {
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    #mobileNameOfDay {
+        font-size: 2.3em;
+    }
+    #mobileMargin {
+        height: 20px;
+    }
+    .mobileDay {
+        height: 26px;
+        border: 1.5px solid black;
+    }
+    .mobileTimeSpan {
+        bottom: 7px;
+        font-size: 1.3em;
+        right: 10px;
+    }
+}
+
+
+/*Desktop*/
+
+@media (min-width: 767px) and (max-width: 1023px) {
+    #raspMobile {
+        display: none;
+    }
+    #raspDesktop {
+        display: block;
+        width: 620px;
+        margin: 0px auto;
+        margin-top: 10px;
+    }
+    #desktopColumnTime {
+        width: 15%;
+        padding-top: 27px
+    }
+    #desktopColumnsDays {
+        width: 85%
+    }
+    .desktopTimeSpan {
+        font-size: 13px;
+    }
+    .desktopTimeDiv {
+        padding-right: 4px;
+    }
+    .desktopDayName {
+        font-size: 18px;
+    }
+    .desktopOneHourBlock {
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+    }
+    .bottom {
+        border-bottom: 1px solid black;
+    }
+    .right {
+        border-right: 1px solid black;
+    }
+    .desktomMargin {
+        height: 6px;
+    }
+}
+
+@media (min-width: 1023px) {
+    #raspMobile {
+        display: none;
+    }
+    #raspDesktop {
+        display: block;
+        width: 900px;
+        margin: 0px auto;
+        margin-top: 10px;
+    }
+    #desktopColumnTime {
+        width: 15%;
+        padding-top: 27px;
+    }
+    #desktopColumnsDays {
+        width: 85%
+    }
+    .desktopTimeSpan {
+        font-size: 16px;
+    }
+    .desktopTimeDiv {
+        padding-right: 4px;
+    }
+    .desktopDayName {
+        font-size: 20px;
+    }
+    .desktopOneHourBlock {
+        border-top: 1.5px solid black;
+        border-left: 1.5px solid black;
+    }
+    .bottom {
+        border-bottom: 1.5px solid black;
+    }
+    .right {
+        border-right: 1.5px solid black;
+    }
+    .desktomMargin {
+        height: 6px;
+    }
+}
