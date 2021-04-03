@@ -53,3 +53,7 @@ def getInformationAboutStudentToId(id):
 def getRaspToId(id):
     user = loginModule.getUserToID(id)
     return json.dumps(user["Расписание"], ensure_ascii=False).encode('utf8').decode()
+
+def getRaspToToken(token):
+    user = loginModule.getUserToToken(token)
+    return json.dumps(user["Расписание"], ensure_ascii=False).encode('utf8').decode()

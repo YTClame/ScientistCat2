@@ -18,16 +18,16 @@
             <div class="menuMobile" id="menuId1" data-vis="nonvis">
                 <a href="/profile"><input type="button" class="button" value="Профиль"></a>
                 <a href="/found"><input type="button" class="button" value="Поиск ученика"></a>
-                <input type="button" class="button" value="Мессенджер">
-                <input type="button" class="button" value="Расписание">
+                <a href="/messenger"><input type="button" class="button" value="Мессенджер"></a>
+                <a href="/rasp"><input type="button" class="button" value="Расписание"></a>
                 <input type="button" class="button" value="Выход" onclick="exit();">
             </div>
         </div>
         <div class="menuDesktopDiv">
             <a href="/profile"><input type="button" class="button deskmenu" value="Профиль"></a>
             <a href="/found"><input type="button" class="button deskmenu" value="Поиск ученика"></a>
-            <input type="button" class="button deskmenu" value="Мессенджер">
-            <input type="button" class="button deskmenu" value="Расписание">
+            <a href="/messenger"><input type="button" class="button deskmenu" value="Мессенджер"></a>
+            <a href="/rasp"><input type="button" class="button deskmenu" value="Расписание"></a>
             <input type="button" class="button deskmenu" value="Выход" onclick="exit();">
         </div>
         <div id="mobileContext">
@@ -45,5 +45,10 @@
     loadInfoAboutTeacher();
 </script>
 <script src="/static/js/exitProfile.js"></script>
+<script src="/static/js/writeToUser.js"></script>
+<script src="/static/js/updateOnline.js"></script>
+<script>
+    updateOnlineFunc();
+</script>
 
 </html>

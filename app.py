@@ -16,12 +16,22 @@ import foundPage
 import apiFoundStudent
 import apiFoundTeacher
 import userProfile
+import raspRoute
+import apiUpdateRasp
+import messengerRouting
+import apiMessenger
+import apiWasOnline
 
 from flask import (
     Flask,
     render_template,
     request,
 )
+
+if os.path.exists("./static/profilesImages"):
+    pass
+else:
+    os.mkdir("./static/profilesImages")
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './static/profilesImages/'
@@ -59,6 +69,14 @@ def found():
 @app.route("/user/<id>")
 def userProfileFunc(id):
     return userProfile.loadProfile(id)
+
+@app.route("/rasp")
+def userRaspFunc():
+    return raspRoute.loadRaspPage(request)
+
+@app.route("/messenger")
+def messengerFunc():
+    return messengerRouting.loadMessenger(request)
 
 
 
@@ -114,7 +132,28 @@ def foundTeacher():
 
 @app.route("/api/getRasp", methods=["get"])
 def rasp():
-    return apiGetInformation.getRaspToId(request.args['id'])
+    try:
+        token = request.args['token']
+        return apiGetInformation.getRaspToToken(token)
+    except:
+        id = request.args['id']
+        return apiGetInformation.getRaspToId(request.args['id'])
+
+@app.route("/api/updateRasp", methods=["post"])
+def updateRaspFunc():
+    return apiUpdateRasp.updateRaspElement(request)
+
+@app.route("/api/writeToUser", methods=["post"])
+def writeToUserFunc():
+    return apiMessenger.createNewContact(request)
+
+@app.route("/api/wasOnline", methods=["post"])
+def wasOnlineFunc():
+    return apiWasOnline.wasOnline(request)
+
+@app.route("/api/loadContacts", methods=["post"])
+def loadContactsFunc():
+    return apiMessenger.loadContactsInfo(request)
 
 
 if __name__ == "__main__":

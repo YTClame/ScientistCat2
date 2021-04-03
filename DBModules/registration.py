@@ -1,5 +1,5 @@
 import idManager, hashlib, tokenManager
-import pymongo
+import pymongo, time
 from pymongo import MongoClient
 
 def AddStudentToDatabase(student):
@@ -13,6 +13,8 @@ def AddStudentToDatabase(student):
     student["Фото"] = "/static/img/avatar.jpg"
     student["Доступ"] = "Открыт"
     student["О себе"] = ""
+    student["Контакты"] = []
+    student["Был в сети"] = int(time.time()//1)
 
     rasp = {}
     day = []
@@ -58,6 +60,8 @@ def AddTeacherToDatabase(teacher):
     teacher["Фото"] = "/static/img/avatar.jpg"
     teacher["Доступ"] = "Открыт"
     teacher["О себе"] = ""
+    teacher["Контакты"] = []
+    teacher["Был в сети"] = int(time.time()//1)
 
     rasp = {}
     day = []

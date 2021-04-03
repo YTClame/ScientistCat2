@@ -8,6 +8,14 @@
     src: url("../fonts/20289.ttf");
 }
 
+.red {
+    color: #F00;
+}
+
+.green {
+    color: #00FF2A;
+}
+
 #mobileContacts {
     width: 100%;
     display: block;
@@ -47,6 +55,8 @@
     width: 100%;
     text-align: center;
     background-color: #53A2FF;
+    display: flex;
+    cursor: pointer;
 }
 
 .mobileContactPhoto,
@@ -57,6 +67,9 @@
 
 .mobileContactPhoto {
     width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .mobileContactInfo {
@@ -119,14 +132,19 @@ img {
     #mobileContacts {
         margin-top: 10px;
     }
+    .mobileContactInfo {
+        padding-bottom: 5px;
+    }
     .mobileContact {
         border: 1px solid;
         margin-bottom: 10px;
+        min-height: 65px;
     }
     img {
-        width: 50px;
-        border: 1px solid;
+        max-height: 50px;
+        max-width: 50px;
         margin: 5px;
+        border: 1px solid black;
     }
     .mobileContactTitle {
         margin-top: 5px;
@@ -194,14 +212,19 @@ img {
     #mobileContacts {
         margin-top: 20px;
     }
+    .mobileContactInfo {
+        padding-bottom: 15px;
+    }
     .mobileContact {
         border: 1.5px solid;
         margin-bottom: 20px;
+        min-height: 100px;
     }
     img {
-        width: 80px;
-        border: 1.5px solid;
+        max-width: 80px;
+        max-height: 80px;
         margin: 10px;
+        border: 1.5px solid black;
     }
     .mobileContactTitle {
         margin-top: 12px;
@@ -213,6 +236,7 @@ img {
     #mobileSenderNameDiv {
         height: 40px;
         border: 1.5px solid black;
+        margin-top: 20px;
     }
     #mobileSenderNameSpan {
         font-size: 2.2em;

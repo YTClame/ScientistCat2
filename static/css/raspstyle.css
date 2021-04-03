@@ -33,6 +33,7 @@
 .mobileDay {
     width: 50%;
     display: inline-block;
+    cursor: pointer;
 }
 
 .red {
@@ -86,6 +87,7 @@
 .desktopOneHourBlock {
     width: 100%;
     height: 20px;
+    cursor: pointer;
 }
 
 .desktomMargin {
@@ -117,6 +119,7 @@
     .mobileTimeSpan {
         bottom: 4px;
         font-size: 1em;
+        right: 10px;
     }
 }
 
@@ -142,6 +145,7 @@
     .mobileTimeSpan {
         bottom: 7px;
         font-size: 1.3em;
+        right: 10px;
     }
 }
 

@@ -8,6 +8,14 @@
     src: url("../fonts/20289.ttf");
 }
 
+.red {
+    color: #F00;
+}
+
+.green {
+    color: #00FF2A;
+}
+
 #desktopContactsDiv,
 #desktopMessengerDiv {
     height: 100%;
@@ -45,12 +53,18 @@
     width: 100%;
     background-color: #53A2FF;
     cursor: pointer;
+    align-items: center;
 }
 
 .desktopNameSpan {
     font-family: "MainFont";
     display: block;
     color: white;
+}
+
+.desktopStatusSpan {
+    font-family: "InputFont";
+    display: block;
 }
 
 .desktopChoice {
@@ -118,6 +132,7 @@
     }
     .desktopOneContact {
         border-bottom: 1px solid black;
+        display: flex;
     }
     #desktopContactsDiv,
     #desktopMessengerDiv {
@@ -132,19 +147,25 @@
     }
     .desktopImageDiv {
         width: 35%;
-        height: 50px;
+        display: flex;
+        justify-content: center;
     }
     .desktopName {
         width: 65%;
-        height: 50px;
+        min-height: 50px;
         padding-top: 4px;
+        padding-bottom: 4px;
     }
     .desktopImage {
-        width: 44px;
+        max-width: 44px;
+        max-height: 44px;
         margin: 3px;
         border: 1px solid black;
     }
     .desktopNameSpan {
+        font-size: 13px;
+    }
+    .desktopStatusSpan {
         font-size: 13px;
     }
     #desktopMessages {
@@ -201,6 +222,7 @@
         margin: 0px auto;
     }
     .desktopOneContact {
+        display: flex;
         border-bottom: 1.5px solid black;
     }
     #desktopContactsDiv,
@@ -215,20 +237,26 @@
         padding-left: 6px;
     }
     .desktopImageDiv {
+        display: flex;
+        justify-content: center;
         width: 30%;
-        height: 60px;
     }
     .desktopName {
         width: 70%;
-        height: 60px;
+        min-height: 60px;
         padding-top: 6px;
+        padding-bottom: 6px;
     }
     .desktopImage {
-        width: 50px;
+        max-width: 50px;
+        max-height: 50px;
         margin: 5px;
         border: 1.5px solid black;
     }
     .desktopNameSpan {
+        font-size: 16px;
+    }
+    .desktopStatusSpan {
         font-size: 16px;
     }
     #desktopMessages {

@@ -1,7 +1,8 @@
 function loadInfoAboutTeacher() {
     var xhr = new XMLHttpRequest();
     nowUrl = window.location.href;
-    xhr.open("GET", '/api/getInformationAboutTeacher?id=' + nowUrl.split('/')[nowUrl.split('/').length - 1], true);
+    id = nowUrl.split('/')[nowUrl.split('/').length - 1];
+    xhr.open("GET", '/api/getInformationAboutTeacher?id=' + id, true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200 && xhr.responseText != "Error") {
@@ -41,7 +42,7 @@ function loadInfoAboutTeacher() {
             viewLessons.forEach(view => {
                 mobileRes += '<span class="valueText">' + view + '</span>';
             });
-            mobileRes += '<a href="#"><input type="button" class="button edit" value="Написать пользователю"></a>' +
+            mobileRes += '<input type="button" class="button edit" value="Написать пользователю" onclick="writeToUserFunc(' + id + ');">' +
                 '<a href="#"><input type="button" class="button edit" value="Пожаловаться"></a>' +
                 '<div class="menuMobileDiv"><input type="button" class="button" onclick="showHideMenu(4);" value="Выбрать день"><div class="menuMobile" id="menuId4" data-vis="nonvis">' +
                 '<input type="button" class="button choice" id="mobileDay1" value="Понедельник" onclick="setRaspDay(1);loadMobileRasp(\'Пн\')">' +
@@ -76,7 +77,7 @@ function loadInfoAboutTeacher() {
                 '<span class="valueText">' + userInfo["Email"] + '</span>' +
                 '<span class="labelText">О себе</span>' +
                 '<span class="valueText">' + userInfo["О себе"] + '</span>' +
-                '<a href="#"><input type="button" class="button edit" value="Написать пользователю"></a><a href="#"><input type="button" class="button edit" value="Пожаловаться"></a></div><div class="onePartContext"><span class="labelText">Преподаваемые предметы</span>';
+                '<input type="button" class="button edit" value="Написать пользователю" onclick="writeToUserFunc(' + id + ');"><a href="#"><input type="button" class="button edit" value="Пожаловаться"></a></div><div class="onePartContext"><span class="labelText">Преподаваемые предметы</span>';
             lessons.forEach(lesson => {
                 desktopRes += '<span class="valueText">' + lesson + '</span>';
             });
@@ -133,7 +134,8 @@ function loadMobileRasp(day) {
 function _loadRaspToId() {
     var xhr = new XMLHttpRequest();
     nowUrl = window.location.href;
-    xhr.open("GET", '/api/getRasp?id=' + nowUrl.split('/')[nowUrl.split('/').length - 1], true);
+    id = nowUrl.split('/')[nowUrl.split('/').length - 1];
+    xhr.open("GET", '/api/getRasp?id=' + id, true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200 && xhr.responseText != "Error") {

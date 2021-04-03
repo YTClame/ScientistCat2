@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="clear.css">
-    <link rel="stylesheet" href="menustyle.css">
-    <link rel="stylesheet" href="messengerstylemobile.css">
-    <link rel="stylesheet" href="messengerstyledesktop.css">
+    <link rel="stylesheet" href="/static/css/clear.css">
+    <link rel="stylesheet" href="/static/css/menustyle.css">
+    <link rel="stylesheet" href="/static/css/messengerstylemobile.css">
+    <link rel="stylesheet" href="/static/css/messengerstyledesktop.css">
     <title>Мессенджер</title>
 </head>
 
@@ -17,43 +17,24 @@
         <div class="menuMobileDiv">
             <input type="button" class="button" onclick="showHideMenu(1);" value="Меню">
             <div class="menuMobile" id="menuId1" data-vis="nonvis">
-                <input type="button" class="button" value="Профиль">
-                <input type="button" class="button" value="Поиск !!!">
-                <input type="button" class="button choice" value="Мессенджер">
-                <input type="button" class="button" value="Расписание">
+                <a href="/profile"><input type="button" class="button" value="Профиль"></a>
+                <a href="/found"><input type="button" class="button" value="Поиск {{foundIs}}"></a>
+                <a href="/messenger"><input type="button" class="button choice" value="Мессенджер"></a>
+                <a href="/rasp"><input type="button" class="button" value="Расписание"></a>
                 <input type="button" class="button" value="Выход" onclick="exit();">
             </div>
         </div>
 
         <div class="menuDesktopDiv">
-            <input type="button" class="button deskmenu" value="Профиль">
-            <input type="button" class="button deskmenu" value="Поиск !!!">
-            <input type="button" class="button deskmenu choice" value="Мессенджер">
-            <input type="button" class="button deskmenu" value="Расписание">
+            <a href="/profile"><input type="button" class="button deskmenu" value="Профиль"></a>
+            <a href="/found"><input type="button" class="button deskmenu" value="Поиск {{foundIs}}"></a>
+            <a href="/messenger"><input type="button" class="button deskmenu choice" value="Мессенджер"></a>
+            <a href="/rasp"><input type="button" class="button deskmenu" value="Расписание"></a>
             <input type="button" class="button deskmenu" value="Выход" onclick="exit();">
         </div>
 
         <div id="mobileContacts">
-            <div class="mobileContact">
-                <div class="mobileContactPhoto">
-                    <img src="ava.jpg" alt="Фото">
-                </div>
-                <div class="mobileContactInfo">
-                    <span class="mobileContactTitle">Бойков</span>
-                    <span class="mobileContactTitle">Владимир</span>
-                    <span class="mobileContactTitle">Online</span>
-                </div>
-            </div>
-            <div class="mobileContact">
-                <div class="mobileContactPhoto">
-                    <img src="ava.jpg" alt="Фото">
-                </div>
-                <div class="mobileContactInfo">
-                    <span class="mobileContactTitle">Бойков</span>
-                    <span class="mobileContactTitle">Владимир</span>
-                    <span class="mobileContactTitle">Online</span>
-                </div>
-            </div>
+
         </div>
 
         <div id="mobileMessenger">
@@ -77,42 +58,13 @@
             <div id="mobileInputDiv">
                 <textarea id="mobileInputTextarea"></textarea>
                 <div id="mobileSendButton">
-                    <img id="mobileSendButtonImg" src="send.svg">
+                    <img id="mobileSendButtonImg" src="/static/img/send.svg">
                 </div>
             </div>
         </div>
         <div id="desktopMessenger">
             <div id="desktopContactsDiv">
-                <div class="desktopOneContact">
-                    <div class="desktopImageDiv">
-                        <img class="desktopImage" src="ava.jpg">
-                    </div>
-                    <div class="desktopName">
-                        <span class="desktopNameSpan">Бойков</span>
-                        <span class="desktopNameSpan">Владимир</span>
-                        <span class="desktopNameSpan">Онлайн</span>
-                    </div>
-                </div>
-                <div class="desktopOneContact desktopChoice">
-                    <div class="desktopImageDiv">
-                        <img class="desktopImage" src="ava.jpg">
-                    </div>
-                    <div class="desktopName">
-                        <span class="desktopNameSpan">Учеватов</span>
-                        <span class="desktopNameSpan">Николай</span>
-                        <span class="desktopNameSpan">Офлайн</span>
-                    </div>
-                </div>
-                <div class="desktopOneContact">
-                    <div class="desktopImageDiv">
-                        <img class="desktopImage" src="ava.jpg">
-                    </div>
-                    <div class="desktopName">
-                        <span class="desktopNameSpan">Учеватов</span>
-                        <span class="desktopNameSpan">Николай</span>
-                        <span class="desktopNameSpan">Офлайн</span>
-                    </div>
-                </div>
+
             </div>
             <div id="desktopMessengerDiv">
                 <div id="desktopMessages">
@@ -131,7 +83,15 @@
         </div>
     </div>
 </body>
-<script src="mobileMenuScript.js"></script>
-<script src="./static/js/exitProfile.js"></script>
+<script src="/static/js/mobileMenuScript.js"></script>
+<script src="/static/js/exitProfile.js"></script>
+<script src="/static/js/updateOnline.js"></script>
+<script>
+    updateOnlineFunc();
+</script>
+<script src="/static/js/messenger.js"></script>
+<script>
+    loadContacts();
+</script>
 
 </html>
