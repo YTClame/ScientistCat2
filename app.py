@@ -74,7 +74,7 @@ def userProfileFunc(id):
 def userRaspFunc():
     return raspRoute.loadRaspPage(request)
 
-@app.route("/messenger")
+@app.route("/messenger", methods=["get"])
 def messengerFunc():
     return messengerRouting.loadMessenger(request)
 
@@ -154,6 +154,18 @@ def wasOnlineFunc():
 @app.route("/api/loadContacts", methods=["post"])
 def loadContactsFunc():
     return apiMessenger.loadContactsInfo(request)
+
+@app.route("/api/sendMessage", methods=["post"])
+def sendMessageFunc():
+    return apiMessenger.sendMessage(request)
+
+@app.route("/api/loadMessages", methods=["post"])
+def loadMessageFunc():
+    return apiMessenger.loadMessages(request)
+
+@app.route("/api/getMessagesSize", methods=["post"])
+def getMessagesSizeFunc():
+    return apiMessenger.getMessagesSize(request)
 
 
 if __name__ == "__main__":

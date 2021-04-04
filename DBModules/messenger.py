@@ -1,7 +1,79 @@
-import pymongo, json
+import pymongo, json, sys, os, datetime
 from pymongo import MongoClient
 
-import loginModule, time
+sys.path.append('./ApiModules/')
+
+import loginModule, time, cityNames
+
+def send(token, id, message):#str int str
+    user = loginModule.getUserToToken(token)
+    if user == "Error":
+        return "Error"
+    idSender = user["ID"]
+    client = MongoClient()
+    dbMes = client['SC_Messages']
+    ids = [idSender, id]
+    ids.sort()
+    collectName = str(ids[0]) + "and" + str(ids[1])
+    collect = dbMes[collectName]
+
+    city = {}
+    cities = json.loads(cityNames.getCityNames())
+    for cityTemp in cities:
+        if cityTemp["Name"] == user["Город"]:
+            city = cityTemp
+            break
+
+    date = datetime.datetime.today()
+    delta = datetime.timedelta(hours=city["Hours"], minutes=city["Minutes"])
+    resDate = date + delta
+    
+    sendDate = resDate.strftime("%d.%m.%Y")
+    sendTime = resDate.strftime("%H:%M:%S")
+    sender = user["ID"]
+    
+    messageRecord = {}
+    messageRecord["Отправитель"] = sender
+    messageRecord["Сообщение"] = message
+    messageRecord["Дата"] = sendDate
+    messageRecord["Время"] = sendTime
+    
+    collect.insert_one(messageRecord)
+    return "OK"
+
+def loadMessages(token, id):#str int
+    user = loginModule.getUserToToken(token)
+    if user == "Error":
+        return "Error"
+    idSender = user["ID"]
+    user2 = loginModule.getUserToID(id)
+    client = MongoClient()
+    dbMes = client['SC_Messages']
+    ids = [idSender, id]
+    ids.sort()
+    collectName = str(ids[0]) + "and" + str(ids[1])
+    collect = dbMes[collectName]
+    messages = list(collect.find({},{"_id":0}))
+    result = {}
+    result["Messages"] = messages
+    result["MobileName"] = user2["Фамилия"] + " " + user2["Имя"][0] + "."
+    return json.dumps(result, ensure_ascii=False).encode('utf8').decode()
+
+def getMessagesSize(token, id):#str int
+    user = loginModule.getUserToToken(token)
+    if user == "Error":
+        return "Error"
+    idSender = user["ID"]
+    client = MongoClient()
+    dbMes = client['SC_Messages']
+    ids = [idSender, id]
+    ids.sort()
+    collectName = str(ids[0]) + "and" + str(ids[1])
+    collect = dbMes[collectName]
+    messages = list(collect.find({},{"_id":0}))
+    return str(len(messages))
+
+
 
 def createNewContact(token, id): #str int
     userMain = loginModule.getUserToToken(token)
@@ -38,13 +110,7 @@ def createNewContact(token, id): #str int
         collect = dbUsers[collectName]
         fil = {"ID": id}
         collect.update_one(fil, {"$set": {"Контакты": userSecondContacts}})
-        ###
         return "OK"
-        #dbMes = client['SC_Messages']
-        #ids = [userMain["ID"], id]
-        #ids.sort()
-        #collectName = str(ids[0]) + "and" + str(ids[1])
-        #collect = dbMes[collectName]
 
 def loadContacts(token):
     user = loginModule.getUserToToken(token)

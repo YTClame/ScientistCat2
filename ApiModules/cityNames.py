@@ -6,11 +6,15 @@ def getCityNames():
 
     city = {
         "Name": "Самара",
+        "Hours": 0,
+        "Minutes": 0,
     }
     cities.append(city)
 
     city = {
         "Name": "Москва",
+        "Hours": -1,
+        "Minutes": 0,
     }
     cities.append(city)
 

@@ -17,3 +17,19 @@ def createNewContact(r):
 def loadContactsInfo(r):
     token = r.form.get('token')
     return messenger.loadContacts(token)
+
+def sendMessage(r):
+    token = r.form.get('token')
+    id = r.form.get('id')
+    message = r.form.get('message')
+    return messenger.send(token, int(id), message)
+
+def loadMessages(r):
+    token = r.form.get('token')
+    id = r.form.get('id')
+    return messenger.loadMessages(token, int(id))
+
+def getMessagesSize(r):
+    token = r.form.get('token')
+    id = r.form.get('id')
+    return messenger.getMessagesSize(token, int(id))

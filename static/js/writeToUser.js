@@ -10,7 +10,7 @@ function writeToUserFunc(id) {
             if (xhr2.responseText == "Error")
                 alert("Произошла ошибка! Попробуйте позже!");
             else
-                document.location.href = '/messenger';
+                document.location.href = '/messenger?userId=' + id;
         }
     }
 

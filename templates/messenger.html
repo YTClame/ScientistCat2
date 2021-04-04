@@ -39,26 +39,15 @@
 
         <div id="mobileMessenger">
             <div id="mobileSenderNameDiv">
-                <span id="mobileSenderNameSpan">Бойков В.</span>
+                <span id="mobileSenderNameSpan"></span>
             </div>
             <div id="mobileMessages">
-                <div class="mobileGetMessageDiv">
-                    <span class="mobileGetMessageSpan">Здравствуйте! Как ваши дела?</span>
-                </div>
-                <div class="mobileSendMessageDiv">
-                    <span class="mobileSendMessageSpan">Отлично! А у вас?</span>
-                </div>
-                <div class="mobileGetMessageDiv">
-                    <span class="mobileGetMessageSpan">У меня тоже хорошо, очень рад, когда так получается. Это очень вдохновляет!</span>
-                </div>
-                <div class="mobileSendMessageDiv">
-                    <span class="mobileSendMessageSpan">Согласен!</span>
-                </div>
+
             </div>
             <div id="mobileInputDiv">
-                <textarea id="mobileInputTextarea"></textarea>
+                <textarea id="mobileInputTextarea" placeholder="Напишите сообщение..."></textarea>
                 <div id="mobileSendButton">
-                    <img id="mobileSendButtonImg" src="/static/img/send.svg">
+                    <img id="mobileSendButtonImg" src="/static/img/send.svg" onclick="sendMessage();">
                 </div>
             </div>
         </div>
@@ -68,16 +57,11 @@
             </div>
             <div id="desktopMessengerDiv">
                 <div id="desktopMessages">
-                    <div class="desktopMessageGetDiv">
-                        <span class="desktopMessageGetSpan">Здравствуйте! Как у вас дела?</span>
-                    </div>
-                    <div class="desktopMessageSendDiv">
-                        <span class="desktopMessageSendSpan">Приветствую! Отлично, а у вас?</span>
-                    </div>
+
                 </div>
                 <div id="desktopInputMessage">
                     <textarea id="desktopTextarea" placeholder="Напишите сообщение..."></textarea>
-                    <input type="button" class="button" id="sendButton" value="Отправить сообщение">
+                    <input type="button" class="button" id="sendButton" value="Отправить сообщение" onclick="sendMessage();">
                 </div>
             </div>
         </div>
@@ -92,6 +76,11 @@
 <script src="/static/js/messenger.js"></script>
 <script>
     loadContacts();
+</script>
+<script src="/static/js/sharevalues3.js"></script>
+<script>
+    loadMessages();
+    changeMobileView();
 </script>
 
 </html>
