@@ -8,7 +8,10 @@ from flask import (
 
 import loginModule
 
-def loadProfile(id):
+def loadProfile(r, id):
+    user = loginModule.getUserToToken(r.cookies.get('token'))
+    if user == "Error":
+        return redirect("/")
     userForId = loginModule.getUserToID(id)
     if(userForId == "Error"):
         return redirect("/")

@@ -21,6 +21,8 @@ import apiUpdateRasp
 import messengerRouting
 import apiMessenger
 import apiWasOnline
+import report
+import apiReport
 
 from flask import (
     Flask,
@@ -68,7 +70,7 @@ def found():
 
 @app.route("/user/<id>")
 def userProfileFunc(id):
-    return userProfile.loadProfile(id)
+    return userProfile.loadProfile(request, id)
 
 @app.route("/rasp")
 def userRaspFunc():
@@ -77,6 +79,10 @@ def userRaspFunc():
 @app.route("/messenger", methods=["get"])
 def messengerFunc():
     return messengerRouting.loadMessenger(request)
+
+@app.route("/report/<id>")
+def userReportFunc(id):
+    return report.reportPage(request)
 
 
 
@@ -166,6 +172,14 @@ def loadMessageFunc():
 @app.route("/api/getMessagesSize", methods=["post"])
 def getMessagesSizeFunc():
     return apiMessenger.getMessagesSize(request)
+
+@app.route("/api/sendReport", methods=["post"])
+def sendReportFunc():
+    return apiReport.report(request)
+
+@app.route("/api/getNameForReport", methods=["post"])
+def getNameForReportFunc():
+    return apiReport.getName(request)
 
 
 if __name__ == "__main__":

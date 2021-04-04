@@ -1,0 +1,124 @@
+@font-face {
+    font-family: "MainFont";
+    src: url("../fonts/20011.ttf");
+}
+
+@font-face {
+    font-family: "InputFont";
+    src: url("../fonts/20289.ttf");
+}
+
+#content {
+    text-align: center;
+}
+
+#userName {
+    color: red;
+    font-family: "InputFont";
+}
+
+#reportFormDiv {
+    margin: 0px auto;
+    width: 100px;
+    text-align: center;
+}
+
+#writeCause {
+    color: #0075FF;
+    font-family: "MainFont";
+    font-weight: bold;
+}
+
+#cause {
+    resize: none;
+    background-color: #F7F5CC;
+    color: black;
+    font-family: "InputFont";
+    padding: 5px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+
+/*Mobile*/
+
+@media (max-width: 424px) {
+    #userName {
+        font-size: 1.4em;
+    }
+    .button {
+        margin-bottom: 10px;
+    }
+    #reportFormDiv {
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px;
+    }
+    #writeCause {
+        font-size: 1em;
+    }
+    #cause {
+        border: 1px solid black;
+        height: 250px;
+    }
+}
+
+@media (min-width: 424px) and (max-width: 767px) {
+    #userName {
+        font-size: 1.7em;
+    }
+    .button {
+        margin-bottom: 10px;
+    }
+    #reportFormDiv {
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px;
+    }
+    #writeCause {
+        font-size: 1.3em;
+    }
+    #cause {
+        border: 1.5px solid black;
+        height: 300px;
+    }
+}
+
+
+/*Desktop*/
+
+@media (min-width: 767px) and (max-width: 1023px) {
+    #userName {
+        font-size: 1.5em;
+    }
+    #reportFormDiv {
+        margin-top: 10px;
+        width: 460px;
+        padding: 10px;
+    }
+    #writeCause {
+        font-size: 1.1em;
+    }
+    #cause {
+        border: 1px solid black;
+        height: 150px;
+    }
+}
+
+@media (min-width: 1023px) {
+    #userName {
+        font-size: 2em;
+    }
+    #reportFormDiv {
+        margin-top: 10px;
+        width: 460px;
+        padding: 10px;
+    }
+    #writeCause {
+        font-size: 1.2em;
+    }
+    #cause {
+        border: 1.5px solid black;
+        height: 160px;
+    }
+}

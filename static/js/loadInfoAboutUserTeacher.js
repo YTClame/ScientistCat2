@@ -43,7 +43,7 @@ function loadInfoAboutTeacher() {
                 mobileRes += '<span class="valueText">' + view + '</span>';
             });
             mobileRes += '<input type="button" class="button edit" value="Написать пользователю" onclick="writeToUserFunc(' + id + ');">' +
-                '<a href="#"><input type="button" class="button edit" value="Пожаловаться"></a>' +
+                '<a href="/report/' + id + '"><input type="button" class="button edit" value="Пожаловаться"></a>' +
                 '<div class="menuMobileDiv"><input type="button" class="button" onclick="showHideMenu(4);" value="Выбрать день"><div class="menuMobile" id="menuId4" data-vis="nonvis">' +
                 '<input type="button" class="button choice" id="mobileDay1" value="Понедельник" onclick="setRaspDay(1);loadMobileRasp(\'Пн\')">' +
                 '<input type="button" class="button" id="mobileDay2" value="Вторник" onclick="setRaspDay(2);loadMobileRasp(\'Вт\')">' +
@@ -77,7 +77,7 @@ function loadInfoAboutTeacher() {
                 '<span class="valueText">' + userInfo["Email"] + '</span>' +
                 '<span class="labelText">О себе</span>' +
                 '<span class="valueText">' + userInfo["О себе"] + '</span>' +
-                '<input type="button" class="button edit" value="Написать пользователю" onclick="writeToUserFunc(' + id + ');"><a href="#"><input type="button" class="button edit" value="Пожаловаться"></a></div><div class="onePartContext"><span class="labelText">Преподаваемые предметы</span>';
+                '<input type="button" class="button edit" value="Написать пользователю" onclick="writeToUserFunc(' + id + ');"><a href="/report/' + id + '"><input type="button" class="button edit" value="Пожаловаться"></a></div><div class="onePartContext"><span class="labelText">Преподаваемые предметы</span>';
             lessons.forEach(lesson => {
                 desktopRes += '<span class="valueText">' + lesson + '</span>';
             });
