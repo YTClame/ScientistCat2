@@ -22,18 +22,6 @@
                 <input type="button" class="button" value="Выход" onclick="exit();">
             </div>
         </div>
-        <div class="menuMobileDiv">
-            <input type="button" class="button" onclick="showHideMenu(4);" value="Выбрать день">
-            <div class="menuMobile" id="menuId4" data-vis="nonvis">
-                <input type="button" class="button choice" id="mobileDay1" value="Понедельник" onclick="setRaspDay(1);loadMobileRasp('Пн');">
-                <input type="button" class="button" id="mobileDay2" value="Вторник" onclick="setRaspDay(2);loadMobileRasp('Вт');">
-                <input type="button" class="button" id="mobileDay3" value="Среда" onclick="setRaspDay(3);loadMobileRasp('Ср');">
-                <input type="button" class="button" id="mobileDay4" value="Четверг" onclick="setRaspDay(4);loadMobileRasp('Чт');">
-                <input type="button" class="button" id="mobileDay5" value="Пятница" onclick="setRaspDay(5);loadMobileRasp('Пт');">
-                <input type="button" class="button" id="mobileDay6" value="Суббота" onclick="setRaspDay(6);loadMobileRasp('Сб');">
-                <input type="button" class="button" id="mobileDay7" value="Воскресенье" onclick="setRaspDay(7);loadMobileRasp('Вс');">
-            </div>
-        </div>
         <div class="menuDesktopDiv">
             <a href="/profile"><input type="button" class="button deskmenu" value="Профиль"></a>
             <a href="/found"><input type="button" class="button deskmenu" value="Поиск {{foundIs}}"></a>
@@ -41,75 +29,118 @@
             <a href="/rasp"><input type="button" class="button deskmenu choice" value="Расписание"></a>
             <input type="button" class="button deskmenu" value="Выход" onclick="exit();">
         </div>
-        <div id="mobileContent">
+        <div id="raspContent">
+            <div class="borderRaspGroup">
+                <span class="titleRaspType">Расписание по дням недели</span>
 
-        </div>
-        <div id="desktopContent">
-            <div id="desktopColumnTime">
-                <div class="desktopTimeDiv">
-                    <span class="desktopTimeSpan">08:00-09:00</span>
+                <div class="oneDayRasp">
+                    <span class="titleRaspType">Понедельник</span>
+                    <div class="oneRecordRasp">
+                        <span class="timeSpan">18:00-19:00</span>
+                        <span class="taskSpan">Позаниматься с Данилом, рассказать ему про выр аыдв адлвыт адлтыв адлты вдалт ывдат ыдла длывлт аыдлвт алтыв адты вадт ыдвлта дытв адлтыв алты влт ыдлтва длывт адлтыв адлт ывдлат ывдлта дылв адлытв адыв адтыв дал ылвт а квадратные уравнения</span>
+                        <span class="editRaspElementButtonSpan">
+                        <img class="editRaspElementButton" src="/static/img/edit.svg" onclick="editRaspElement(this);">
+                        <img class="editRaspElementButton" src="/static/img/trash.svg">
+                    </span>
+                    </div>
+                    <div class="oneRecordRasp">
+                        <span class="timeSpan">18:00-19:00</span>
+                        <span class="taskSpan">Позаниматься с Данилом, рассказать ему про выр аыдв адлвыт адлтыв адлты вдалт ывдат ыдла длывлт аыдлвт алтыв адты вадт ыдвлта дытв адлтыв алты влт ыдлтва длывт адлтыв адлт ывдлат ывдлта дылв адлытв адыв адтыв дал ылвт а квадратные уравнения</span>
+                        <span class="editRaspElementButtonSpan">
+                        <img class="editRaspElementButton" src="/static/img/edit.svg" onclick="editRaspElement(this);">
+                        <img class="editRaspElementButton" src="/static/img/trash.svg">
+                    </span>
+                    </div>
+                    <input type="button" class="button addButton" value="Добавить" onclick="addRaspEvent(this);">
                 </div>
-                <div class="desktopTimeDiv">
-                    <span class="desktopTimeSpan">09:00-10:00</span>
-                </div>
-                <div class="desktopTimeDiv">
-                    <span class="desktopTimeSpan">10:00-11:00</span>
-                </div>
-                <div class="desktopTimeDiv">
-                    <span class="desktopTimeSpan">11:00-12:00</span>
-                </div>
-                <div class="desktopTimeDiv">
-                    <span class="desktopTimeSpan">12:00-13:00</span>
-                </div>
-                <div class="desktopTimeDiv">
-                    <span class="desktopTimeSpan">13:00-14:00</span>
-                </div>
-                <div class="desktopTimeDiv">
-                    <span class="desktopTimeSpan">14:00-15:00</span>
-                </div>
-                <div class="desktopTimeDiv">
-                    <span class="desktopTimeSpan">15:00-16:00</span>
-                </div>
-                <div class="desktopTimeDiv">
-                    <span class="desktopTimeSpan">16:00-17:00</span>
-                </div>
-                <div class="desktopTimeDiv">
-                    <span class="desktopTimeSpan">17:00-18:00</span>
-                </div>
-                <div class="desktopTimeDiv">
-                    <span class="desktopTimeSpan">18:00-19:00</span>
-                </div>
-                <div class="desktopTimeDiv">
-                    <span class="desktopTimeSpan">19:00-20:00</span>
-                </div>
-                <div class="desktopTimeDiv">
-                    <span class="desktopTimeSpan">20:00-21:00</span>
-                </div>
-                <div class="desktopTimeDiv">
-                    <span class="desktopTimeSpan">21:00-22:00</span>
-                </div>
-                <div class="desktopTimeDiv">
-                    <span class="desktopTimeSpan">22:00-23:00</span>
+
+                <div class="oneDayRasp">
+                    <span class="titleRaspType">Вторник</span>
+                    <div class="oneRecordRasp">
+                        <span class="timeSpan">18:00-19:00</span>
+                        <span class="taskSpan">Позаниматься с Данилом, рассказать ему про выр аыдв адлвыт адлтыв адлты вдалт ывдат ыдла длывлт аыдлвт алтыв адты вадт ыдвлта дытв адлтыв алты влт ыдлтва длывт адлтыв адлт ывдлат ывдлта дылв адлытв адыв адтыв дал ылвт а квадратные уравнения</span>
+                        <span class="editRaspElementButtonSpan">
+                        <img class="editRaspElementButton" src="/static/img/edit.svg" onclick="editRaspElement(this);">
+                        <img class="editRaspElementButton" src="/static/img/trash.svg">
+                    </span>
+                    </div>
+                    <div class="oneRecordRasp">
+                        <input type="text" class="input" placeholder="Время начала"></input>
+                        <input type="text" class="input" placeholder="Время завершения"></input>
+                        <textarea class="input" placeholder="Деятельность"></textarea>
+                        <input type="button" class="button addButton" value="Сохранить">
+                    </div>
+                    <div class="oneRecordRasp">
+                        <span class="timeSpan">18:00-19:00</span>
+                        <span class="taskSpan">Позаниматься с Данилом, рассказать ему про выр аыдв адлвыт адлтыв адлты вдалт ывдат ыдла длывлт аыдлвт алтыв адты вадт ыдвлта дытв адлтыв алты влт ыдлтва длывт адлтыв адлт ывдлат ывдлта дылв адлытв адыв адтыв дал ылвт а квадратные уравнения</span>
+                        <span class="editRaspElementButtonSpan">
+                        <img class="editRaspElementButton" src="/static/img/edit.svg" onclick="editRaspElement(this);">
+                        <img class="editRaspElementButton" src="/static/img/trash.svg">
+                    </span>
+                    </div>
+                    <input type="button" class="button addButton" value="Добавить" onclick="addRaspEvent(this);">
                 </div>
             </div>
-            <div id="desktopColumnsDays">
+            <!---->
+            <div class="borderRaspGroup">
+                <span class="titleRaspType">Дополнительное расписание по датам</span>
 
+                <div class="oneDayRasp">
+                    <span class="titleRaspType">17.03.2021</span>
+                    <div class="oneRecordRasp">
+                        <span class="timeSpan">18:00-19:00</span>
+                        <span class="taskSpan">Позаниматься с Данилом, рассказать ему про выр аыдв адлвыт адлтыв адлты вдалт ывдат ыдла длывлт аыдлвт алтыв адты вадт ыдвлта дытв адлтыв алты влт ыдлтва длывт адлтыв адлт ывдлат ывдлта дылв адлытв адыв адтыв дал ылвт а квадратные уравнения</span>
+                        <span class="editRaspElementButtonSpan">
+                        <img class="editRaspElementButton" src="/static/img/edit.svg" onclick="editRaspElement(this);">
+                        <img class="editRaspElementButton" src="/static/img/trash.svg">
+                    </span>
+                    </div>
+                    <div class="oneRecordRasp">
+                        <span class="timeSpan">18:00-19:00</span>
+                        <span class="taskSpan">Позаниматься с Данилом, рассказать ему про выр аыдв адлвыт адлтыв адлты вдалт ывдат ыдла длывлт аыдлвт алтыв адты вадт ыдвлта дытв адлтыв алты влт ыдлтва длывт адлтыв адлт ывдлат ывдлта дылв адлытв адыв адтыв дал ылвт а квадратные уравнения</span>
+                        <span class="editRaspElementButtonSpan">
+                        <img class="editRaspElementButton" src="/static/img/edit.svg" onclick="editRaspElement(this);">
+                        <img class="editRaspElementButton" src="/static/img/trash.svg">
+                    </span>
+                    </div>
+                    <input type="button" class="button addButton" value="Добавить" onclick="addRaspEvent(this);">
+                </div>
+
+                <div class="oneDayRasp">
+                    <span class="titleRaspType">24.04.2021</span>
+                    <div class="oneRecordRasp">
+                        <span class="timeSpan">18:00-19:00</span>
+                        <span class="taskSpan">Позаниматься с Данилом, рассказать ему про выр аыдв адлвыт адлтыв адлты вдалт ывдат ыдла длывлт аыдлвт алтыв адты вадт ыдвлта дытв адлтыв алты влт ыдлтва длывт адлтыв адлт ывдлат ывдлта дылв адлытв адыв адтыв дал ылвт а квадратные уравнения</span>
+                        <span class="editRaspElementButtonSpan">
+                        <img class="editRaspElementButton" src="/static/img/edit.svg" onclick="editRaspElement(this);">
+                        <img class="editRaspElementButton" src="/static/img/trash.svg">
+                    </span>
+                    </div>
+                    <div class="oneRecordRasp">
+                        <span class="timeSpan">18:00-19:00</span>
+                        <span class="taskSpan">Позаниматься с Данилом, рассказать ему про выр аыдв адлвыт адлтыв адлты вдалт ывдат ыдла длывлт аыдлвт алтыв адты вадт ыдвлта дытв адлтыв алты влт ыдлтва длывт адлтыв адлт ывдлат ывдлта дылв адлытв адыв адтыв дал ылвт а квадратные уравнения</span>
+                        <span class="editRaspElementButtonSpan">
+                        <img class="editRaspElementButton" src="/static/img/edit.svg" onclick="editRaspElement(this);">
+                        <img class="editRaspElementButton" src="/static/img/trash.svg">
+                    </span>
+                    </div>
+                    <input type="button" class="button addButton" value="Добавить" onclick="addRaspEvent(this);">
+                </div>
+                <input type="button" class="button addButton" value="Создать" onclick="addRaspAdditionalDate(this);">
             </div>
         </div>
-
-
     </div>
 </body>
 <script src="/static/js/mobileMenuScript.js"></script>
-<script src="/static/js/mobileRaspDayScript.js"></script>
 <script src="/static/js/exitProfile.js"></script>
-<script src="/static/js/loadRaspLK.js"></script>
-<script>
-    _loadRaspToToken();
-</script>
 <script src="/static/js/updateOnline.js"></script>
 <script>
     updateOnlineFunc();
+</script>
+<script src="/static/js/editRasp.js"></script>
+<script src="/static/js/loadRasp.js"></script>
+<script>
+    loadRaspToToken();
 </script>
 
 </html>

@@ -149,6 +149,14 @@ def rasp():
 def updateRaspFunc():
     return apiUpdateRasp.updateRaspElement(request)
 
+@app.route("/api/createRaspElem", methods=["post"])
+def createRaspFunc():
+    return apiUpdateRasp.createRaspElement(request)
+
+@app.route("/api/removeRaspElem", methods=["post"])
+def removeRaspFunc():
+    return apiUpdateRasp.removeRaspElement(request)
+
 @app.route("/api/writeToUser", methods=["post"])
 def writeToUserFunc():
     return apiMessenger.createNewContact(request)

@@ -8,89 +8,70 @@
     src: url("../fonts/20289.ttf");
 }
 
-#mobileContent {
+#raspContent {
     width: 100%;
     text-align: center;
 }
 
-#mobileNameOfDay {
+.borderRaspGroup {
+    width: 100%;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.titleRaspType {
     font-family: "MainFont";
+    display: block;
 }
 
-.mobileTimeDiv {
+.oneRecordRasp {
     width: 100%;
+    margin-bottom: 8px;
 }
 
-.mobileTimeSpan {
-    font-family: "InputFont";
-    position: relative;
-}
-
-#mobileMargin {
-    width: 100%;
-}
-
-.mobileDay {
-    width: 50%;
+.timeSpan {
+    font-family: "MainFont";
     display: inline-block;
-    cursor: pointer;
-}
-
-.red {
-    background-color: #FE5757;
-}
-
-.green {
-    background-color: #5EDE73;
-}
-
-#desktopContent {
-    height: 300px;
-    width: 100%;
-    font-size: 0em;
-}
-
-#desktopColumnTime,
-#desktopColumnsDays,
-.desktopOneDayColumn {
-    display: inline-block;
-    height: 400px;
     vertical-align: top;
 }
 
-.desktopOneDayColumn {
-    display: inline-block;
-    width: 14%;
-    vertical-align: top;
-    text-align: center;
-}
-
-#desktopColumnTime {
-    text-align: right;
-}
-
-#desktopColumnsDays {
-    text-align: left;
-}
-
-.desktopTimeDiv {
-    width: 100%;
+.taskSpan {
     font-family: "InputFont";
-    height: 20px;
+    display: inline-block;
+    text-align: justify;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.desktopDayName {
-    font-family: "MainFont";
-    color: black;
+.editRaspElementButtonSpan {
+    display: inline-block;
+    vertical-align: top;
 }
 
-.desktopOneHourBlock {
-    width: 100%;
-    height: 20px;
+.editRaspElementButton {
     cursor: pointer;
+    display: block;
+    margin-bottom: 5px;
+    width: 15px;
+    height: 15px;
 }
 
-.desktomMargin {
+.addButton {
+    display: block;
+    margin: 0px auto;
+    margin-bottom: 20px;
+}
+
+.input {
+    display: block;
+    margin: 0px auto;
+    font-family: "InputFont";
+    margin-bottom: 5px;
+    padding: 2px;
+    resize: none;
+}
+
+.oneDayRasp {
     width: 100%;
 }
 
@@ -98,54 +79,54 @@
 /*Mobile*/
 
 @media (max-width: 424px) {
-    #desktopContent {
-        display: none;
-    }
-    #mobileContent {
-        display: block;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    #mobileNameOfDay {
-        font-size: 1.6em;
-    }
-    #mobileMargin {
-        height: 10px;
-    }
-    .mobileDay {
-        height: 20px;
+    .borderRaspGroup {
         border: 1px solid black;
+        border-radius: 20px;
+        padding-top: 4px;
+        margin-top: 10px;
     }
-    .mobileTimeSpan {
-        bottom: 4px;
+    .titleRaspType {
+        font-size: 1.1em;
+        margin: 2px;
+    }
+    .taskSpan {
+        max-width: 130px;
+    }
+    .addButton {
+        width: 130px;
+        height: 25px;
+        font-size: 1.1em;
+    }
+    .input {
+        border: 1px solid black;
+        width: 230px;
         font-size: 1em;
-        right: 10px;
     }
 }
 
 @media (min-width: 424px) and (max-width: 767px) {
-    #desktopContent {
-        display: none;
-    }
-    #mobileContent {
-        display: block;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-    #mobileNameOfDay {
-        font-size: 2.3em;
-    }
-    #mobileMargin {
-        height: 20px;
-    }
-    .mobileDay {
-        height: 26px;
+    .borderRaspGroup {
         border: 1.5px solid black;
+        border-radius: 20px;
+        padding-top: 4px;
+        margin-top: 20px;
     }
-    .mobileTimeSpan {
-        bottom: 7px;
+    .titleRaspType {
+        font-size: 1.4em;
+        margin: 3px;
+    }
+    .taskSpan {
+        max-width: 250px;
+    }
+    .addButton {
+        width: 170px;
+        height: 32px;
         font-size: 1.3em;
-        right: 10px;
+    }
+    .input {
+        border: 1.5px solid black;
+        width: 270px;
+        font-size: 1em;
     }
 }
 
@@ -153,81 +134,47 @@
 /*Desktop*/
 
 @media (min-width: 767px) and (max-width: 1023px) {
-    #mobileContent {
-        display: none;
+    .borderRaspGroup {
+        border: 1px solid black;
+        border-radius: 20px;
+        padding-top: 4px;
     }
-    #desktopContent {
-        display: block;
-        width: 620px;
-        margin: 0px auto;
+    .titleRaspType {
+        font-size: 1.2em;
+        margin: 2px;
     }
-    #desktopColumnTime {
-        width: 15%;
-        padding-top: 27px
+    .taskSpan {
+        max-width: 540px;
     }
-    #desktopColumnsDays {
-        width: 85%
+    .addButton {
+        width: 230px;
     }
-    .desktopTimeSpan {
-        font-size: 13px;
-    }
-    .desktopTimeDiv {
-        padding-right: 4px;
-    }
-    .desktopDayName {
-        font-size: 18px;
-    }
-    .desktopOneHourBlock {
-        border-top: 1px solid black;
-        border-left: 1px solid black;
-    }
-    .bottom {
-        border-bottom: 1px solid black;
-    }
-    .right {
-        border-right: 1px solid black;
-    }
-    .desktomMargin {
-        height: 6px;
+    .input {
+        border: 1px solid black;
+        width: 470px;
+        font-size: 1em;
     }
 }
 
 @media (min-width: 1023px) {
-    #mobileContent {
-        display: none;
+    .borderRaspGroup {
+        border: 1.5px solid black;
+        border-radius: 30px;
+        padding-top: 4px;
     }
-    #desktopContent {
-        display: block;
-        width: 900px;
-        margin: 0px auto;
+    .titleRaspType {
+        font-size: 1.5em;
+        margin: 4px;
     }
-    #desktopColumnTime {
-        width: 15%;
-        padding-top: 27px;
+    .taskSpan {
+        max-width: 750px;
     }
-    #desktopColumnsDays {
-        width: 85%
+    .addButton {
+        width: 230px;
     }
-    .desktopTimeSpan {
-        font-size: 16px;
-    }
-    .desktopTimeDiv {
-        padding-right: 4px;
-    }
-    .desktopDayName {
-        font-size: 20px;
-    }
-    .desktopOneHourBlock {
-        border-top: 1.5px solid black;
-        border-left: 1.5px solid black;
-    }
-    .bottom {
-        border-bottom: 1.5px solid black;
-    }
-    .right {
-        border-right: 1.5px solid black;
-    }
-    .desktomMargin {
-        height: 6px;
+    .input {
+        border: 1.5px solid black;
+        width: 660px;
+        font-size: 1em;
     }
 }

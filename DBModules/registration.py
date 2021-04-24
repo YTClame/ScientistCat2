@@ -16,17 +16,7 @@ def AddStudentToDatabase(student):
     student["Контакты"] = []
     student["Был в сети"] = int(time.time()//1)
 
-    rasp = {}
-    day = []
-    for i in range(15):
-        day.append("Занят")
-    rasp["Пн"] = day
-    rasp["Вт"] = day
-    rasp["Ср"] = day
-    rasp["Чт"] = day
-    rasp["Пт"] = day
-    rasp["Сб"] = day
-    rasp["Вс"] = day
+    rasp = []
     student["Расписание"] = rasp
 
     loginClient = MongoClient()
@@ -63,20 +53,8 @@ def AddTeacherToDatabase(teacher):
     teacher["Контакты"] = []
     teacher["Был в сети"] = int(time.time()//1)
 
-    rasp = {}
-    day = []
-    for i in range(15):
-        day.append("Занят")
-    rasp["Пн"] = day
-    rasp["Вт"] = day
-    rasp["Ср"] = day
-    rasp["Чт"] = day
-    rasp["Пт"] = day
-    rasp["Сб"] = day
-    rasp["Вс"] = day
+    rasp = []
     teacher["Расписание"] = rasp
-
-    
 
     loginClient = MongoClient()
     dbLogin = loginClient['SC_Service']
@@ -97,6 +75,3 @@ def AddTeacherToDatabase(teacher):
     db = client['SC_Users']
     collect = db[str(teacher["Город"])+"Teachers"]
     collect.insert_one(teacher)
-
-
-
