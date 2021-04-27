@@ -51,7 +51,7 @@ function loadInfoAboutTeacher() {
                 '<input type="button" class="button" id="mobileDay4" value="Четверг" onclick="setRaspDay(4);loadMobileRasp(\'Чт\')">' +
                 '<input type="button" class="button" id="mobileDay5" value="Пятница" onclick="setRaspDay(5);loadMobileRasp(\'Пт\')">' +
                 '<input type="button" class="button" id="mobileDay6" value="Суббота" onclick="setRaspDay(6);loadMobileRasp(\'Сб\')">' +
-                '<input type="button" class="button" id="mobileDay7" value="Воскресенье" onclick="setRaspDay(7);loadMobileRasp(\'Вс\')"></div></div><div id="raspMobile"></div>';
+                '<input type="button" class="button" id="mobileDay7" value="Воскресенье" onclick="setRaspDay(7);loadMobileRasp(\'Вс\')"></div></div>';
             mobileCont = document.getElementById("mobileContext");
             mobileCont.innerHTML = mobileRes;
 
@@ -89,46 +89,13 @@ function loadInfoAboutTeacher() {
             viewLessons.forEach(view => {
                 desktopRes += '<span class="valueText">' + view + '</span>';
             });
-            desktopRes += '</div><div id="raspDesktop"></div>';
+            desktopRes += '</div>';
             desktopCont = document.getElementById("desktopContext");
             desktopCont.innerHTML = desktopRes;
-            _loadRaspToId()
+            _loadRaspToId();
         }
     }
     xhr.send();
-}
-
-rasp = {}
-times = ["08:00-09:00", "09:00-10:00", "10:00-11:00", "11:00-12:00", "12:00-13:00", "13:00-14:00", "14:00-15:00", "15:00-16:00", "16:00-17:00", "17:00-18:00", "18:00-19:00", "19:00-20:00", "20:00-21:00", "21:00-22:00", "22:00-23:00"];
-
-function loadMobileRasp(day) {
-    mobileRes = "";
-    if (day == "Пн")
-        mobileRes = '<span id="mobileNameOfDay">Понедельник</span>';
-    if (day == "Вт")
-        mobileRes = '<span id="mobileNameOfDay">Вторник</span>';
-    if (day == "Ср")
-        mobileRes = '<span id="mobileNameOfDay">Среда</span>';
-    if (day == "Чт")
-        mobileRes = '<span id="mobileNameOfDay">Четверг</span>';
-    if (day == "Пт")
-        mobileRes = '<span id="mobileNameOfDay">Пятница</span>';
-    if (day == "Сб")
-        mobileRes = '<span id="mobileNameOfDay">Суббота</span>';
-    if (day == "Вс")
-        mobileRes = '<span id="mobileNameOfDay">Воскресенье</span>';
-    mobileRes += '<div id="mobileMargin"></div>';
-    for (var i = 0; i < 15; i++) {
-        mobileRes += '<div class="mobileTimeDiv"><span class="mobileTimeSpan">' +
-            times[i] + '</span><div class="mobileDay ';
-        if (rasp[day][i] == "Свободен")
-            mobileRes += 'green';
-        else
-            mobileRes += 'red';
-        mobileRes += '"></div></div>';
-    }
-    mobileRasp = document.getElementById("raspMobile");
-    mobileRasp.innerHTML = mobileRes;
 }
 
 function _loadRaspToId() {
@@ -139,29 +106,8 @@ function _loadRaspToId() {
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200 && xhr.responseText != "Error") {
-            rasp = JSON.parse(xhr.responseText);
-            loadMobileRasp("Пн");
-
-            desktopRes = '<div id="desktopColumnTime"><div class="desktopTimeDiv"><span class="desktopTimeSpan">08:00-09:00</span></div><div class="desktopTimeDiv"><span class="desktopTimeSpan">09:00-10:00</span></div><div class="desktopTimeDiv"><span class="desktopTimeSpan">10:00-11:00</span></div><div class="desktopTimeDiv"><span class="desktopTimeSpan">11:00-12:00</span></div><div class="desktopTimeDiv"><span class="desktopTimeSpan">12:00-13:00</span></div><div class="desktopTimeDiv"><span class="desktopTimeSpan">13:00-14:00</span></div><div class="desktopTimeDiv"><span class="desktopTimeSpan">14:00-15:00</span></div><div class="desktopTimeDiv"><span class="desktopTimeSpan">15:00-16:00</span></div><div class="desktopTimeDiv"><span class="desktopTimeSpan">16:00-17:00</span></div><div class="desktopTimeDiv"><span class="desktopTimeSpan">17:00-18:00</span></div><div class="desktopTimeDiv"><span class="desktopTimeSpan">18:00-19:00</span></div><div class="desktopTimeDiv"><span class="desktopTimeSpan">19:00-20:00</span></div><div class="desktopTimeDiv"><span class="desktopTimeSpan">20:00-21:00</span></div><div class="desktopTimeDiv"><span class="desktopTimeSpan">21:00-22:00</span></div><div class="desktopTimeDiv"><span class="desktopTimeSpan">22:00-23:00</span></div></div><div id="desktopColumnsDays">';
-            days = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
-            days.forEach((day) => {
-                desktopRes += '<div class="desktopOneDayColumn">';
-                desktopRes += '<span class="desktopDayName">' + day + '</span>';
-                desktopRes += '<div class="desktomMargin"></div>';
-                for (var i = 0; i < 14; i++) {
-                    if (rasp[day][i] == 'Свободен')
-                        desktopRes += '<div class="desktopOneHourBlock green"></div>'
-                    else
-                        desktopRes += '<div class="desktopOneHourBlock red"></div>'
-                }
-                if (rasp[day][14] == 'Свободен')
-                    desktopRes += '<div class="desktopOneHourBlock bottom green"></div></div>'
-                else
-                    desktopRes += '<div class="desktopOneHourBlock bottom red"></div></div>'
-            })
-            desktopRes += '</div>';
-            desktopRasp = document.getElementById("raspDesktop");
-            desktopRasp.innerHTML = desktopRes;
+            let rasp = JSON.parse(xhr.responseText);
+            _drawRasp(rasp)
         }
     }
     xhr.send();

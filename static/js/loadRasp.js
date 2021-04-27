@@ -8,115 +8,83 @@ function loadRaspToToken() {
     let saturday = [];
     let sunday = [];
     let another = [];
+
+    let days = [];
+    let onedaySettings = {};
+    onedaySettings["День"] = "Понедельник";
+    onedaySettings["Список"] = monday;
+    days.push(onedaySettings);
+
+    onedaySettings = {};
+    onedaySettings["День"] = "Вторник";
+    onedaySettings["Список"] = tuesday;
+    days.push(onedaySettings);
+
+    onedaySettings = {};
+    onedaySettings["День"] = "Среда";
+    onedaySettings["Список"] = wednesday;
+    days.push(onedaySettings);
+
+    onedaySettings = {};
+    onedaySettings["День"] = "Четверг";
+    onedaySettings["Список"] = thursday;
+    days.push(onedaySettings);
+
+    onedaySettings = {};
+    onedaySettings["День"] = "Пятница";
+    onedaySettings["Список"] = friday;
+    days.push(onedaySettings);
+
+    onedaySettings = {};
+    onedaySettings["День"] = "Суббота";
+    onedaySettings["Список"] = saturday;
+    days.push(onedaySettings);
+
+    onedaySettings = {};
+    onedaySettings["День"] = "Воскресенье";
+    onedaySettings["Список"] = sunday;
+    days.push(onedaySettings);
+
     xhr.open('GET', '/api/getRasp?token=' + _getCookie('token'), true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
             let raspList = JSON.parse(xhr.responseText);
             raspList.forEach(raspEl => {
                 if (raspEl['День'] == "Пн")
-                    monday.push(raspEl);
+                    days[0]["Список"].push(raspEl);
                 else if (raspEl['День'] == "Вт")
-                    tuesday.push(raspEl);
+                    days[1]["Список"].push(raspEl);
                 else if (raspEl['День'] == "Ср")
-                    wednesday.push(raspEl);
+                    days[2]["Список"].push(raspEl);
                 else if (raspEl['День'] == "Чт")
-                    thursday.push(raspEl);
+                    days[3]["Список"].push(raspEl);
                 else if (raspEl['День'] == "Пт")
-                    friday.push(raspEl);
+                    days[4]["Список"].push(raspEl);
                 else if (raspEl['День'] == "Сб")
-                    saturday.push(raspEl);
+                    days[5]["Список"].push(raspEl);
                 else if (raspEl['День'] == "Вс")
-                    sunday.push(raspEl);
+                    days[6]["Список"].push(raspEl);
                 else
                     another.push(raspEl);
             });
             let res = '';
-            res += '<div class="borderRaspGroup"><span class="titleRaspType">Расписание по дням недели</span>' +
-                '<div class="oneDayRasp"><span class="titleRaspType">Понедельник</span>';
-            monday.forEach(task => {
-                res += '<div class="oneRecordRasp">' +
-                    '<span class="timeSpan">' +
-                    task["От"] + '-' + task["До"] + '</span>' +
-                    '<span class="taskSpan">' + task["Занятие"] + '</span>' +
-                    '<span class="editRaspElementButtonSpan">' +
-                    '<img class="editRaspElementButton" src="/static/img/edit.svg" onclick="editRaspElement(this);">' +
-                    '<img class="editRaspElementButton" src="/static/img/trash.svg" onclick="deleteRaspElem(this);">' +
-                    '</span></div>';
+            res += '<div class="borderRaspGroup"><span class="titleRaspType">Расписание по дням недели</span>';
+            days.forEach(oneDay => {
+                res += '<div class="oneDayRasp"><span class="titleRaspType">' + oneDay["День"] + '</span>';
+                oneDay["Список"].forEach(task => {
+                    res += '<div class="oneRecordRasp">' +
+                        '<span class="timeSpan">' +
+                        task["От"] + '-' + task["До"] + '</span>' +
+                        '<span class="taskSpan">' + task["Занятие"] + '</span>' +
+                        '<span class="editRaspElementButtonSpan">' +
+                        '<img class="editRaspElementButton" src="/static/img/edit.svg" onclick="editRaspElement(this);">' +
+                        '<img class="editRaspElementButton" src="/static/img/trash.svg" onclick="deleteRaspElem(this);">' +
+                        '</span></div>';
+                });
+                res += '<input type="button" class="button addButton" value="Добавить" onclick="addRaspEvent(this);"></div>';
             });
-            res += '<input type="button" class="button addButton" value="Добавить" onclick="addRaspEvent(this);"></div>' +
-                '<div class="oneDayRasp"><span class="titleRaspType">Вторник</span>';
-            tuesday.forEach(task => {
-                res += '<div class="oneRecordRasp">' +
-                    '<span class="timeSpan">' +
-                    task["От"] + '-' + task["До"] + '</span>' +
-                    '<span class="taskSpan">' + task["Занятие"] + '</span>' +
-                    '<span class="editRaspElementButtonSpan">' +
-                    '<img class="editRaspElementButton" src="/static/img/edit.svg" onclick="editRaspElement(this);">' +
-                    '<img class="editRaspElementButton" src="/static/img/trash.svg" onclick="deleteRaspElem(this);">' +
-                    '</span></div>';
-            });
-            res += '<input type="button" class="button addButton" value="Добавить" onclick="addRaspEvent(this);"></div>' +
-                '<div class="oneDayRasp"><span class="titleRaspType">Среда</span>';
-            wednesday.forEach(task => {
-                res += '<div class="oneRecordRasp">' +
-                    '<span class="timeSpan">' +
-                    task["От"] + '-' + task["До"] + '</span>' +
-                    '<span class="taskSpan">' + task["Занятие"] + '</span>' +
-                    '<span class="editRaspElementButtonSpan">' +
-                    '<img class="editRaspElementButton" src="/static/img/edit.svg" onclick="editRaspElement(this);">' +
-                    '<img class="editRaspElementButton" src="/static/img/trash.svg" onclick="deleteRaspElem(this);">' +
-                    '</span></div>';
-            });
-            res += '<input type="button" class="button addButton" value="Добавить" onclick="addRaspEvent(this);"></div>' +
-                '<div class="oneDayRasp"><span class="titleRaspType">Четверг</span>';
-            thursday.forEach(task => {
-                res += '<div class="oneRecordRasp">' +
-                    '<span class="timeSpan">' +
-                    task["От"] + '-' + task["До"] + '</span>' +
-                    '<span class="taskSpan">' + task["Занятие"] + '</span>' +
-                    '<span class="editRaspElementButtonSpan">' +
-                    '<img class="editRaspElementButton" src="/static/img/edit.svg" onclick="editRaspElement(this);">' +
-                    '<img class="editRaspElementButton" src="/static/img/trash.svg" onclick="deleteRaspElem(this);">' +
-                    '</span></div>';
-            });
-            res += '<input type="button" class="button addButton" value="Добавить" onclick="addRaspEvent(this);"></div>' +
-                '<div class="oneDayRasp"><span class="titleRaspType">Пятница</span>';
-            friday.forEach(task => {
-                res += '<div class="oneRecordRasp">' +
-                    '<span class="timeSpan">' +
-                    task["От"] + '-' + task["До"] + '</span>' +
-                    '<span class="taskSpan">' + task["Занятие"] + '</span>' +
-                    '<span class="editRaspElementButtonSpan">' +
-                    '<img class="editRaspElementButton" src="/static/img/edit.svg" onclick="editRaspElement(this);">' +
-                    '<img class="editRaspElementButton" src="/static/img/trash.svg" onclick="deleteRaspElem(this);">' +
-                    '</span></div>';
-            });
-            res += '<input type="button" class="button addButton" value="Добавить" onclick="addRaspEvent(this);"></div>' +
-                '<div class="oneDayRasp"><span class="titleRaspType">Суббота</span>';
-            saturday.forEach(task => {
-                res += '<div class="oneRecordRasp">' +
-                    '<span class="timeSpan">' +
-                    task["От"] + '-' + task["До"] + '</span>' +
-                    '<span class="taskSpan">' + task["Занятие"] + '</span>' +
-                    '<span class="editRaspElementButtonSpan">' +
-                    '<img class="editRaspElementButton" src="/static/img/edit.svg" onclick="editRaspElement(this);">' +
-                    '<img class="editRaspElementButton" src="/static/img/trash.svg" onclick="deleteRaspElem(this);">' +
-                    '</span></div>';
-            });
-            res += '<input type="button" class="button addButton" value="Добавить" onclick="addRaspEvent(this);"></div>' +
-                '<div class="oneDayRasp"><span class="titleRaspType">Воскресенье</span>';
-            sunday.forEach(task => {
-                res += '<div class="oneRecordRasp">' +
-                    '<span class="timeSpan">' +
-                    task["От"] + '-' + task["До"] + '</span>' +
-                    '<span class="taskSpan">' + task["Занятие"] + '</span>' +
-                    '<span class="editRaspElementButtonSpan">' +
-                    '<img class="editRaspElementButton" src="/static/img/edit.svg" onclick="editRaspElement(this);">' +
-                    '<img class="editRaspElementButton" src="/static/img/trash.svg" onclick="deleteRaspElem(this);">' +
-                    '</span></div>';
-            });
-            res += '<input type="button" class="button addButton" value="Добавить" onclick="addRaspEvent(this);"></div>' +
-                '</div>';
+            res += '</div>';
+
             //Блок с датами:
             res += '<div class="borderRaspGroup"><span class="titleRaspType">Дополнительное расписание по датам</span>';
             let printedDates = [];

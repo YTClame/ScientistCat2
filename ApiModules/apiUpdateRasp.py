@@ -10,8 +10,13 @@ import raspUpdater
 def updateRaspElement(r):
     token = r.form.get("token")
     day = r.form.get("day")
-    hourIndex = r.form.get('hourIndex')
-    return raspUpdater.updateRaspElem(token, day, int(hourIndex))
+    time1old = r.form.get("time1old")
+    time2old = r.form.get("time2old")
+    taskOld = r.form.get("taskold")
+    time1 = r.form.get("time1")
+    time2 = r.form.get("time2")
+    task = r.form.get("task")
+    return raspUpdater.updateRaspElem(token, day, time1old, time1, time2old, time2, taskOld, task)
 
 def createRaspElement(r):
     token = r.form.get("token")

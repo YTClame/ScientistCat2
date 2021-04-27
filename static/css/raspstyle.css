@@ -91,6 +91,7 @@
     }
     .taskSpan {
         max-width: 130px;
+        text-align: center;
     }
     .addButton {
         width: 130px;
