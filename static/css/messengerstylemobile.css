@@ -1,0 +1,292 @@
+@font-face {
+    font-family: "MainFont";
+    src: url("../fonts/20011.ttf");
+}
+
+@font-face {
+    font-family: "InputFont";
+    src: url("../fonts/20289.ttf");
+}
+
+.red {
+    color: #F00;
+}
+
+.green {
+    color: #00FF2A;
+}
+
+#mobileContacts {
+    width: 100%;
+    display: block;
+}
+
+#mobileMessenger {
+    width: 100%;
+    font-family: "MainFont";
+    color: white;
+    background-color: #C6E0FF;
+    text-align: center;
+    display: none;
+    position: relative;
+}
+
+#mobileSenderNameDiv {
+    width: 100%;
+    background-color: #53A2FF;
+}
+
+#mobileSenderNameSpan {
+    width: 100%;
+}
+
+#mobileInputDiv {
+    text-align: start;
+    width: 100%;
+    background-color: #53A2FF;
+}
+
+#mobileInputTextarea {
+    font-family: "InputFont";
+    resize: none;
+}
+
+.mobileContact {
+    width: 100%;
+    text-align: center;
+    background-color: #53A2FF;
+    display: flex;
+    cursor: pointer;
+}
+
+.mobileContactPhoto,
+.mobileContactInfo {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.mobileContactPhoto {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobileContactInfo {
+    width: 60%;
+    text-align: start;
+}
+
+.mobileContactTitle {
+    width: 100%;
+    display: inline-block;
+    font-family: "InputFont";
+    color: white;
+}
+
+img {
+    object-fit: contain;
+}
+
+#mobileSendButton,
+#mobileInputTextarea {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#mobileSendButtonImg {
+    border: none;
+    cursor: pointer;
+}
+
+#mobileMessages {
+    width: 100%;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+.mobileGetMessageDiv,
+.mobileSendMessageDiv {
+    width: 85%;
+}
+
+.mobileGetMessageDiv {
+    background-color: #0075FF;
+}
+
+.mobileSendMessageDiv {
+    background-color: #53A2FF;
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+.mobileGetMessageSpan,
+.mobileSendMessageSpan {
+    font-family: "InputFont";
+}
+
+
+/*Mobile*/
+
+@media (max-width: 424px) {
+    #mobileContacts {
+        margin-top: 10px;
+    }
+    .mobileContactInfo {
+        padding-bottom: 5px;
+    }
+    .mobileContact {
+        border: 1px solid;
+        margin-bottom: 10px;
+        min-height: 65px;
+    }
+    img {
+        max-height: 50px;
+        max-width: 50px;
+        margin: 5px;
+        border: 1px solid black;
+    }
+    .mobileContactTitle {
+        margin-top: 5px;
+        font-size: 0.9em;
+    }
+    #mobileMessenger {
+        margin-top: 10px;
+    }
+    #mobileSenderNameDiv {
+        height: 28px;
+        border: 1px solid black;
+    }
+    #mobileSenderNameSpan {
+        font-size: 1.35em;
+        color: white;
+        position: relative;
+        top: 2.5px;
+    }
+    #mobileInputTextarea {
+        font-size: 0.9em;
+        height: 50px;
+        width: 200px;
+        padding: 2px;
+        border: 1px solid black;
+    }
+    #mobileInputDiv {
+        border: 1px solid black;
+        height: 52px;
+        width: 250px;
+        position: fixed;
+        bottom: 0;
+    }
+    #mobileSendButton {
+        margin-top: 8px;
+        width: 40px;
+        height: 40px;
+    }
+    #mobileSendButtonImg {
+        width: 25px;
+        height: 25px;
+    }
+    #mobileMessages {
+        width: 100%;
+        overflow-y: auto;
+        margin-top: 20px;
+        height: calc(100vh - 156px);
+        border: 1px solid black;
+    }
+    .mobileGetMessageDiv,
+    .mobileSendMessageDiv {
+        border: 1px solid black;
+        padding: 7px;
+        margin-top: 5px;
+    }
+    .mobileGetMessageSpan,
+    .mobileSendMessageSpan {
+        font-size: 1.1em;
+    }
+    #desktopMessenger {
+        display: none;
+    }
+}
+
+@media (min-width: 424px) and (max-width: 767px) {
+    #mobileContacts {
+        margin-top: 20px;
+    }
+    .mobileContactInfo {
+        padding-bottom: 15px;
+    }
+    .mobileContact {
+        border: 1.5px solid;
+        margin-bottom: 20px;
+        min-height: 100px;
+    }
+    img {
+        max-width: 80px;
+        max-height: 80px;
+        margin: 10px;
+        border: 1.5px solid black;
+    }
+    .mobileContactTitle {
+        margin-top: 12px;
+        font-size: 1.3em;
+    }
+    #mobileMessager {
+        margin-top: 20px;
+    }
+    #mobileSenderNameDiv {
+        height: 40px;
+        border: 1.5px solid black;
+        margin-top: 20px;
+    }
+    #mobileSenderNameSpan {
+        font-size: 2.2em;
+        color: white;
+    }
+    #mobileInputTextarea {
+        font-size: 1.2em;
+        height: 65px;
+        width: 330px;
+        padding: 4px;
+        border: 1.5px solid black;
+    }
+    #mobileInputDiv {
+        border: 1.5px solid black;
+        height: 66px;
+        width: 400px;
+        position: fixed;
+        bottom: 0;
+    }
+    #mobileSendButton {
+        margin-top: 8px;
+        width: 55px;
+        height: 55px;
+    }
+    #mobileSendButtonImg {
+        width: 30px;
+        height: 30px;
+    }
+    .mobileGetMessageDiv,
+    .mobileSendMessageDiv {
+        border: 1.5px solid black;
+        padding: 7px;
+        margin-top: 5px;
+    }
+    .mobileGetMessageSpan,
+    .mobileSendMessageSpan {
+        font-size: 1.2em;
+    }
+    #mobileMessages {
+        width: 100%;
+        overflow-y: auto;
+        margin-top: 20px;
+        height: calc(100vh - 220px);
+        border: 1px solid black;
+    }
+    #desktopMessenger {
+        display: none;
+    }
+}
+
+.dateTimeMes {
+    color: #FFF070;
+}

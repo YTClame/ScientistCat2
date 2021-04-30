@@ -1,0 +1,181 @@
+@font-face {
+    font-family: "MainFont";
+    src: url("../fonts/20011.ttf");
+}
+
+@font-face {
+    font-family: "InputFont";
+    src: url("../fonts/20289.ttf");
+}
+
+#raspContent {
+    width: 100%;
+    text-align: center;
+}
+
+.borderRaspGroup {
+    width: 100%;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.titleRaspType {
+    font-family: "MainFont";
+    display: block;
+}
+
+.oneRecordRasp {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.timeSpan {
+    font-family: "MainFont";
+    display: inline-block;
+    vertical-align: top;
+}
+
+.taskSpan {
+    font-family: "InputFont";
+    display: inline-block;
+    text-align: justify;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.editRaspElementButtonSpan {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.editRaspElementButton {
+    cursor: pointer;
+    display: block;
+    margin-bottom: 5px;
+    width: 15px;
+    height: 15px;
+}
+
+.addButton {
+    display: block;
+    margin: 0px auto;
+    margin-bottom: 20px;
+}
+
+.input {
+    display: block;
+    margin: 0px auto;
+    font-family: "InputFont";
+    margin-bottom: 5px;
+    padding: 2px;
+    resize: none;
+}
+
+.oneDayRasp {
+    width: 100%;
+}
+
+
+/*Mobile*/
+
+@media (max-width: 424px) {
+    .borderRaspGroup {
+        border: 1px solid black;
+        border-radius: 20px;
+        padding-top: 4px;
+        margin-top: 10px;
+    }
+    .titleRaspType {
+        font-size: 1.1em;
+        margin: 2px;
+    }
+    .taskSpan {
+        max-width: 130px;
+        text-align: center;
+    }
+    .addButton {
+        width: 130px;
+        height: 25px;
+        font-size: 1.1em;
+    }
+    .input {
+        border: 1px solid black;
+        width: 230px;
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 424px) and (max-width: 767px) {
+    .borderRaspGroup {
+        border: 1.5px solid black;
+        border-radius: 20px;
+        padding-top: 4px;
+        margin-top: 20px;
+    }
+    .titleRaspType {
+        font-size: 1.4em;
+        margin: 3px;
+    }
+    .taskSpan {
+        max-width: 250px;
+    }
+    .addButton {
+        width: 170px;
+        height: 32px;
+        font-size: 1.3em;
+    }
+    .input {
+        border: 1.5px solid black;
+        width: 270px;
+        font-size: 1em;
+    }
+}
+
+
+/*Desktop*/
+
+@media (min-width: 767px) and (max-width: 1023px) {
+    .borderRaspGroup {
+        border: 1px solid black;
+        border-radius: 20px;
+        padding-top: 4px;
+    }
+    .titleRaspType {
+        font-size: 1.2em;
+        margin: 2px;
+    }
+    .taskSpan {
+        max-width: 540px;
+    }
+    .addButton {
+        width: 230px;
+    }
+    .input {
+        border: 1px solid black;
+        width: 470px;
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 1023px) {
+    .borderRaspGroup {
+        border: 1.5px solid black;
+        border-radius: 30px;
+        padding-top: 4px;
+    }
+    .titleRaspType {
+        font-size: 1.5em;
+        margin: 4px;
+    }
+    .taskSpan {
+        max-width: 750px;
+    }
+    .addButton {
+        width: 230px;
+    }
+    .input {
+        border: 1.5px solid black;
+        width: 660px;
+        font-size: 1em;
+    }
+}

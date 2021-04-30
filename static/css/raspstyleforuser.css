@@ -1,0 +1,18 @@
+@media (max-width: 424px) {}
+
+@media (min-width: 424px) and (max-width: 767px) {}
+
+
+/*Desktop*/
+
+@media (min-width: 767px) and (max-width: 1023px) {
+    #desktopContext {
+        margin-bottom: 15px;
+    }
+}
+
+@media (min-width: 1023px) {
+    #desktopContext {
+        margin-bottom: 20px;
+    }
+}

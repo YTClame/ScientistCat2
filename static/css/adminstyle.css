@@ -1,0 +1,213 @@
+@font-face {
+    font-family: "MainFont";
+    src: url("../fonts/20011.ttf");
+}
+
+@font-face {
+    font-family: "InputFont";
+    src: url("../fonts/20289.ttf");
+}
+
+#reportsMainDiv {
+    width: 100%;
+}
+
+.oneString {
+    width: 100%;
+}
+
+.name {
+    cursor: pointer;
+    color: black;
+    text-decoration: underline;
+}
+
+.report {
+    margin: 0px auto;
+    background-color: #F7F5CC;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    overflow: auto;
+    margin-bottom: 15px;
+}
+
+.fieldName {
+    font-family: "MainFont";
+}
+
+.fieldText {
+    font-family: "InputFont";
+}
+
+#buttonExit {
+    margin: 0px auto;
+}
+
+#messenger {
+    background-color: #EBEBEB;
+    margin: 10px auto;
+    padding: 20px;
+    overflow: auto;
+    height: 100%;
+    max-height: 100%;
+}
+
+.inputMessageDiv,
+.outputMessageDiv {
+    width: 80%;
+    margin: 3px;
+    padding: 3px;
+}
+
+.outputMessage,
+.inputMessage {
+    font-family: "InputFont";
+    color: #ffffff;
+}
+
+.outputMessageDiv {
+    background-color: #0b8b27;
+    margin-left: 3px;
+    margin-right: auto;
+}
+
+.inputMessageDiv {
+    background-color: #af3618;
+    margin-right: 3px;
+    margin-left: auto;
+    text-align: end;
+}
+
+.dateTime {
+    color: #f0f010;
+}
+
+
+/*Mobile*/
+
+@media (max-width: 424px) {
+    #buttonExit {
+        width: 140px;
+        margin-bottom: 10px;
+    }
+    .fieldName {
+        font-size: 1.1em;
+    }
+    .fieldText {
+        font-size: 1.1em;
+    }
+    .oneString {
+        padding: 2px;
+    }
+    .RepButton {
+        width: 140px;
+    }
+    .report {
+        border: 1px solid black;
+    }
+    #messenger {
+        width: 250px;
+        border: 1px solid black;
+    }
+    .inputMessageDiv,
+    .outputMessageDiv {
+        border: 1px solid black;
+    }
+}
+
+@media (min-width: 424px) and (max-width: 767px) {
+    #buttonExit {
+        width: 220px;
+        margin-bottom: 20px;
+    }
+    .fieldName {
+        font-size: 1.5em;
+    }
+    .fieldText {
+        font-size: 1.4em;
+    }
+    .oneString {
+        padding: 4px;
+    }
+    .RepButton {
+        width: 220px;
+    }
+    .button {
+        font-size: 1.6em;
+    }
+    .report {
+        border: 1.5px solid black;
+    }
+    #messenger {
+        width: 400px;
+        border: 1.5px solid black;
+    }
+    .inputMessageDiv,
+    .outputMessageDiv {
+        border: 1.5px solid black;
+    }
+}
+
+
+/*Desktop*/
+
+@media (min-width: 767px) and (max-width: 1023px) {
+    #buttonExit {
+        width: 170px;
+    }
+    .fieldName {
+        font-size: 1.2em;
+    }
+    .fieldText {
+        font-size: 1.2em;
+    }
+    .oneString {
+        padding: 3px;
+    }
+    .RepButton {
+        width: 170px;
+    }
+    .report {
+        width: 500px;
+        border: 1px solid black;
+    }
+    #messenger {
+        width: 580px;
+        border: 1px solid black;
+    }
+    .inputMessageDiv,
+    .outputMessageDiv {
+        border: 1px solid black;
+    }
+}
+
+@media (min-width: 1023px) {
+    #buttonExit {
+        width: 250px;
+    }
+    .fieldName {
+        font-size: 1.4em;
+    }
+    .fieldText {
+        font-size: 1.4em;
+    }
+    .oneString {
+        padding: 5px;
+    }
+    .RepButton {
+        width: 250px;
+    }
+    .report {
+        width: 730px;
+        border: 1.5px solid black;
+    }
+    #messenger {
+        width: 800px;
+        border: 1.5px solid black;
+    }
+    .inputMessageDiv,
+    .outputMessageDiv {
+        border: 1.5px solid black;
+    }
+}

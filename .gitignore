@@ -1,3 +1,4 @@
 /static/profilesImages/*
 /__pycache__/*
 /.vscode/*
+*.pyc

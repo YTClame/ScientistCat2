@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/clear.css">
+    <link rel="stylesheet" href="/static/css/menustyle.css">
+    <link rel="stylesheet" href="/static/css/messengerstylemobile.css">
+    <link rel="stylesheet" href="/static/css/messengerstyledesktop.css">
+    <title>Мессенджер</title>
+</head>
+
+<body>
+    <div id="content">
+
+        <div class="menuMobileDiv">
+            <input type="button" class="button" onclick="showHideMenu(1);" value="Меню">
+            <div class="menuMobile" id="menuId1" data-vis="nonvis">
+                <a href="/profile"><input type="button" class="button" value="Профиль"></a>
+                <a href="/found"><input type="button" class="button" value="Поиск {{foundIs}}"></a>
+                <a href="/messenger"><input type="button" class="button choice" value="Мессенджер"></a>
+                <a href="/rasp"><input type="button" class="button" value="Расписание"></a>
+                <input type="button" class="button" value="Выход" onclick="exit();">
+            </div>
+        </div>
+
+        <div class="menuDesktopDiv">
+            <a href="/profile"><input type="button" class="button deskmenu" value="Профиль"></a>
+            <a href="/found"><input type="button" class="button deskmenu" value="Поиск {{foundIs}}"></a>
+            <a href="/messenger"><input type="button" class="button deskmenu choice" value="Мессенджер"></a>
+            <a href="/rasp"><input type="button" class="button deskmenu" value="Расписание"></a>
+            <input type="button" class="button deskmenu" value="Выход" onclick="exit();">
+        </div>
+
+        <div id="mobileContacts">
+
+        </div>
+
+        <div id="mobileMessenger">
+            <div id="mobileSenderNameDiv">
+                <span id="mobileSenderNameSpan"></span>
+            </div>
+            <div id="mobileMessages">
+
+            </div>
+            <div id="mobileInputDiv">
+                <textarea id="mobileInputTextarea" placeholder="Напишите сообщение..."></textarea>
+                <div id="mobileSendButton">
+                    <img id="mobileSendButtonImg" src="/static/img/send.svg" onclick="sendMessage();">
+                </div>
+            </div>
+        </div>
+        <div id="desktopMessenger">
+            <div id="desktopContactsDiv">
+
+            </div>
+            <div id="desktopMessengerDiv">
+                <div id="desktopMessages">
+
+                </div>
+                <div id="desktopInputMessage">
+                    <textarea id="desktopTextarea" placeholder="Напишите сообщение..."></textarea>
+                    <input type="button" class="button" id="sendButton" value="Отправить сообщение" onclick="sendMessage();">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/static/js/mobileMenuScript.js"></script>
+<script src="/static/js/exitProfile.js"></script>
+<script src="/static/js/updateOnline.js"></script>
+<script>
+    updateOnlineFunc();
+</script>
+<script src="/static/js/messenger.js"></script>
+<script>
+    loadContacts();
+</script>
+<script src="/static/js/sharevalues3.js"></script>
+<script>
+    loadMessages();
+    changeMobileView();
+</script>
+
+</html>

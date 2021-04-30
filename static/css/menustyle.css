@@ -1,0 +1,169 @@
+body {
+    background-color: #C6E0FF;
+}
+
+div {
+    border: none;
+}
+
+@font-face {
+    font-family: "MainFont";
+    src: url("../fonts/20011.ttf");
+}
+
+@font-face {
+    font-family: "InputFont";
+    src: url("../fonts/20289.ttf");
+}
+
+.menuMobileDiv {
+    width: 100%;
+}
+
+.menuDesktopDiv {
+    display: none;
+    width: 100%;
+    text-align: center;
+}
+
+.button {
+    width: 100%;
+    cursor: pointer;
+    background-color: #53A2FF;
+    font-family: "MainFont";
+    color: black;
+}
+
+.choice {
+    background-color: #0075FF;
+}
+
+.menuMobile {
+    width: 100%;
+}
+
+#menuId1,
+#menuId2,
+#menuId3,
+#menuId4 {
+    display: none;
+}
+
+
+/*Mobile*/
+
+@media (max-width: 424px) {
+    #content {
+        width: 250px;
+    }
+    .menuMobileDiv {
+        display: block;
+    }
+    .button {
+        height: 28px;
+        margin-top: 10px;
+        font-size: 1.35em;
+        border: 1px solid;
+    }
+    .menuDesktopDiv {
+        display: none;
+    }
+    .inputText {
+        border: 1px solid;
+    }
+    select {
+        border: 1px solid;
+    }
+}
+
+@media (min-width: 424px) and (max-width: 767px) {
+    #content {
+        width: 400px;
+    }
+    .menuMobileDiv {
+        display: block;
+    }
+    .button {
+        height: 40px;
+        margin-top: 20px;
+        font-size: 2.2em;
+        border: 1.5px solid;
+    }
+    .menuDesktopDiv {
+        display: none;
+    }
+    .inputText {
+        border: 1.5px solid;
+    }
+    select {
+        border: 1.5px solid;
+    }
+}
+
+
+/*Desktop*/
+
+@media (min-width: 767px) and (max-width: 1023px) {
+    #content {
+        width: 700px;
+    }
+    .menuDesktopDiv {
+        display: block;
+    }
+    .menuMobileDiv {
+        display: none;
+    }
+    .deskmenu {
+        display: inline-block;
+        width: 19%;
+        border: 1px solid;
+    }
+    .button {
+        height: 25px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+        border: 1px solid;
+    }
+    .inputText {
+        border: 1px solid;
+    }
+    select {
+        border: 1px solid;
+    }
+}
+
+@media (min-width: 1023px) {
+    #content {
+        width: 90%;
+    }
+    .menuDesktopDiv {
+        display: block;
+    }
+    .menuMobileDiv {
+        display: none;
+    }
+    .deskmenu {
+        display: inline-block;
+        width: 19%;
+        border: 1.5px solid;
+    }
+    .button {
+        height: 30px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 1.4em;
+        border: 1.5px solid;
+    }
+    .inputText {
+        border: 1.5px solid;
+    }
+    select {
+        border: 1.5px solid;
+    }
+}
+
+#content {
+    margin: 0px auto;
+    max-width: 1300px;
+}

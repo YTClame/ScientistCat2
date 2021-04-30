@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: SketchAPI 2021.4.7.1 <https://api.sketch.io/> -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketchjs="https://sketch.io/dtd/" sketchjs:metadata="eyJuYW1lIjoiRHJhd2luZy5za2V0Y2hwYWQiLCJzdXJmYWNlIjp7Im1ldGhvZCI6ImZpbGwiLCJibGVuZCI6Im5vcm1hbCIsImVuYWJsZWQiOnRydWUsIm9wYWNpdHkiOjEsInR5cGUiOiJwYXR0ZXJuIiwicGF0dGVybiI6eyJ0eXBlIjoicGF0dGVybiIsInJlZmxlY3QiOiJuby1yZWZsZWN0IiwicmVwZWF0IjoicmVwZWF0Iiwic21vb3RoaW5nIjpmYWxzZSwic3JjIjoidHJhbnNwYXJlbnRMaWdodCIsInN4IjoxLCJzeSI6MSwieDAiOjAuNSwieDEiOjEsInkwIjowLjUsInkxIjoxfX0sImNsaXBQYXRoIjp7ImVuYWJsZWQiOnRydWUsInN0eWxlIjp7InN0cm9rZVN0eWxlIjoiYmxhY2siLCJsaW5lV2lkdGgiOjF9fSwiZGVzY3JpcHRpb24iOiJNYWRlIHdpdGggU2tldGNocGFkIiwibWV0YWRhdGEiOnt9LCJleHBvcnREUEkiOjcyLCJleHBvcnRGb3JtYXQiOiJwbmciLCJleHBvcnRRdWFsaXR5IjowLjk1LCJ1bml0cyI6InB4Iiwid2lkdGgiOjcxLCJoZWlnaHQiOjY4LCJwYWdlcyI6W3sid2lkdGgiOjcxLCJoZWlnaHQiOjY4fV0sInV1aWQiOiI4OTFkYjUzOC0zNjY5LTQ4N2YtOGRhMC00NGQzYTJjZTgzNjgifQ==" width="71" height="68" viewBox="0 0 71 68" sketchjs:version="2021.4.7.1">
+<g sketchjs:tool="clipart" style="mix-blend-mode: source-over;" transform="matrix(1,0,0,1,2,1)">
+	<g sketchjs:uid="1">
+		<rect id="canvas_background" x="-1" y="-1" width="582" height="402" sketchjs:uid="2" style="fill: none;"/>
+	</g>
+	<g sketchjs:uid="3">
+		<rect id="svgEditorBackground" x="0" y="0" width="64" height="64" sketchjs:uid="4" style="fill: none;"/>
+		<g id="svg_1" sketchjs:uid="5">
+			<g id="Icon-Trash" sketchjs:uid="6">
+				<polygon id="Fill-6" points="19.74295204589839,20.008807458656293 24.59559726602174,20.008807458656293 24.59559726602174,51.67679728798339 19.74295204589839,51.67679728798339" sketchjs:uid="7" style="fill: #fe5757; fill-opacity: 1;"/>
+				<polygon id="Fill-7" points="29.448240134582193,20.008807458656293 34.300883003142644,20.008807458656293 34.300883003142644,51.67679728798339 29.448240134582193,51.67679728798339" sketchjs:uid="8" style="fill: #fe5757; fill-opacity: 1;"/>
+				<polygon id="Fill-8" points="39.153525871703096,20.008807458656293 44.00616874026355,20.008807458656293 44.00616874026355,51.67679728798339 39.153525871703096,51.67679728798339" sketchjs:uid="9" style="fill: #fe5757; fill-opacity: 1;"/>
+				<polygon id="Fill-9" points="0.3323791019297744,8.13331100139925 63.41674491763115,8.13331100139925 63.41674491763115,12.09181054384328 0.3323791019297744,12.09181054384328" sketchjs:uid="10" style="fill: #fe5757; fill-opacity: 1;"/>
+				<path id="Fill-10" d="m43.844406,10.112561l-4.52914,0l0,-3.9585c0,-1.187562 -1.132278,-2.111207 -2.588085,-2.111207l-9.705288,0c-1.455782,0 -2.588062,0.923645 -2.588062,2.111207l0,3.9585l-4.529139,0l0,-3.9585c0,-3.166811 3.235098,-5.80581 7.117201,-5.80581l9.705288,0c3.882126,0 7.117226,2.638999 7.117226,5.80581l0,3.9585" sketchjs:uid="11" style="fill: #fe5757; fill-opacity: 1;"/>
+				<path id="Fill-11" d="m46.432491,63.552296l-29.11586,0c-3.882106,0 -7.278965,-2.639 -7.60247,-5.805813l-4.529139,-47.501985l4.852644,-0.263895l4.529139,47.501987c0.16174,1.187561 1.455784,2.111206 2.749826,2.111206l29.11586,0c1.455784,0 2.749825,-1.055603 2.749825,-2.111206l4.529144,-47.501987l4.852642,0.263895l-4.529137,47.501985c-0.323505,3.298771 -3.720367,5.805813 -7.602474,5.805813" sketchjs:uid="12" style="fill: #fe5757; fill-opacity: 1;"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

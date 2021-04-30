@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/clear.css">
+    <link rel="stylesheet" href="/static/css/menustyle.css">
+    <link rel="stylesheet" href="/static/css/foundstyle2.css">
+    <title>Подбор ученика</title>
+</head>
+
+<body>
+    <div id="content">
+        <div class="menuMobileDiv">
+            <input type="button" class="button" onclick="showHideMenu(1);" value="Меню">
+            <div class="menuMobile" id="menuId1" data-vis="nonvis">
+                <a href="/profile"><input type="button" class="button" value="Профиль"></a>
+                <a href="/found"><input type="button" class="button choice" value="Поиск ученика"></a>
+                <a href="/messenger"><input type="button" class="button" value="Мессенджер"></a>
+                <a href="/rasp"><input type="button" class="button" value="Расписание"></a>
+                <input type="button" class="button" value="Выход" onclick="exit();">
+            </div>
+        </div>
+
+        <div class="menuMobileDiv">
+            <input type="button" class="button" onclick="showHideMenu(2);" value="Настроить фильтр">
+            <div class="menuMobile" id="menuId2" data-vis="nonvis">
+                <span class="labelText">Формат занятий</span>
+                <label><div class="choiceDIV"><input type="checkbox" class="choiceCheck" id="checkboxSTOTmobileFS">Ученик ко мне</div></label>
+                <label><div class="choiceDIV"><input type="checkbox" class="choiceCheck" id="checkboxTTOSmobileFS">Я к ученику</div></label>
+                <label><div class="choiceDIV"><input type="checkbox" class="choiceCheck" id="checkboxDistantMobileFS">Дистанционно</div></label>
+                <span class="labelText">Класс (От)</span>
+                <select id="selectMinClassmobileFS">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                </select>
+                <span class="labelText">Класс (До)</span>
+                <select id="selectMaxClassmobileFS">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option selected>11</option>
+                </select>
+                <span class="labelText">Пол</span>
+                <label><div class="choiceDIV"><input type="radio" class="choiceCheck" name="sex" id="radioMANmobileFS">Мужской</div></label>
+                <label><div class="choiceDIV"><input type="radio" class="choiceCheck" name="sex" id="radioWOMANmobileFS">Женский</div></label>
+                <label><div class="choiceDIV"><input type="radio" class="choiceCheck" name="sex" id="radioALLmobileFS" checked>Любой</div></label>
+                <span class="labelText">Предметы</span>
+                <label><div class="choiceDIV"><input type="checkbox" id="checkboxMATANmobileFS" class="choiceCheck">Математика</div></label>
+                <label><div class="choiceDIV"><input type="checkbox" id="checkboxRUSmobileFS" class="choiceCheck">Русский язык</div></label>
+                <label><div class="choiceDIV"><input type="checkbox" id="checkboxPHISmobileFS" class="choiceCheck">Физика</div></label>
+                <label><div class="choiceDIV"><input type="checkbox" id="checkboxINFmobileFS" class="choiceCheck">Информатика</div></label>
+                <label><div class="choiceDIV"><input type="checkbox" id="checkboxCHEMmobileFS" class="choiceCheck">Химия</div></label>
+                <label><div class="choiceDIV"><input type="checkbox" id="checkboxBIOmobileFS" class="choiceCheck">Биология</div></label>
+                <label><div class="choiceDIV"><input type="checkbox" id="checkboxHISTmobileFS" class="choiceCheck">История</div></label>
+                <label><div class="choiceDIV"><input type="checkbox" id="checkboxSOCmobileFS" class="choiceCheck">Обществознание</div></label>
+                <label><div class="choiceDIV"><input type="checkbox" id="checkboxLITmobileFS" class="choiceCheck">Литература</div></label>
+                <label><div class="choiceDIV"><input type="checkbox" id="checkboxGEOmobileFS" class="choiceCheck">География</div></label>
+                <label><div class="choiceDIV"><input type="checkbox" id="checkboxECOmobileFS" class="choiceCheck">Экономика</div></label>
+                <label><div class="choiceDIV"><input type="checkbox" id="checkboxENGmobileFS" class="choiceCheck">Английский язык</div></label>
+                <label><div class="choiceDIV"><input type="checkbox" id="checkboxNEMmobileFS" class="choiceCheck">Немецкий язык</div></label>
+                <input type="button" class="button" value="Применить фильтр" onclick="foundStudent();">
+            </div>
+        </div>
+
+        <div class="menuDesktopDiv">
+            <a href="/profile"><input type="button" class="button deskmenu" value="Профиль"></a>
+            <a href="/found"><input type="button" class="button deskmenu choice" value="Поиск ученика"></a>
+            <a href="/messenger"><input type="button" class="button deskmenu" value="Мессенджер"></a>
+            <a href="/rasp"><input type="button" class="button deskmenu" value="Расписание"></a>
+            <input type="button" class="button deskmenu" value="Выход" onclick="exit();">
+        </div>
+        <div id="mobileContext">
+
+        </div>
+        <div id="desktopContext">
+            <div class="menuMobileDiv" id="desktopMenu">
+                <input type="button" class="button" onclick="showHideMenu(3);" id="filterBut" value="Настроить фильтр">
+            </div>
+            <div class="filter" id="menuId3" data-vis="nonvis">
+                <div class="onePartContext">
+                    <span class="labelText">Формат занятий</span>
+                    <label><div class="choiceDIV"><input type="checkbox" class="choiceCheck" id="checkboxSTOTdesktopFS">Ученик ко мне</div></label>
+                    <label><div class="choiceDIV"><input type="checkbox" class="choiceCheck" id="checkboxTTOSdesktopFS">Я к ученику</div></label>
+                    <label><div class="choiceDIV"><input type="checkbox" class="choiceCheck" id="checkboxDistantDesktopFS">Дистанционно</div></label>
+                    <span class="labelText">Класс (От)</span>
+                    <select id="selectMinClassdesktopFS">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                </select>
+                    <span class="labelText">Класс (До)</span>
+                    <select id="selectMaxClassdesktopFS">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option selected>11</option>
+                </select>
+                    <span class="labelText">Пол</span>
+                    <label><div class="choiceDIV"><input type="radio" class="choiceCheck" name="sex2" id="radioMANdesktopFS">Мужской</div></label>
+                    <label><div class="choiceDIV"><input type="radio" class="choiceCheck" name="sex2" id="radioWOMANdesktopFS">Женский</div></label>
+                    <label><div class="choiceDIV"><input type="radio" class="choiceCheck" name="sex2" id="radioALLdesktopFS" checked>Любой</div></label>
+                </div>
+                <div class="onePartContext">
+                    <span class="labelText">Предметы</span>
+                    <label><div class="choiceDIV"><input type="checkbox" id="checkboxMATANdesktopFS" class="choiceCheck">Математика</div></label>
+                    <label><div class="choiceDIV"><input type="checkbox" id="checkboxRUSdesktopFS" class="choiceCheck">Русский язык</div></label>
+                    <label><div class="choiceDIV"><input type="checkbox" id="checkboxPHISdesktopFS" class="choiceCheck">Физика</div></label>
+                    <label><div class="choiceDIV"><input type="checkbox" id="checkboxINFdesktopFS" class="choiceCheck">Информатика</div></label>
+                    <label><div class="choiceDIV"><input type="checkbox" id="checkboxCHEMdesktopFS" class="choiceCheck">Химия</div></label>
+                    <label><div class="choiceDIV"><input type="checkbox" id="checkboxBIOdesktopFS" class="choiceCheck">Биология</div></label>
+                    <label><div class="choiceDIV"><input type="checkbox" id="checkboxHISTdesktopFS" class="choiceCheck">История</div></label>
+                    <label><div class="choiceDIV"><input type="checkbox" id="checkboxSOCdesktopFS" class="choiceCheck">Обществознание</div></label>
+                    <label><div class="choiceDIV"><input type="checkbox" id="checkboxLITdesktopFS" class="choiceCheck">Литература</div></label>
+                    <label><div class="choiceDIV"><input type="checkbox" id="checkboxGEOdesktopFS" class="choiceCheck">География</div></label>
+                    <label><div class="choiceDIV"><input type="checkbox" id="checkboxECOdesktopFS" class="choiceCheck">Экономика</div></label>
+                    <label><div class="choiceDIV"><input type="checkbox" id="checkboxENGdesktopFS" class="choiceCheck">Английский язык</div></label>
+                    <label><div class="choiceDIV"><input type="checkbox" id="checkboxNEMdesktopFS" class="choiceCheck">Немецкий язык</div></label>
+                </div>
+                <input type="button" class="button" id="acceptDeskFilterButton" value="Применить фильтр" onclick="foundStudent();">
+            </div>
+            <div class="deskResults" id="desktopResults">
+
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/static/js/mobileMenuScript.js"></script>
+<script src="/static/js/sharevalues2.js"></script>
+<script src="/static/js/foundStudents.js"></script>
+<script src="/static/js/exitProfile.js"></script>
+<script src="/static/js/updateOnline.js"></script>
+<script>
+    updateOnlineFunc();
+    foundStudent();
+</script>
+
+</html>

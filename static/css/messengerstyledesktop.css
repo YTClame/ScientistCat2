@@ -1,0 +1,304 @@
+@font-face {
+    font-family: "MainFont";
+    src: url("../fonts/20011.ttf");
+}
+
+@font-face {
+    font-family: "InputFont";
+    src: url("../fonts/20289.ttf");
+}
+
+.red {
+    color: #F00;
+}
+
+.green {
+    color: #00FF2A;
+}
+
+#desktopContactsDiv,
+#desktopMessengerDiv {
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#desktopContactsDiv {
+    background-color: #A7A7A7;
+    width: 29%;
+    overflow-y: auto;
+}
+
+#desktopMessengerDiv {
+    background-color: #EBEBEB;
+    width: 69%;
+}
+
+#desktopMessenger {
+    font-size: 0em;
+    text-align: center;
+}
+
+.desktopImageDiv,
+.desktopName {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.desktopName {
+    text-align: start;
+}
+
+.desktopOneContact {
+    width: 100%;
+    background-color: #53A2FF;
+    cursor: pointer;
+    align-items: center;
+}
+
+.desktopNameSpan {
+    font-family: "MainFont";
+    display: block;
+    color: white;
+}
+
+.desktopStatusSpan {
+    font-family: "InputFont";
+    display: block;
+}
+
+.desktopChoice {
+    background-color: #0075FF;
+}
+
+#desktopMessages {
+    width: 100%;
+    overflow-y: auto;
+}
+
+#desktopInputMessage {
+    width: 100%;
+}
+
+#desktopTextarea {
+    width: 100%;
+    font-family: "InputFont";
+    resize: none;
+}
+
+#sendButton {
+    background-color: #0075FF;
+}
+
+.desktopMessageGetDiv {
+    background-color: #0075FF;
+}
+
+.desktopMessageSendDiv {
+    background-color: #53A2FF;
+}
+
+.desktopMessageGetDiv,
+.desktopMessageSendDiv {
+    width: 90%;
+}
+
+.desktopMessageSendSpan,
+.desktopMessageGetSpan {
+    font-family: "InputFont";
+    color: white;
+}
+
+.desktopMessageSendDiv {
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+
+/*Desktop*/
+
+@media (min-width: 767px) and (max-width: 1023px) {
+    #mobileContacts {
+        display: none;
+    }
+    #mobileMessenger {
+        display: none;
+    }
+    #desktopMessenger {
+        display: block;
+        width: 600px;
+        height: 350px;
+        margin: 0px auto;
+    }
+    .desktopOneContact {
+        border-bottom: 1px solid black;
+        display: flex;
+    }
+    #desktopContactsDiv,
+    #desktopMessengerDiv {
+        border: 1px solid black;
+    }
+    #desktopContactsDiv {
+        border-right: 0px;
+    }
+    #desktopMessengerDiv {
+        padding: 5px;
+        padding-left: 6px;
+    }
+    .desktopImageDiv {
+        width: 35%;
+        display: flex;
+        justify-content: center;
+    }
+    .desktopName {
+        width: 65%;
+        min-height: 50px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+    .desktopImage {
+        max-width: 44px;
+        max-height: 44px;
+        margin: 3px;
+        border: 1px solid black;
+    }
+    .desktopNameSpan {
+        font-size: 13px;
+    }
+    .desktopStatusSpan {
+        font-size: 13px;
+    }
+    #desktopMessages {
+        height: 247px;
+        border: 1px solid black;
+    }
+    #desktopInputMessage {
+        height: 80px;
+        margin-top: 10px;
+    }
+    #desktopTextarea {
+        font-size: 11px;
+        height: 46px;
+        padding: 2px;
+        border: 1px solid black;
+    }
+    #sendButton {
+        font-size: 14px;
+        color: white;
+        border: 1px solid black;
+    }
+    .desktopMessageSendSpan,
+    .desktopMessageGetSpan {
+        font-size: 12px;
+    }
+    .desktopMessageGetDiv,
+    .desktopMessageSendDiv {
+        padding: 6px;
+        margin-bottom: 6px;
+    }
+    .desktopMessageGetDiv {
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+    .desktopMessageSendDiv {
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+}
+
+@media (min-width: 1023px) {
+    #mobileContacts {
+        display: none;
+    }
+    #mobileMessenger {
+        display: none;
+    }
+    #desktopMessenger {
+        display: block;
+        width: 900px;
+        height: 500px;
+        margin: 0px auto;
+    }
+    .desktopOneContact {
+        display: flex;
+        border-bottom: 1.5px solid black;
+    }
+    #desktopContactsDiv,
+    #desktopMessengerDiv {
+        border: 1.5px solid black;
+    }
+    #desktopContactsDiv {
+        border-right: 0px;
+    }
+    #desktopMessengerDiv {
+        padding: 5px;
+        padding-left: 6px;
+    }
+    .desktopImageDiv {
+        display: flex;
+        justify-content: center;
+        width: 30%;
+    }
+    .desktopName {
+        width: 70%;
+        min-height: 60px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+    .desktopImage {
+        max-width: 50px;
+        max-height: 50px;
+        margin: 5px;
+        border: 1.5px solid black;
+    }
+    .desktopNameSpan {
+        font-size: 16px;
+    }
+    .desktopStatusSpan {
+        font-size: 16px;
+    }
+    #desktopMessages {
+        height: 393px;
+        border: 1.5px solid black;
+    }
+    #desktopInputMessage {
+        height: 85px;
+        margin-top: 10px;
+    }
+    #desktopTextarea {
+        font-size: 11px;
+        height: 46px;
+        padding: 2px;
+        border: 1.5px solid black;
+    }
+    #sendButton {
+        font-size: 16px;
+        color: white;
+        border: 1.5px solid black;
+    }
+    .desktopMessageSendSpan,
+    .desktopMessageGetSpan {
+        font-size: 14px;
+    }
+    .desktopMessageGetDiv,
+    .desktopMessageSendDiv {
+        padding: 7.5px;
+        margin-bottom: 7.5px;
+    }
+    .desktopMessageGetDiv {
+        border-top: 1.5px solid black;
+        border-right: 1.5px solid black;
+        border-bottom: 1.5px solid black;
+    }
+    .desktopMessageSendDiv {
+        border-top: 1.5px solid black;
+        border-left: 1.5px solid black;
+        border-bottom: 1.5px solid black;
+    }
+}
+
+.dateTimeMes {
+    color: #FFF070;
+}
