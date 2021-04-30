@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/clear.css">
+    <link rel="stylesheet" href="/static/css/menustyle.css">
+    <link rel="stylesheet" href="/static/css/adminstyle.css">
+    <title>Админка</title>
+</head>
+
+<body>
+    <div id="content">
+        <div id="buttonExit">
+            <input type="button" class="button" value="Выход" onclick="exit();">
+        </div>
+        <div id="reportsMainDiv">
+
+        </div>
+    </div>
+</body>
+<script src="/static/js/exitProfile.js"></script>
+<script src="/static/js/loadReports.js"></script>
+<script>
+    loadReports();
+</script>
+
+</html>

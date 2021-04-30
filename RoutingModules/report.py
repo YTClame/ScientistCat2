@@ -16,5 +16,7 @@ def reportPage(r):
     else:
         if user["Роль"] == "Репетитор":
             return render_template("report.html", foundIs="ученика")
-        else:
+        if user["Роль"] == "Ученик":
             return render_template("report.html", foundIs="репетитора")
+        if user["Роль"] == "Админ":
+            return redirect("/admin")

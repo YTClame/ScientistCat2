@@ -1,0 +1,67 @@
+@font-face {
+    font-family: "MainFont";
+    src: url("../fonts/20011.ttf");
+}
+
+@font-face {
+    font-family: "InputFont";
+    src: url("../fonts/20289.ttf");
+}
+
+#banMessage {
+    margin: 0px auto;
+    font-family: "InputFont";
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    color: red;
+}
+
+.button {
+    display: block;
+    margin: 0px auto;
+    margin-top: 20px;
+}
+
+
+/*Mobile*/
+
+@media (max-width: 424px) {
+    .button {
+        width: 100px;
+    }
+    #banMessage {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 424px) and (max-width: 767px) {
+    .button {
+        width: 100px;
+        font-size: 1.5em;
+    }
+    #banMessage {
+        font-size: 1.5em;
+    }
+}
+
+
+/*Desktop*/
+
+@media (min-width: 767px) and (max-width: 1023px) {
+    .button {
+        width: 100px;
+    }
+    #banMessage {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 1023px) {
+    .button {
+        width: 100px;
+    }
+    #banMessage {
+        font-size: 1.4em;
+    }
+}

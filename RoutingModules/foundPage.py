@@ -13,7 +13,12 @@ def found(r):
     if(user == "Error"):
         return redirect("/")
     else:
+        if user["Роль"] == "Админ":
+            return redirect("/admin")
+        if user["Доступ"] == "Закрыт":
+            return redirect("/profile")
         if user["Роль"] == "Репетитор":
             return render_template("foundStudent.html")
         if user["Роль"] == "Ученик":
             return render_template("foundTeacher.html")
+        

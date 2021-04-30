@@ -7,6 +7,11 @@ function loadInfoAboutStudent() {
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200 && xhr.responseText != "Error") {
             userInfo = JSON.parse(xhr.responseText);
+            if (userInfo["Доступ"] == "Закрыт") {
+                alert("Данный пользователь заблокирован на нашем сервисе, приносим извенения.");
+                window.location.href = "/profile";
+                return;
+            }
             mobileRes = "";
             mobileRes += '<img id="avatarMobile" src="' + userInfo["Фото"] + '" alt="Ваше фото">' +
                 '<span class="labelText">Фамилия</span>' +

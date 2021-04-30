@@ -24,8 +24,12 @@ function auth() {
                 alert("Ошибка ввода! Пользователь не найден!");
                 return;
             } else {
-                document.cookie = "token=" + xhr.responseText + "; max-age=315360000000";
-                document.location.href = '/profile'
+                let loginObject = JSON.parse(xhr.responseText);
+                document.cookie = "token=" + loginObject["Токен"] + "; max-age=315360000000";
+                if (loginObject["Роль"] == "Пользователь")
+                    document.location.href = '/profile'
+                else if (loginObject["Роль"] == "Админ")
+                    document.location.href = '/admin'
             }
         }
     }

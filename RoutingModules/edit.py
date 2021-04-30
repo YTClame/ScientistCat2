@@ -18,3 +18,5 @@ def editInf(r):
             return render_template("editTeacher.html")
         if user["Роль"] == "Ученик":
             return render_template("editStudent.html")
+        if user["Роль"] == "Админ":
+            return redirect("/admin")

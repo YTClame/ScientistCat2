@@ -181,4 +181,5 @@ def foundTeacher(r):
     if len(educs) != 0:
         fil["Образование"] = {"$in": educs}
     
+    fil["Доступ"] = "Открыт"
     return json.dumps(foundToFilter.foundTeacherToFilter(fil, r.form.get("token")), ensure_ascii=False).encode('utf8').decode()

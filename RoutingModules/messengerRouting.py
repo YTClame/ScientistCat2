@@ -13,7 +13,12 @@ def loadMessenger(r):
     if(userForToken == "Error"):
         return redirect("/")
     else:
+        if userForToken["Роль"] == "Админ":
+            return render_template("messengerAW.html")
+        if userForToken["Доступ"] == "Закрыт":
+            return redirect("/profile")
         if userForToken["Роль"] == "Репетитор":
             return render_template("messenger.html", foundIs="ученика")
-        else:
+        if userForToken["Роль"] == "Ученик":
             return render_template("messenger.html", foundIs="репетитора")
+        

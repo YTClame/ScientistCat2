@@ -1,21 +1,3 @@
-/*
-.borderRaspGroup {
-    border-color: #0075FF;
-}
-
-.titleRaspType {
-    color: #0075FF;
-}
-
-.timeSpan {
-    color: #0075FF;
-}
-
-.taskSpan {
-    color: #0075FF;
-}
-*/
-
 @media (max-width: 424px) {}
 
 @media (min-width: 424px) and (max-width: 767px) {}

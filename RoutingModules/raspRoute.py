@@ -14,7 +14,12 @@ def loadRaspPage(r):
     if(user == "Error"):
         return redirect("/")
     else:
+        if user["Роль"] == "Админ":
+            return redirect("/admin")
+        if user["Доступ"] == "Закрыт":
+            return redirect("/profile")
         if user["Роль"] == "Репетитор":
             return render_template("rasp.html", foundIs="ученика")
-        else:
+        if user["Роль"] == "Ученик":
             return render_template("rasp.html", foundIs="репетитора")
+        

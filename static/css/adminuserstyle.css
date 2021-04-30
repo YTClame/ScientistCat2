@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "MainFont";
+    src: url("../fonts/20011.ttf");
+}
+
+@font-face {
+    font-family: "InputFont";
+    src: url("../fonts/20289.ttf");
+}
+
+#content {
+    margin-top: 20px;
+}
+
+#blockButtonDiv {
+    margin: 0px auto;
+    margin-bottom: 20px;
+}
+
+
+/*Mobile*/
+
+@media (max-width: 424px) {
+    #blockButtonDiv {
+        width: 210px;
+    }
+}
+
+@media (min-width: 424px) and (max-width: 767px) {
+    #blockButtonDiv {
+        width: 350px;
+    }
+}
+
+
+/*Desktop*/
+
+@media (min-width: 767px) and (max-width: 1023px) {
+    #blockButtonDiv {
+        width: 170px;
+    }
+}
+
+@media (min-width: 1023px) {
+    #blockButtonDiv {
+        width: 290px;
+    }
+}

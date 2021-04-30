@@ -7,8 +7,12 @@ import loginModule, time, cityNames
 
 def send(token, id, message):#str int str
     user = loginModule.getUserToToken(token)
-    if user == "Error":
+    if user == "Error" or user["Доступ"] == "Закрыт":
         return "Error"
+    userSecond = loginModule.getUserToID(id)
+    if userSecond == "Error" or userSecond["Доступ"] == "Закрыт":
+        return "Error"
+
     idSender = user["ID"]
     client = MongoClient()
     dbMes = client['SC_Messages']
@@ -43,10 +47,12 @@ def send(token, id, message):#str int str
 
 def loadMessages(token, id):#str int
     user = loginModule.getUserToToken(token)
-    if user == "Error":
+    if user == "Error" or user["Доступ"] == "Закрыт":
         return "Error"
     idSender = user["ID"]
     user2 = loginModule.getUserToID(id)
+    if user2 == "Error" or user2["Доступ"] == "Закрыт":
+        return "Error"
     client = MongoClient()
     dbMes = client['SC_Messages']
     ids = [idSender, id]
@@ -61,7 +67,7 @@ def loadMessages(token, id):#str int
 
 def getMessagesSize(token, id):#str int
     user = loginModule.getUserToToken(token)
-    if user == "Error":
+    if user == "Error" or user["Доступ"] == "Закрыт":
         return "Error"
     idSender = user["ID"]
     client = MongoClient()
@@ -79,7 +85,7 @@ def createNewContact(token, id): #str int
     userMain = loginModule.getUserToToken(token)
     userSecond = loginModule.getUserToID(id)
 
-    if userMain == "Error" or userSecond == "Error":
+    if userMain == "Error" or userSecond == "Error" or userMain["ID"] == userSecond["ID"] or userMain["Доступ"] == "Закрыт" or userSecond["Доступ"] == "Закрыт":
         return "Error"
 
     userMainContacts = userMain["Контакты"]
@@ -114,12 +120,14 @@ def createNewContact(token, id): #str int
 
 def loadContacts(token):
     user = loginModule.getUserToToken(token)
-    if user == "Error":
+    if user == "Error" or user["Доступ"] == "Закрыт":
         return "Error"
     contacts = user["Контакты"]
     contactsList = []
     for id in contacts:
         contact = loginModule.getUserToID(id)
+        if contact == "Error" or contact["Доступ"] == "Закрыт":
+            continue
         contactSended = {}
         contactSended["Фамилия"] = contact["Фамилия"]
         contactSended["Имя"] = contact["Имя"]
@@ -132,3 +140,14 @@ def loadContacts(token):
         contactsList.append(contactSended)
     contactsList.reverse()
     return json.dumps(contactsList, ensure_ascii=False).encode('utf8').decode()
+
+
+def loadMessagesToIds(idF, idS):
+    client = MongoClient()
+    dbMes = client['SC_Messages']
+    ids = [idF, idS]
+    ids.sort()
+    collectName = str(ids[0]) + "and" + str(ids[1])
+    collect = dbMes[collectName]
+    messages = list(collect.find({},{"_id":0}))
+    return json.dumps(messages, ensure_ascii=False).encode('utf8').decode()

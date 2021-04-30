@@ -33,3 +33,11 @@ def getMessagesSize(r):
     token = r.form.get('token')
     id = r.form.get('id')
     return messenger.getMessagesSize(token, int(id))
+
+def loadMessagesToIds(r):
+    idF = r.form.get('f')
+    idS = r.form.get('s')
+    token = r.form.get('token')
+    if not loginModule.userIsAdmin(token):
+        return "Error"
+    return messenger.loadMessagesToIds(int(idF), int(idS))

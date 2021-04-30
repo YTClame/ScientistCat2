@@ -126,4 +126,5 @@ def foundStudent(r):
         lessons.append("Немецкий язык")
     if(len(lessons) != 0):
         fil["Изучаемые предметы"] = {"$all":lessons}
+    fil["Доступ"] = "Открыт"
     return json.dumps(foundToFilter.foundStudentToFilter(fil, r.form.get("token")), ensure_ascii=False).encode('utf8').decode()

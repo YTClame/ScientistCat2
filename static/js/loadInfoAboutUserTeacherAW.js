@@ -7,11 +7,6 @@ function loadInfoAboutTeacher() {
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200 && xhr.responseText != "Error") {
             userInfo = JSON.parse(xhr.responseText);
-            if (userInfo["Доступ"] == "Закрыт") {
-                alert("Данный пользователь заблокирован на нашем сервисе, приносим извенения.");
-                window.location.href = "/profile";
-                return;
-            }
             mobileRes = "";
             mobileRes += '<img id="avatarMobile" src="' + userInfo["Фото"] + '" alt="Ваше фото">' +
                 '<span class="labelText">Фамилия</span>' +
@@ -47,8 +42,7 @@ function loadInfoAboutTeacher() {
             viewLessons.forEach(view => {
                 mobileRes += '<span class="valueText">' + view + '</span>';
             });
-            mobileRes += '<input type="button" class="button edit" value="Написать пользователю" onclick="writeToUserFunc(' + id + ');">' +
-                '<a href="/report/' + id + '"><input type="button" class="button edit" value="Пожаловаться"></a>';
+
             mobileCont = document.getElementById("mobileContext");
             mobileCont.innerHTML = mobileRes;
 
@@ -73,8 +67,9 @@ function loadInfoAboutTeacher() {
                 '<span class="labelText">Email</span>' +
                 '<span class="valueText">' + userInfo["Email"] + '</span>' +
                 '<span class="labelText">О себе</span>' +
-                '<span class="valueText">' + userInfo["О себе"] + '</span>' +
-                '<input type="button" class="button edit" value="Написать пользователю" onclick="writeToUserFunc(' + id + ');"><a href="/report/' + id + '"><input type="button" class="button edit" value="Пожаловаться"></a></div><div class="onePartContext"><span class="labelText">Преподаваемые предметы</span>';
+                '<span class="valueText">' + userInfo["О себе"] + '</span>';
+
+            desktopRes += '</div><div class="onePartContext"><span class="labelText">Преподаваемые предметы</span>';
             lessons.forEach(lesson => {
                 desktopRes += '<span class="valueText">' + lesson + '</span>';
             });
@@ -89,6 +84,13 @@ function loadInfoAboutTeacher() {
             desktopRes += '</div>';
             desktopCont = document.getElementById("desktopContext");
             desktopCont.innerHTML = desktopRes;
+            menuButtonBlockMobile = '';
+            if (userInfo["Доступ"] == "Открыт")
+                menuButtonBlockMobile = '<input type="button" class="button edit" value="Заблокировать" onclick="blockUser(this, ' + id + ');">';
+            if (userInfo["Доступ"] == "Закрыт")
+                menuButtonBlockMobile = '<input type="button" class="button edit" value="Разблокировать" onclick="unblockUser(this, ' + id + ');">';
+            menuBlockDivEl = document.getElementById("blockButtonDiv");
+            menuBlockDivEl.innerHTML = menuButtonBlockMobile;
             _loadRaspToId();
         }
     }

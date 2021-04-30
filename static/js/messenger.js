@@ -77,17 +77,17 @@ function _loadMessagesAjax() {
                 if (message["Отправитель"] == _getSecondUserId()) {
                     //Полученное сообщение
                     mobileMessagesRes += '<div class="mobileGetMessageDiv"><span class="mobileGetMessageSpan">' +
-                        message["Сообщение"] + '</span></div>';
+                        message["Сообщение"] + '</span><span class="mobileGetMessageSpan dateTimeMes">   (' + message["Дата"] + ', ' + message["Время"] + ')' + '</span></div>';
 
                     desktopMessagesRes += '<div class="desktopMessageGetDiv"><span class="desktopMessageGetSpan">' +
-                        message["Сообщение"] + '</span></div>';
+                        message["Сообщение"] + '</span><span class="desktopMessageGetSpan dateTimeMes">   (' + message["Дата"] + ', ' + message["Время"] + ')' + '</span></div>';
                 } else {
                     //Отправленное сообщение
                     mobileMessagesRes += '<div class="mobileSendMessageDiv"><span class="mobileSendMessageSpan">' +
-                        message["Сообщение"] + '</span></div>';
+                        message["Сообщение"] + '</span><span class="mobileSendMessageSpan dateTimeMes">   (' + message["Дата"] + ', ' + message["Время"] + ')' + '</span></div>';
 
                     desktopMessagesRes += '<div class="desktopMessageSendDiv"><span class="desktopMessageSendSpan">' +
-                        message["Сообщение"] + '</span></div>';
+                        message["Сообщение"] + '</span><span class="desktopMessageSendSpan dateTimeMes">   (' + message["Дата"] + ', ' + message["Время"] + ')' + '</span></div>';
                 }
             });
             mobileMessengerEl = document.getElementById("mobileMessages");

@@ -1,4 +1,4 @@
-import pymongo, hashlib
+import pymongo, hashlib, json
 from pymongo import MongoClient
 
 def getTokenToLoginAndPassword(login, password):
@@ -19,7 +19,14 @@ def getTokenToLoginAndPassword(login, password):
         userFilter = {"Логин":login, "Пароль":password}
         if(collect.count_documents(userFilter)==1):
             user = collect.find_one(userFilter)
-            return user["Токен"]
+
+            resultObj = {}
+            resultObj["Токен"] = user["Токен"]
+            if nameCollect == "Admins":
+                resultObj["Роль"] = "Админ"
+            else:
+                resultObj["Роль"] = "Пользователь"
+            return json.dumps(resultObj, ensure_ascii=False).encode('utf8').decode()
         else:
             return "Error"
     return "Error"
@@ -36,6 +43,8 @@ def getUserToToken(token):
             nameCollect = userTokenInfo["Город"] + "Teachers"
         if(userTokenInfo["Роль"] == "Ученик"):
             nameCollect = userTokenInfo["Город"] + "Students"
+        if(userTokenInfo["Роль"] == "Админ"):
+            nameCollect = "Admins"
 
         db = client["SC_Users"]
         collect = db[nameCollect]
@@ -70,4 +79,22 @@ def getUserToID(id):
             return user
         else:
             return "Error"
+    return "Error"
+
+def userIsAdmin(token):
+    client = MongoClient()
+    db = client['SC_Users']
+    collect = db["Admins"]
+    doc = {'Токен': token}
+    if(collect.count_documents(doc)==1):
+        return True
+    return False
+
+def getAdminToLogin(login):
+    client = MongoClient()
+    db = client['SC_Users']
+    collect = db["Admins"]
+    doc = {'Логин': login}
+    if(collect.count_documents(doc)==1):
+        return collect.find_one(doc)
     return "Error"

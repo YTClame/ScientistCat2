@@ -23,6 +23,8 @@ import apiMessenger
 import apiWasOnline
 import report
 import apiReport
+import admin
+import apiBlocking
 
 from flask import (
     Flask,
@@ -83,6 +85,10 @@ def messengerFunc():
 @app.route("/report/<id>")
 def userReportFunc(id):
     return report.reportPage(request)
+
+@app.route("/admin")
+def loadAdminPage():
+    return admin.loadPage(request)
 
 
 
@@ -188,6 +194,26 @@ def sendReportFunc():
 @app.route("/api/getNameForReport", methods=["post"])
 def getNameForReportFunc():
     return apiReport.getName(request)
+
+@app.route("/api/blockUser", methods=["post"])
+def blockUserFunc():
+    return apiBlocking.blockUser(request)
+
+@app.route("/api/unblockUser", methods=["post"])
+def unblockUserFunc():
+    return apiBlocking.unblockUser(request)
+
+@app.route("/api/loadReports", methods=["post"])
+def loadReportsFunc():
+    return apiReport.loadReports(request)
+
+@app.route("/api/loadMessagesToIds", methods=["post"])
+def loadMessToIdFunc():
+    return apiMessenger.loadMessagesToIds(request)
+
+@app.route("/api/deleteReport", methods=["post"])
+def deleteReportFunc():
+    return apiReport.deleteReportForId(request)
 
 
 if __name__ == "__main__":
