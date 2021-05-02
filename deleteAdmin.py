@@ -31,3 +31,4 @@ collect = dbLogin["Admins"]
 collect.delete_one({"Токен": tokenAdmin, "Логин": inputLogin, "Роль": "Админ"})
 
 print("Администратор " + inputLogin + " успешно удалён!")
+input()

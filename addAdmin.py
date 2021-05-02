@@ -46,3 +46,4 @@ collect = dbLogin["Admins"]
 collect.insert_one({"Токен": tokenAdmin, "Логин": inputLogin, "Пароль": password, "Роль": "Админ"})
 
 print("Администратор добавлен успешно!")
+input()
