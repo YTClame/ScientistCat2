@@ -14,7 +14,7 @@ function load() {
             if (xhr.responseText == "Error") {
                 alert("Ошибка!");
                 return;
-            } else if (xhr.responseText == "OK") {
+            } else {
                 let messages = JSON.parse(xhr.responseText);
                 let res = '';
                 messages.forEach(message => {
