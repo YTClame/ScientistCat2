@@ -24,8 +24,10 @@ def getTokenToLoginAndPassword(login, password):
             resultObj["Токен"] = user["Токен"]
             if nameCollect == "Admins":
                 resultObj["Роль"] = "Админ"
-            else:
-                resultObj["Роль"] = "Пользователь"
+            elif user["Роль"] == "Ученик":
+                resultObj["Роль"] = "Ученик"
+            elif user["Роль"] == "Репетитор":
+                resultObj["Роль"] = "Репетитор"
             return json.dumps(resultObj, ensure_ascii=False).encode('utf8').decode()
         else:
             return "Error"

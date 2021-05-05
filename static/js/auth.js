@@ -26,7 +26,7 @@ function auth() {
             } else {
                 let loginObject = JSON.parse(xhr.responseText);
                 document.cookie = "token=" + loginObject["Токен"] + "; max-age=315360000000";
-                if (loginObject["Роль"] == "Пользователь")
+                if (loginObject["Роль"] == "Репетитор" || loginObject["Роль"] == "Ученик")
                     document.location.href = '/profile'
                 else if (loginObject["Роль"] == "Админ")
                     document.location.href = '/admin'
