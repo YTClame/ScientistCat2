@@ -145,7 +145,8 @@ function sendMessage() {
     xhr3.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     var secondUserId = _getSecondUserId();
     xhr3.onreadystatechange = function() {
-        if (xhr3.readyState == 4 && xhr3.status == 200 && xhr3.responseText == "OK") {
+        if (xhr3.readyState == 4 && xhr3.status == 200 && xhr3.responseText != "Error") {
+            var sendedMessageCallback = JSON.parse(xhr3.responseText);
             messages_count++;
             var textAreaElem = document.getElementById("desktopTextarea");
             var mobileMessengerEl = document.getElementById("mobileMessages");
@@ -153,9 +154,9 @@ function sendMessage() {
             var mobileMessagesRes = mobileMessengerEl.innerHTML;
             var desktopMessagesRes = desktopMessengerEl.innerHTML;
             mobileMessagesRes += '<div class="mobileSendMessageDiv"><span class="mobileSendMessageSpan">' +
-                textAreaElem.value.trim() + '</span></div>';
+                textAreaElem.value.trim() + '</span><span class="mobileSendMessageSpan dateTimeMes">   (' + sendedMessageCallback["Дата"] + ', ' + sendedMessageCallback["Время"] + ')' + '</span></div>';
             desktopMessagesRes += '<div class="desktopMessageSendDiv"><span class="desktopMessageSendSpan">' +
-                textAreaElem.value.trim() + '</span></div>';
+                textAreaElem.value.trim() + '</span><span class="desktopMessageSendSpan dateTimeMes">   (' + sendedMessageCallback["Дата"] + ', ' + sendedMessageCallback["Время"] + ')' + '</span></div>';
             mobileMessengerEl.innerHTML = mobileMessagesRes;
             desktopMessengerEl.innerHTML = desktopMessagesRes;
             document.getElementById("desktopTextarea").value = "";

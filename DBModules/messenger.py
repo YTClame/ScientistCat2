@@ -41,9 +41,11 @@ def send(token, id, message):#str int str
     messageRecord["Сообщение"] = message
     messageRecord["Дата"] = sendDate
     messageRecord["Время"] = sendTime
+
+    tempRes = messageRecord.copy()
     
     collect.insert_one(messageRecord)
-    return "OK"
+    return json.dumps(tempRes, ensure_ascii=False).encode('utf8').decode()
 
 def loadMessages(token, id):#str int
     user = loginModule.getUserToToken(token)
