@@ -175,8 +175,11 @@ function loadEditableTeacher() {
 
             formatLessons = userInfo["Формат занятий"];
             selectTTOS = document.getElementById("selectTTOS");
+            selectTTOS.checked = false;
             selectSTOT = document.getElementById("selectSTOT");
+            selectSTOT.checked = false;
             selectDistant = document.getElementById("selectDistant");
+            selectDistant.checked = false;
             formatLessons.forEach(form => {
                 if (form == "Ученик ко мне")
                     selectSTOT.checked = true;
@@ -205,6 +208,19 @@ function loadEditableTeacher() {
             email.value = userInfo["Email"];
 
             lessons = userInfo["Преподаваемые предметы"];
+            document.getElementById("selectMATH").checked = false;
+            document.getElementById("selectRUS").checked = false;
+            document.getElementById("selectPHIS").checked = false;
+            document.getElementById("selectINF").checked = false;
+            document.getElementById("selectCHEM").checked = false;
+            document.getElementById("selectBIO").checked = false;
+            document.getElementById("selectHIST").checked = false;
+            document.getElementById("selectSOC").checked = false;
+            document.getElementById("selectLIT").checked = false;
+            document.getElementById("selectGEO").checked = false;
+            document.getElementById("selectECO").checked = false;
+            document.getElementById("selectENG").checked = false;
+            document.getElementById("selectNEM").checked = false;
             lessons.forEach(lesson => {
                 if (lesson == "Математика") {
                     el = document.getElementById("selectMATH");
@@ -263,6 +279,10 @@ function loadEditableTeacher() {
             price.value = userInfo["Ставка"];
 
             lessonsView = userInfo["Вид занятий"];
+            document.getElementById("checkSolo").checked = false;
+            document.getElementById("checkGroup").checked = false;
+            document.getElementById("checkHome").checked = false;
+            document.getElementById("checkStandart").checked = false;
             lessonsView.forEach(view => {
                 if (view == "Разовые") {
                     el = document.getElementById("checkSolo");
@@ -307,8 +327,11 @@ function loadEditableStudent() {
             classNumber.value = userInfo["Класс"];
             formatLessons = userInfo["Формат занятий"];
             selectTTOS = document.getElementById("selectTTOS");
+            selectTTOS.checked = false;
             selectSTOT = document.getElementById("selectSTOT");
+            selectSTOT.checked = false;
             selectDistant = document.getElementById("selectDistant");
+            selectDistant.checked = false;
             formatLessons.forEach(form => {
                 if (form == "Я к репетитору")
                     selectSTOT.checked = true;
@@ -333,6 +356,19 @@ function loadEditableStudent() {
             email.value = userInfo["Email"];
 
             lessons = userInfo["Изучаемые предметы"];
+            document.getElementById("selectMATH").checked = false;
+            document.getElementById("selectRUS").checked = false;
+            document.getElementById("selectPHIS").checked = false;
+            document.getElementById("selectINF").checked = false;
+            document.getElementById("selectCHEM").checked = false;
+            document.getElementById("selectBIO").checked = false;
+            document.getElementById("selectHIST").checked = false;
+            document.getElementById("selectSOC").checked = false;
+            document.getElementById("selectLIT").checked = false;
+            document.getElementById("selectGEO").checked = false;
+            document.getElementById("selectECO").checked = false;
+            document.getElementById("selectENG").checked = false;
+            document.getElementById("selectNEM").checked = false;
             lessons.forEach(lesson => {
                 if (lesson == "Математика") {
                     el = document.getElementById("selectMATH");
