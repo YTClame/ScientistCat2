@@ -43,6 +43,7 @@ def loadReports(r):
         tmp["Имя обвиняемого"] = nameObj["Имя"]
         tmp["Фамилия обвиняемого"] = nameObj["Фамилия"]
         reportsRes.append(tmp)
+    reportsRes.reverse()
     return json.dumps(reportsRes, ensure_ascii=False).encode('utf8').decode()
 
 def getNameForId(id):
