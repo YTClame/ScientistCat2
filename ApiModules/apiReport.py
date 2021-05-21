@@ -39,9 +39,11 @@ def loadReports(r):
         tmp["ID"] = report["ID"]
         tmp["Имя отправителя"] = nameObj["Имя"]
         tmp["Фамилия отправителя"] = nameObj["Фамилия"]
+        tmp["Роль отправителя"] = nameObj["Роль"]
         nameObj = getNameForId(report["Обвиняемый"])
         tmp["Имя обвиняемого"] = nameObj["Имя"]
         tmp["Фамилия обвиняемого"] = nameObj["Фамилия"]
+        tmp["Роль обвиняемого"] = nameObj["Роль"]
         reportsRes.append(tmp)
     reportsRes.reverse()
     return json.dumps(reportsRes, ensure_ascii=False).encode('utf8').decode()
@@ -53,6 +55,7 @@ def getNameForId(id):
     res = {}
     res["Имя"] = user["Имя"]
     res["Фамилия"] = user["Фамилия"]
+    res["Роль"] = user["Роль"]
     return res 
 
 def deleteReportForId(r):
