@@ -35,6 +35,10 @@ function updateRaspElement(el) {
 }
 
 function _updateRaspElement(day, time1, time2, task, time1new, time2new, tasknew, elRec) {
+    if (time1new.trim() == "" || time2new.trim() == "" || tasknew.trim() == "" || day.trim() == "") {
+        alert("Заполните все поля!");
+        return;
+    }
     let xhrPost = new XMLHttpRequest();
     xhrPost.open("POST", '/api/updateRasp', true);
     xhrPost.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -166,6 +170,10 @@ function createNewRaspElemOnCustomDate(el) {
 }
 
 function _continueCreate(day, time1, time2, task, callback) {
+    if (day.trim() == "" || time1.trim() == "" || time2.trim() == "" || task.trim() == "") {
+        alert("Заполните все поля!");
+        return;
+    }
     let xhrPost = new XMLHttpRequest();
     var body = 'time1=' + encodeURIComponent(time1.trim()) +
         '&time2=' + encodeURIComponent(time2.trim()) +
